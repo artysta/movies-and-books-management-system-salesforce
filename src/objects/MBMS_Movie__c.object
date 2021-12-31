@@ -154,32 +154,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>MBMS_Birthplace__c</fullName>
-        <externalId>false</externalId>
-        <label>Birthplace</label>
-        <length>255</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>MBMS_Date_of_Birth__c</fullName>
-        <externalId>false</externalId>
-        <label>Date of Birth</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>MBMS_Date_of_Death__c</fullName>
-        <externalId>false</externalId>
-        <label>Date of Death</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>MBMS_Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
@@ -187,6 +161,18 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MBMS_Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Director</label>
+        <referenceTo>MBMS_Author__c</referenceTo>
+        <relationshipLabel>Movies</relationshipLabel>
+        <relationshipName>Movies_Director</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>MBMS_Title__c</fullName>
@@ -198,19 +184,30 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Author</label>
+    <fields>
+        <fullName>MBMS_Writer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Writer</label>
+        <referenceTo>MBMS_Author__c</referenceTo>
+        <relationshipLabel>Movies (Writer)</relationshipLabel>
+        <relationshipName>Movies_Writer</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Movie</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
     <nameField>
-        <label>Author Name</label>
+        <label>Movie Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Authors</pluralLabel>
+    <pluralLabel>Movies</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>
