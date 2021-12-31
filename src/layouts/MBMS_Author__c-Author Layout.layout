@@ -12,7 +12,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>MBMS_Description__c</field>
+                <field>MBMS_Date_of_Birth__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MBMS_Date_of_Death__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MBMS_Birthplace__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
