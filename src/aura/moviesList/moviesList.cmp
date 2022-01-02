@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="MoviesListController" access="global">
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="movies" type="MBMS_Movie__c[]"/>
+    <aura:handler name='init' action="{!c.getMovies}" value="{!this}"/>
+    <lightning:card title="Movies List">
+        <lightning:datatable keyField="id"
+                             data="{!v.movies}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="true"/>
+    </lightning:card>
+</aura:component>
