@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="AuthorsListController" access="global">
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="authors" type="MBMS_Author__c[]"/>
+    <aura:handler name='init' action="{!c.getAuthors}" value="{!this}"/>
+    <lightning:card title="Authors List">
+        <lightning:datatable keyField="id"
+                             data="{!v.authors}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="true"/>
+    </lightning:card>
+</aura:component>
