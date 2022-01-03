@@ -27,6 +27,8 @@
         <members>MBMS_Author__c.MBMS_Description__c</members>
         <members>MBMS_Author__c.MBMS_Title__c</members>
         <members>MBMS_Book__c.MBMS_Author__c</members>
+        <members>MBMS_Book__c.MBMS_Cover_Image_URL__c</members>
+        <members>MBMS_Book__c.MBMS_Cover_Image__c</members>
         <members>MBMS_Book__c.MBMS_Description__c</members>
         <members>MBMS_Book__c.MBMS_Title__c</members>
         <members>MBMS_Movie__c.MBMS_Description__c</members>

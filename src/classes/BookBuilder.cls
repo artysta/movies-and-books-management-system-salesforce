@@ -25,6 +25,11 @@ public class BookBuilder {
         return this;
     }
     
+    public BookBuilder withCoverImageURL(String coverImageURL) {
+        this.book.MBMS_Cover_Image_URL__c = coverImageURL;
+        return this;
+    }
+    
     public MBMS_Book__c buildAndInsert() {       
         insert book;
         return book;

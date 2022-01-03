@@ -166,6 +166,25 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>MBMS_Cover_Image_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Cover Image URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MBMS_Cover_Image__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(MBMS_Cover_Image_URL__c)), IMAGE(MBMS_Cover_Image_URL__c, &apos;Image&apos;), &quot;Book cover image is not available.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cover Image</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>MBMS_Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
