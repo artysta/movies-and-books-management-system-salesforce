@@ -6,6 +6,7 @@
         <members>AuthorsListController</members>
         <members>BookBuilder</members>
         <members>BooksListController</members>
+        <members>MBMS_Constants</members>
         <members>MovieBuilder</members>
         <members>MoviesListController</members>
         <name>ApexClass</name>
