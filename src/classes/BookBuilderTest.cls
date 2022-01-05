@@ -2,12 +2,12 @@
 private class BookBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Author__c author = new AuthorBuilder()
+        MBMS_Artist__c artist = new ArtistBuilder()
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .buildAndInsert();
         
         MBMS_Book__c book = new BookBuilder()
-            .withAuthor(author)
+            .withArtist(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
@@ -27,14 +27,14 @@ private class BookBuilderTest {
     }
     
     @isTest
-    static void bookShouldHaveAnAuthor() {
+    static void bookShouldHaveAnArtist() {
         Test.startTest();        
-        MBMS_Book__c book = [SELECT MBMS_Author__c
+        MBMS_Book__c book = [SELECT MBMS_Artist__c
                              FROM MBMS_Book__c
                              LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, book.MBMS_Author__c);
+        System.assertNotEquals(null, book.MBMS_Artist__c);
     }
     
     @isTest

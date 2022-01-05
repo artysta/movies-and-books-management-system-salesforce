@@ -3,7 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>authorsList</componentName>
+                <componentName>artistsList</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>

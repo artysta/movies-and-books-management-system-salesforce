@@ -5,8 +5,8 @@ public class BookBuilder {
         this.book = new MBMS_Book__c();
     }
     
-    public BookBuilder withAuthor(MBMS_Author__c author) {
-        this.book.MBMS_Author__c = author.Id;
+    public BookBuilder withArtist(MBMS_Artist__c artist) {
+        this.book.MBMS_Artist__c = artist.Id;
         return this;
     }
     

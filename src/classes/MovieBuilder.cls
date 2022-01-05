@@ -10,7 +10,7 @@ public class MovieBuilder {
         return this;
     }
     
-    public MovieBuilder withDirector(MBMS_Author__c director) {
+    public MovieBuilder withDirector(MBMS_Artist__c director) {
         this.movie.MBMS_Director__c = director.Id;
         return this;
     }
@@ -25,7 +25,7 @@ public class MovieBuilder {
         return this;
     }
     
-    public MovieBuilder withWriter(MBMS_Author__c writer) {
+    public MovieBuilder withWriter(MBMS_Artist__c writer) {
         this.movie.MBMS_Writer__c = writer.Id;
         return this;
     }

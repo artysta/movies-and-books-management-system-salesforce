@@ -154,11 +154,11 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>MBMS_Author__c</fullName>
+        <fullName>MBMS_Artist__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Author</label>
-        <referenceTo>MBMS_Author__c</referenceTo>
+        <label>Artist</label>
+        <referenceTo>MBMS_Artist__c</referenceTo>
         <relationshipLabel>Books</relationshipLabel>
         <relationshipName>Books</relationshipName>
         <required>false</required>

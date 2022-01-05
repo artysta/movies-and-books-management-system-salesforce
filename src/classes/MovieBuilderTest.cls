@@ -2,16 +2,16 @@
 private class MovieBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Author__c author = new AuthorBuilder()
+        MBMS_Artist__c artist = new ArtistBuilder()
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .buildAndInsert();
         
         MBMS_Movie__c movie = new MovieBuilder()
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withDirector(author)
+            .withDirector(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withWriter(author)
+            .withWriter(artist)
             .buildAndInsert();
     }
     

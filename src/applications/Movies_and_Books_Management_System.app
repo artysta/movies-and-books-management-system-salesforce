@@ -26,7 +26,7 @@
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
-    <tabs>MBMS_Author__c</tabs>
+    <tabs>MBMS_Artist__c</tabs>
     <tabs>MBMS_Book__c</tabs>
     <tabs>MBMS_Movie__c</tabs>
     <uiType>Lightning</uiType>
