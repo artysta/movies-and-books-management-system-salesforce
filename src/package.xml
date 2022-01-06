@@ -9,6 +9,7 @@
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
         <members>BooksListController</members>
+        <members>BooksListControllerTest</members>
         <members>MBMS_Constants</members>
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
