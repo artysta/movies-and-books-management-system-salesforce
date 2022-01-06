@@ -143,6 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is an object for storing information about the Movie.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,7 +156,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>MBMS_Description__c</fullName>
+        <description>A field that stores a description of the Movie.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Description of the movie.</inlineHelpText>
         <label>Description</label>
         <length>1000</length>
         <trackTrending>false</trackTrending>
@@ -165,7 +168,9 @@
     <fields>
         <fullName>MBMS_Director__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <description>A field that stores a lookup to the Artist object.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Movie director.</inlineHelpText>
         <label>Director</label>
         <referenceTo>MBMS_Artist__c</referenceTo>
         <relationshipLabel>Movies</relationshipLabel>
@@ -176,7 +181,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Title__c</fullName>
+        <description>A field that stores a title of the Movie.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Title of the movie.</inlineHelpText>
         <label>Title</label>
         <length>255</length>
         <required>false</required>
@@ -187,7 +194,9 @@
     <fields>
         <fullName>MBMS_Writer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <description>A field that stores a lookup to the Artist object.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Movie writer.</inlineHelpText>
         <label>Writer</label>
         <referenceTo>MBMS_Artist__c</referenceTo>
         <relationshipLabel>Movies (Writer)</relationshipLabel>

@@ -143,6 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is an object for storing information about the Artist.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,7 +156,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>MBMS_Birthplace__c</fullName>
+        <description>A field that stores a birthplace (country / city) of the Artist.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Birthplace of the artist.</inlineHelpText>
         <label>Birthplace</label>
         <length>255</length>
         <required>false</required>
@@ -165,7 +168,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Date_of_Birth__c</fullName>
+        <description>A field that stores a date of birth of the Artist.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Date of birth of the artist.</inlineHelpText>
         <label>Date of Birth</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -173,7 +178,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Date_of_Death__c</fullName>
+        <description>A field that stores a date of death of the Artist.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Date of death of the artist.</inlineHelpText>
         <label>Date of Death</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -181,7 +188,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Description__c</fullName>
+        <description>A field that stores a description of the Artist.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Description of the artist.</inlineHelpText>
         <label>Description</label>
         <length>1000</length>
         <trackTrending>false</trackTrending>
@@ -190,7 +199,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Title__c</fullName>
+        <description>A field that stores a title of the Artist.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Title of the artist.</inlineHelpText>
         <label>Title</label>
         <length>255</length>
         <required>false</required>

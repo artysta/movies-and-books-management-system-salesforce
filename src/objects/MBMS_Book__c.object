@@ -143,6 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is an object for storing information about the Book.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -156,7 +157,9 @@
     <fields>
         <fullName>MBMS_Artist__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <description>A field that stores a lookup to the Artist object.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Book author.</inlineHelpText>
         <label>Artist</label>
         <referenceTo>MBMS_Artist__c</referenceTo>
         <relationshipLabel>Books</relationshipLabel>
@@ -167,7 +170,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Cover_Image_URL__c</fullName>
+        <description>A field that stores a cover image URL of the Book.</description>
         <externalId>false</externalId>
+        <inlineHelpText>URL of the Book cover image.</inlineHelpText>
         <label>Cover Image URL</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -175,9 +180,11 @@
     </fields>
     <fields>
         <fullName>MBMS_Cover_Image__c</fullName>
+        <description>A formula field that displays Book cover image or string value (if the cover image URL is not available).</description>
         <externalId>false</externalId>
         <formula>IF(NOT(ISBLANK(MBMS_Cover_Image_URL__c)), IMAGE(MBMS_Cover_Image_URL__c, &apos;Image&apos;), &quot;Book cover image is not available.&quot;)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Cover image of the Book.</inlineHelpText>
         <label>Cover Image</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -186,7 +193,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Description__c</fullName>
+        <description>A field that stores a description of the Book.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Description of the Book.</inlineHelpText>
         <label>Description</label>
         <length>1000</length>
         <trackTrending>false</trackTrending>
@@ -195,7 +204,9 @@
     </fields>
     <fields>
         <fullName>MBMS_Title__c</fullName>
+        <description>A field that stores a title of the Book.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Title of the Book.</inlineHelpText>
         <label>Title</label>
         <length>255</length>
         <required>false</required>
