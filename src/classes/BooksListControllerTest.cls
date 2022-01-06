@@ -15,6 +15,6 @@ private class BooksListControllerTest {
         Test.stopTest();
         
         System.assert(booksList.size() > 0);
-		System.assertNotEquals(null, booksList[0]);
+        System.assertNotEquals(null, booksList[0]);
     }
 }

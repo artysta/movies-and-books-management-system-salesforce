@@ -17,6 +17,6 @@ private class ArtistsListControllerTest {
         Test.stopTest();
         
         System.assert(artistsList.size() > 0);
-		System.assertNotEquals(null, artistsList[0]);
+        System.assertNotEquals(null, artistsList[0]);
     }
 }
