@@ -5,6 +5,7 @@
         <members>ArtistBuilder</members>
         <members>ArtistBuilderTest</members>
         <members>ArtistsListController</members>
+        <members>ArtistsListControllerTest</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
         <members>BooksListController</members>
