@@ -14,6 +14,7 @@
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
         <members>MoviesListController</members>
+        <members>MoviesListControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
