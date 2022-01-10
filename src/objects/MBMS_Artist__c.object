@@ -198,6 +198,43 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>MBMS_Roles__c</fullName>
+        <description>A field that stores a roles of the Artist.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Roles of the artist.</inlineHelpText>
+        <label>Roles</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MBMS_Author</fullName>
+                    <default>false</default>
+                    <label>Author</label>
+                </value>
+                <value>
+                    <fullName>MBMS_Actor</fullName>
+                    <default>false</default>
+                    <label>Actor</label>
+                </value>
+                <value>
+                    <fullName>MBMS_Director</fullName>
+                    <default>false</default>
+                    <label>Director</label>
+                </value>
+                <value>
+                    <fullName>MBMS_Writer</fullName>
+                    <default>false</default>
+                    <label>Writer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>MBMS_Title__c</fullName>
         <description>A field that stores a title of the Artist.</description>
         <externalId>false</externalId>

@@ -8,6 +8,7 @@ private class ArtistBuilderTest {
             .withDateOfBirth(MBMS_Constants.MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY)
             .withDateOfDeath(MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY)
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
             .buildAndInsert();
     }
     
@@ -75,5 +76,19 @@ private class ArtistBuilderTest {
         Test.stopTest();
         
         System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.MBMS_Description__c);
+    }
+    
+    @isTest
+    static void artistShouldHaveARole() {
+        Test.startTest();        
+        MBMS_Artist__c artist = [SELECT MBMS_Roles__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        Test.stopTest();
+        
+        List<String> roles = artist.MBMS_Roles__c.split(MBMS_Constants.MBMS_SEMICOLON);
+        
+        System.assert(roles.size() > 0);
+        System.assertEquals(MBMS_Constants.MBMS_ROLE_AUTHOR, roles.get(0));
     }
 }

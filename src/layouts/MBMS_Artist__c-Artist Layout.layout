@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>MBMS_Title__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>MBMS_Roles__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

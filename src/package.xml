@@ -32,6 +32,7 @@
         <members>MBMS_Artist__c.MBMS_Date_of_Birth__c</members>
         <members>MBMS_Artist__c.MBMS_Date_of_Death__c</members>
         <members>MBMS_Artist__c.MBMS_Description__c</members>
+        <members>MBMS_Artist__c.MBMS_Roles__c</members>
         <members>MBMS_Artist__c.MBMS_Title__c</members>
         <members>MBMS_Book__c.MBMS_Artist__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image_URL__c</members>

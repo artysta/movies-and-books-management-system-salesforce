@@ -7,6 +7,7 @@ private class ArtistsListControllerTest {
             .withBirthplace(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDateOfBirth(MBMS_Constants.MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY)
             .withDateOfDeath(MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY)
+            .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
             .buildAndInsert();
     }
     
