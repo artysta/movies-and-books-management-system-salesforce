@@ -59,6 +59,7 @@
     <types>
         <members>MBMS_Artist__c</members>
         <members>MBMS_Book__c</members>
+        <members>MBMS_Movie_Actor__c</members>
         <members>MBMS_Movie__c</members>
         <name>CustomTab</name>
     </types>
@@ -77,6 +78,7 @@
     <types>
         <members>MBMS_Artist__c.All</members>
         <members>MBMS_Book__c.All</members>
+        <members>MBMS_Movie_Actor__c.All</members>
         <members>MBMS_Movie__c.All</members>
         <name>ListView</name>
     </types>

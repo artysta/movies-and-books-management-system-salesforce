@@ -29,6 +29,7 @@
     <tabs>MBMS_Artist__c</tabs>
     <tabs>MBMS_Book__c</tabs>
     <tabs>MBMS_Movie__c</tabs>
+    <tabs>MBMS_Movie_Actor__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Movies_and_Books_Management_System_UtilityBar</utilityBar>
 </CustomApplication>
