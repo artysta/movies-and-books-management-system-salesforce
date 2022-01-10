@@ -8,16 +8,43 @@ private class MovieActorBuilderTest {
         
         MBMS_Movie__c movie = new MovieBuilder()
             .buildAndInsert();
+        
+        MBMS_Movie_Actor__c movieActor = new MovieActorBuilder()
+            .withActor(artist)
+            .withMovie(movie)
+            .buildAndInsert();
     }
     
     @isTest
-    static void movieShouldNotBeNull() {
+    static void movieActorShouldNotBeNull() {
         Test.startTest();        
-        MBMS_Movie__c movie = [SELECT Id
-                               FROM MBMS_Movie__c
-                               LIMIT 1];
+        MBMS_Movie_Actor__c movieActor = [SELECT Id
+                                          FROM MBMS_Movie_Actor__c
+                                          LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, movie);
+        System.assertNotEquals(null, movieActor);
+    }
+    
+    @isTest
+    static void movieActorShouldHaveAnActor() {
+        Test.startTest();        
+        MBMS_Movie_Actor__c movieActor = [SELECT MBMS_Artist__c
+                                          FROM MBMS_Movie_Actor__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertNotEquals(null, movieActor.MBMS_Artist__c);
+    }
+    
+    @isTest
+    static void movieActorShouldHaveAMovie() {
+        Test.startTest();        
+        MBMS_Movie_Actor__c movieActor = [SELECT MBMS_Movie__c
+                                          FROM MBMS_Movie_Actor__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertNotEquals(null, movieActor.MBMS_Movie__c);
     }
 }

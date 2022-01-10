@@ -14,4 +14,9 @@ public class MovieActorBuilder {
         this.movieActor.MBMS_Movie__c = movie.Id;
         return this;
     }
+    
+    public MBMS_Movie_Actor__c buildAndInsert() {       
+        insert movieActor;
+        return movieActor;
+    }
 }
