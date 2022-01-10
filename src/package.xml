@@ -11,6 +11,8 @@
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
         <members>MBMS_Constants</members>
+        <members>MovieActorBuilder</members>
+        <members>MovieActorBuilderTest</members>
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
         <members>MoviesListController</members>
