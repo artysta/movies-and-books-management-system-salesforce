@@ -25,6 +25,7 @@
     <types>
         <members>artistsList</members>
         <members>booksList</members>
+        <members>moviePhotosList</members>
         <members>moviesList</members>
         <name>AuraDefinitionBundle</name>
     </types>
