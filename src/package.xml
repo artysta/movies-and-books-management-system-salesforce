@@ -17,6 +17,7 @@
         <members>MovieBuilderTest</members>
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
+        <members>MoviePhotosListController</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
         <name>ApexClass</name>
