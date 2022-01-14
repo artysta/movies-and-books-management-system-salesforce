@@ -78,6 +78,10 @@
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>MBMS_Status_Values</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
         <members>MBMS_Artist__c-Artist Layout</members>
         <members>MBMS_Book__c-Book Layout</members>
         <members>MBMS_Movie_Actor__c-Movie Actor Layout</members>
