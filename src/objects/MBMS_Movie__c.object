@@ -180,6 +180,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>MBMS_Status__c</fullName>
+        <description>A field that stores a status of the Movie record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the Movie record.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>MBMS_Status_Values</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>MBMS_Title__c</fullName>
         <description>A field that stores a title of the Movie.</description>
         <externalId>false</externalId>

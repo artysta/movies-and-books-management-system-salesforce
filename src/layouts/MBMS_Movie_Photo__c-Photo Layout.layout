@@ -23,6 +23,10 @@
                 <behavior>Readonly</behavior>
                 <field>MBMS_Photo__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MBMS_Status__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

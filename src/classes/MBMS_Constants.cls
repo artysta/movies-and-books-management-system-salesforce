@@ -13,4 +13,9 @@ public class MBMS_Constants {
     public final static String MBMS_ROLE_ACTOR = 'MBMS_Actor';
     public final static String MBMS_ROLE_DIRECTOR = 'MBMS_Director';
     public final static String MBMS_ROLE_WRITER = 'MBMS_Writer';
+
+    // Record statuses.
+    public final static String MBMS_STATUS_INITIAL = 'Initial';
+    public final static String MBMS_STATUS_APPROVED = 'Approved';
+    public final static String MBMS_STATUS_REJECTED = 'Rejected';
 }

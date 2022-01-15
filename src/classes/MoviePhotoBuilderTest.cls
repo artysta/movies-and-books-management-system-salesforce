@@ -9,6 +9,7 @@ private class MoviePhotoBuilderTest {
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withMovie(movie)
             .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
             .buildAndInsert();
     }
     
@@ -35,13 +36,24 @@ private class MoviePhotoBuilderTest {
     }
 
     @isTest
-    static void bookShouldHaveAPhotoURL() {
+    static void moviePhotoShouldHaveAPhotoURL() {
         Test.startTest();
-        MBMS_Movie_Photo__c book = [SELECT MBMS_Photo_URL__c
-                                    FROM MBMS_Movie_Photo__c
-                                    LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Photo_URL__c
+                                          FROM MBMS_Movie_Photo__c
+                                          LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Photo_URL__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, moviePhoto.MBMS_Photo_URL__c);
+    }
+
+    @isTest
+    static void moviePhotoShouldHaveAStatus() {
+        Test.startTest();        
+        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Status__c
+                                          FROM MBMS_Movie_Photo__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, moviePhoto.MBMS_Status__c);
     }
 }

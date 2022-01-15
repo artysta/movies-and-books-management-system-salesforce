@@ -13,6 +13,7 @@ private class BookBuilderTest {
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withCoverImageURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
             .buildAndInsert();
     }
     
@@ -80,5 +81,16 @@ private class BookBuilderTest {
         Test.stopTest();
         
         System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Cover_Image_URL__c);
+    }
+
+    @isTest
+    static void bookShouldHaveAStatus() {
+        Test.startTest();        
+        MBMS_Book__c book = [SELECT MBMS_Status__c
+                             FROM MBMS_Book__c
+                             LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, book.MBMS_Status__c);
     }
 }

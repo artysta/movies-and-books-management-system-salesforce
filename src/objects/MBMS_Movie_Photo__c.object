@@ -190,6 +190,20 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>MBMS_Status__c</fullName>
+        <description>A field that stores a status of the Movie Photo record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the Movie Photo record.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>MBMS_Status_Values</valueSetName>
+        </valueSet>
+    </fields>
     <label>Movie Photo</label>
     <listViews>
         <fullName>All</fullName>

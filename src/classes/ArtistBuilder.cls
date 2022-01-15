@@ -34,6 +34,11 @@ public class ArtistBuilder {
         this.artist.MBMS_Roles__c = String.join(roles, ';');
         return this;
     }
+
+    public ArtistBuilder withStatus(String status) {
+        this.artist.MBMS_Status__c = status;
+        return this;
+    }
     
     public MBMS_Artist__c buildAndInsert() {       
         insert artist;

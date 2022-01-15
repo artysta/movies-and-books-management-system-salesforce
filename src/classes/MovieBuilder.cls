@@ -30,6 +30,11 @@ public class MovieBuilder {
         return this;
     }
     
+    public MovieBuilder withStatus(String status) {
+        this.movie.MBMS_Status__c = status;
+        return this;
+    }
+
     public MBMS_Movie__c buildAndInsert() {       
         insert movie;
         return movie;

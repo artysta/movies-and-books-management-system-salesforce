@@ -19,6 +19,11 @@ public class MoviePhotoBuilder {
         this.moviePhoto.MBMS_Photo_URL__c = photoURL;
         return this;
     }
+
+    public MoviePhotoBuilder withStatus(String status) {
+        this.moviePhoto.MBMS_Status__c = status;
+        return this;
+    }
     
     public MBMS_Movie_Photo__c buildAndInsert() {       
         insert moviePhoto;

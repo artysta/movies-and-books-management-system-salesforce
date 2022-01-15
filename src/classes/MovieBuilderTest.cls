@@ -13,6 +13,7 @@ private class MovieBuilderTest {
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withWriter(artist)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
             .buildAndInsert();
     }
     
@@ -80,5 +81,16 @@ private class MovieBuilderTest {
         Test.stopTest();
         
         System.assertNotEquals(null, movie.MBMS_Writer__c);
+    }
+
+    @isTest
+    static void movieShouldHaveAStatus() {
+        Test.startTest();        
+        MBMS_Movie__c movie = [SELECT MBMS_Status__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, movie.MBMS_Status__c);
     }
 }

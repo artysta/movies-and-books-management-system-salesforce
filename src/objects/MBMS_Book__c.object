@@ -203,6 +203,20 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>MBMS_Status__c</fullName>
+        <description>A field that stores a status of the Book record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the Book record.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>MBMS_Status_Values</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>MBMS_Title__c</fullName>
         <description>A field that stores a title of the Book.</description>
         <externalId>false</externalId>
