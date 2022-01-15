@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="RequiringActionRecordsController" access="global">
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="sObjects" type="sObject[]"/>
+    <aura:handler name='init' action="{!c.getRequiringActionRecordsFunction}" value="{!this}"/>
+    <lightning:card title="Records That Require An Action">
+        <lightning:datatable keyField="id"
+                             data="{!v.sObjects}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="true"/>
+    </lightning:card>
+</aura:component>

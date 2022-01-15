@@ -12,6 +12,7 @@ private class MoviesListControllerTest {
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withWriter(artist)
+            .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
             .buildAndInsert();
     }
     
@@ -19,6 +20,16 @@ private class MoviesListControllerTest {
     static void shouldReturnNotEmptyListOfBooks() {
         Test.startTest();
         List<MBMS_Movie__c> moviesList = MoviesListController.getMoviesList();
+        Test.stopTest();
+        
+        System.assert(moviesList.size() > 0);
+        System.assertNotEquals(null, moviesList[0]);
+    }
+    
+    @isTest
+    static void shouldReturnNotEmptyListOfRequiringActionMovies() {
+        Test.startTest();
+        List<MBMS_Movie__c> moviesList = MoviesListController.getRequiringActionMovies();
         Test.stopTest();
         
         System.assert(moviesList.size() > 0);

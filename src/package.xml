@@ -20,6 +20,7 @@
         <members>MoviePhotosListController</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
+        <members>RequiringActionRecordsController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -27,6 +28,7 @@
         <members>booksList</members>
         <members>moviePhotosList</members>
         <members>moviesList</members>
+        <members>requiringActionRecordsList</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>

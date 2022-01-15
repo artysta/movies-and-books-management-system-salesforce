@@ -15,6 +15,13 @@ public with sharing class MoviePhotosListController {
                 LIMIT :minimumNumberOfPhotos];
     }
     
+    public static List<MBMS_Movie_Photo__c> getRequiringActionPhotos() {
+        return [SELECT Id, Name, MBMS_Status__c, CreatedDate
+                FROM MBMS_Movie_Photo__c
+                WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL, :MBMS_Constants.MBMS_STATUS_REJECTED)
+                ORDER BY CreatedDate];
+    }
+    
     @AuraEnabled
     public static Boolean arePhotosAvailable() { 
         return getLatestPhotos().size() == minimumNumberOfPhotos;
