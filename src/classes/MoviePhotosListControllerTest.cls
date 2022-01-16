@@ -40,6 +40,25 @@ private class MoviePhotosListControllerTest {
     @isTest
     static void shouldReturnNotEmptyListOfLatestMoviePhotos() {
         Test.startTest();
+        List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getLatestPhotos();
+        Test.stopTest();
+        
+        System.assert(moviePhotos.size() > 0);
+        System.assertNotEquals(null, moviePhotos[0]);
+    }
+    
+    @isTest
+    static void latestPhotosShouldNotBeAvailable() {
+        Test.startTest();
+        Boolean photosAvailable = MoviePhotosListController.arePhotosAvailable();
+        Test.stopTest();
+        
+        System.assert(!photosAvailable);
+    }
+    
+    @isTest
+    static void latestPhotosListShouldBeAvailable() {
+        Test.startTest();
         List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
         List<MBMS_Movie_Photo__c> moviePhotosToInsert = new List<MBMS_Movie_Photo__c>();
         
@@ -52,10 +71,45 @@ private class MoviePhotosListControllerTest {
         
         insert moviePhotosToInsert;
         
-        List<MBMS_Movie_Photo__c> latestMoviePhotos = MoviePhotosListController.getLatestPhotos();
+        Boolean photosAvailable = MoviePhotosListController.arePhotosAvailable();
         Test.stopTest();
         
-        System.assertEquals(MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS, latestMoviePhotos.size());
-        System.assertNotEquals(null, latestMoviePhotos[0]);
+        System.assert(photosAvailable);
+    }
+    
+    @isTest
+    static void minimumNumberOfLatestPhotosShouldMatch() {
+        Test.startTest();
+        Integer minimumNumberOfPhotos = MoviePhotosListController.getMinimumNumberOfPhotos();
+        Test.stopTest();
+        
+        System.assertEquals(MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS, minimumNumberOfPhotos);
+    }
+    
+    @isTest
+    static void requiringActionPhotosListShouldBeEmpty() {
+        Test.startTest();
+        List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getRequiringActionPhotos();
+        Test.stopTest();
+        
+        System.assertEquals(0, moviePhotos.size());
+    }
+    
+    @isTest
+    static void requiringActionPhotosListShouldNotBeEmpty() {
+        Test.startTest();
+		List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
+        
+        for (MBMS_Movie_Photo__c moviePhoto : moviePhotosFromDb) {
+            moviePhoto.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+        }
+        
+        update moviePhotosFromDb;
+
+        List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getRequiringActionPhotos();
+        Test.stopTest();
+        
+        System.assert(moviePhotos.size() > 0);
+        System.assertNotEquals(null, moviePhotos.get(0));
     }
 }
