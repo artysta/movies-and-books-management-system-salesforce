@@ -25,8 +25,12 @@ public class MoviePhotoBuilder {
         return this;
     }
     
+    public MBMS_Movie_Photo__c build() {       
+        return moviePhoto;
+    }
+    
     public MBMS_Movie_Photo__c buildAndInsert() {       
         insert moviePhoto;
-        return moviePhoto;
+        return this.build();
     }
 }

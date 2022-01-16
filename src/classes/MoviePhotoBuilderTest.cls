@@ -16,6 +16,15 @@ private class MoviePhotoBuilderTest {
     @isTest
     static void moviePhotoShouldNotBeNull() {
         Test.startTest();        
+        MBMS_Movie_Photo__c moviePhoto = new MoviePhotoBuilder().build();
+        Test.stopTest();
+        
+        System.assertNotEquals(null, moviePhoto);
+    }
+    
+    @isTest
+    static void insertedMoviePhotoShouldNotBeNull() {
+        Test.startTest();        
         MBMS_Movie_Photo__c moviePhoto = [SELECT Id
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];

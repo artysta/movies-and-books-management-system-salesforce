@@ -34,9 +34,13 @@ public class MovieBuilder {
         this.movie.MBMS_Status__c = status;
         return this;
     }
+    
+    public MBMS_Movie__c build() {       
+        return movie;
+    }
 
     public MBMS_Movie__c buildAndInsert() {       
         insert movie;
-        return movie;
+        return this.build();
     }
 }

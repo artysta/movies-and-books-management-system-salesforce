@@ -20,6 +20,15 @@ private class BookBuilderTest {
     @isTest
     static void bookShouldNotBeNull() {
         Test.startTest();        
+        MBMS_Book__c book = new BookBuilder().build();
+        Test.stopTest();
+        
+        System.assertNotEquals(null, book);
+    }
+    
+    @isTest
+    static void insertedBookShouldNotBeNull() {
+        Test.startTest();        
         MBMS_Book__c book = [SELECT Id
                              FROM MBMS_Book__c
                              LIMIT 1];

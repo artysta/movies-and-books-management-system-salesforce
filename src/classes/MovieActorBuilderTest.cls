@@ -18,6 +18,15 @@ private class MovieActorBuilderTest {
     @isTest
     static void movieActorShouldNotBeNull() {
         Test.startTest();        
+        MBMS_Movie_Actor__c movieActor = new MovieActorBuilder().build();
+        Test.stopTest();
+        
+        System.assertNotEquals(null, movieActor);
+    }
+    
+    @isTest
+    static void insertedMovieActorShouldNotBeNull() {
+        Test.startTest();        
         MBMS_Movie_Actor__c movieActor = [SELECT Id
                                           FROM MBMS_Movie_Actor__c
                                           LIMIT 1];

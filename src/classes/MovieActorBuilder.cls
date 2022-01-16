@@ -15,8 +15,12 @@ public class MovieActorBuilder {
         return this;
     }
     
+    public MBMS_Movie_Actor__c build() {       
+        return movieActor;
+    }
+    
     public MBMS_Movie_Actor__c buildAndInsert() {       
         insert movieActor;
-        return movieActor;
+        return this.build();
     }
 }

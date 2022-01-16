@@ -35,8 +35,12 @@ public class BookBuilder {
         return this;
     }
     
+    public MBMS_Book__c build() {       
+        return book;
+    }
+    
     public MBMS_Book__c buildAndInsert() {       
         insert book;
-        return book;
+        return this.build();
     }
 }

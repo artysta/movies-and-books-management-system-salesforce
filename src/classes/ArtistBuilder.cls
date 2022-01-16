@@ -40,8 +40,12 @@ public class ArtistBuilder {
         return this;
     }
     
+    public MBMS_Artist__c build() {       
+        return artist;
+    }
+    
     public MBMS_Artist__c buildAndInsert() {       
         insert artist;
-        return artist;
+        return this.build();
     }
 }

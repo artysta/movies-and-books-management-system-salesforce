@@ -16,6 +16,15 @@ private class ArtistBuilderTest {
     @isTest
     static void artistShouldNotBeNull() {
         Test.startTest();        
+        MBMS_Artist__c artist = new ArtistBuilder().build();
+        Test.stopTest();
+        
+        System.assertNotEquals(null, artist);
+    }
+
+    @isTest
+    static void insertedArtistShouldNotBeNull() {
+        Test.startTest();        
         MBMS_Artist__c artist = [SELECT Id
                                  FROM MBMS_Artist__c
                                  LIMIT 1];

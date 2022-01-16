@@ -20,6 +20,15 @@ private class MovieBuilderTest {
     @isTest
     static void movieShouldNotBeNull() {
         Test.startTest();        
+        MBMS_Movie__c movie = new MovieBuilder().build();
+        Test.stopTest();
+        
+        System.assertNotEquals(null, movie);
+    }
+    
+    @isTest
+    static void insertedMovieShouldNotBeNull() {
+        Test.startTest();        
         MBMS_Movie__c movie = [SELECT Id
                                FROM MBMS_Movie__c
                                LIMIT 1];
