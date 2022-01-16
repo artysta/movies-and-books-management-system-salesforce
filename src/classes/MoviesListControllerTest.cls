@@ -17,6 +17,18 @@ private class MoviesListControllerTest {
     }
     
     @isTest
+    static void shouldReturnEmptyListOfMovies() {
+        Test.startTest();
+        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        delete movie;
+        
+        List<MBMS_Movie__c> moviesList = MoviesListController.getMoviesList();
+        Test.stopTest();
+        
+        System.assertEquals(0, moviesList.size());
+    }
+    
+    @isTest
     static void shouldReturnNotEmptyListOfBooks() {
         Test.startTest();
         List<MBMS_Movie__c> moviesList = MoviesListController.getMoviesList();
@@ -24,6 +36,19 @@ private class MoviesListControllerTest {
         
         System.assert(moviesList.size() > 0);
         System.assertNotEquals(null, moviesList[0]);
+    }
+    
+    @isTest
+    static void shouldReturnEmptyListOfRequiringActionMovies() {
+        Test.startTest();
+        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        movie.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_APPROVED;
+        update movie;
+        
+        List<MBMS_Movie__c> moviesList = MoviesListController.getRequiringActionMovies();
+        Test.stopTest();
+        
+        System.assertEquals(0, moviesList.size());
     }
     
     @isTest
