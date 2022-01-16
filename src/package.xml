@@ -18,6 +18,7 @@
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
         <members>MoviePhotosListController</members>
+        <members>MoviePhotosListControllerTest</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
         <members>RequiringActionRecordsController</members>
