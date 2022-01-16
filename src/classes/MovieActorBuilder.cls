@@ -15,6 +15,22 @@ public class MovieActorBuilder {
         return this;
     }
     
+    public MBMS_Movie_Actor__c buildWithAllFields() {
+        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
+        
+        return this
+            .withActor(artist)
+            .withMovie(movie)
+            .build();
+    }
+    
+    public MBMS_Movie_Actor__c buildWithAllFieldsAndInsert() {
+        this.movieActor = this.buildWithAllFields();
+        insert movieActor;
+        return movieActor;
+    }
+    
     public MBMS_Movie_Actor__c build() {       
         return movieActor;
     }

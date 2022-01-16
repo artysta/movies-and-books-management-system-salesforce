@@ -40,12 +40,30 @@ public class ArtistBuilder {
         return this;
     }
     
-    public MBMS_Artist__c build() {       
+    public MBMS_Artist__c buildWithAllFields() {
+        return this
+            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withBirthplace(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withDateOfBirth(MBMS_Constants.MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY)
+            .withDateOfDeath(MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY)
+            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .build();
+    }
+    
+    public MBMS_Artist__c buildWithAllFieldsAndInsert() {
+        this.artist = this.buildWithAllFields();
+        insert artist;
         return artist;
     }
     
+    public MBMS_Artist__c build() {       
+        return this.artist;
+    }
+    
     public MBMS_Artist__c buildAndInsert() {       
-        insert artist;
+        insert this.artist;
         return this.build();
     }
 }

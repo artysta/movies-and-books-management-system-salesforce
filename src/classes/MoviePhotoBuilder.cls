@@ -25,6 +25,23 @@ public class MoviePhotoBuilder {
         return this;
     }
     
+    public MBMS_Movie_Photo__c buildWithAllFields() {
+        MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
+        
+        return this
+            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withMovie(movie)
+            .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .build();
+    }
+    
+    public MBMS_Movie_Photo__c buildWithAllFieldsAndInsert() {
+        this.moviePhoto = this.buildWithAllFields();
+        insert moviePhoto;
+        return moviePhoto;
+    }
+    
     public MBMS_Movie_Photo__c build() {       
         return moviePhoto;
     }

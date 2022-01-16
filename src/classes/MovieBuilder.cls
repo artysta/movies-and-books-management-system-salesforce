@@ -35,10 +35,29 @@ public class MovieBuilder {
         return this;
     }
     
+    public MBMS_Movie__c buildWithAllFields() {
+        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        
+        return this
+            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withDirector(artist)
+            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withWriter(artist)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .build();
+    }
+    
+    public MBMS_Movie__c buildWithAllFieldsAndInsert() {
+        this.movie = this.buildWithAllFields();
+        insert movie;
+        return movie;
+    }
+    
     public MBMS_Movie__c build() {       
         return movie;
     }
-
+    
     public MBMS_Movie__c buildAndInsert() {       
         insert movie;
         return this.build();

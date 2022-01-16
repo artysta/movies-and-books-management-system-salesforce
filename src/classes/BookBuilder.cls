@@ -29,10 +29,29 @@ public class BookBuilder {
         this.book.MBMS_Cover_Image_URL__c = coverImageURL;
         return this;
     }
-
+    
     public BookBuilder withStatus(String status) {
         this.book.MBMS_Status__c = status;
         return this;
+    }
+    
+    public MBMS_Book__c buildWithAllFields() {
+        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+            
+		return this
+            .withArtist(artist)
+            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withCoverImageURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .build();
+    }
+    
+    public MBMS_Book__c buildWithAllFieldsAndInsert() {
+        this.book = this.buildWithAllFields();
+        insert book;
+        return book;
     }
     
     public MBMS_Book__c build() {       
