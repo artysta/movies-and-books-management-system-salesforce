@@ -2,11 +2,7 @@
 private class BooksListControllerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Book__c book = new BookBuilder()
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
-            .buildAndInsert();
+        MBMS_Book__c book = new BookBuilder().buildWithAllFieldsAndInsert();
     }
     
     @isTest
@@ -47,6 +43,14 @@ private class BooksListControllerTest {
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionBooks() {
         Test.startTest();
+        List<MBMS_Book__c> booksFromDb = [SELECT Id FROM MBMS_Book__c];
+        
+        for (MBMS_Book__c book : booksFromDb) {
+            book.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+        }
+        
+        update booksFromDb;
+        
         List<MBMS_Book__c> booksList = BooksListController.getRequiringActionBooks();
         Test.stopTest();
         

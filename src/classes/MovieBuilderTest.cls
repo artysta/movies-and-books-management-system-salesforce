@@ -2,19 +2,7 @@
 private class MovieBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Artist__c artist = new ArtistBuilder()
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
-            .buildAndInsert();
-        
-        MBMS_Movie__c movie = new MovieBuilder()
-            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withDirector(artist)
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withWriter(artist)
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .buildAndInsert();
+        MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
     }
     
     @isTest

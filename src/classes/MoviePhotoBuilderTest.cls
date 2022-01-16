@@ -2,15 +2,7 @@
 private class MoviePhotoBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Movie__c movie = new MovieBuilder()
-            .buildAndInsert();
-        
-        MBMS_Movie_Photo__c moviePhoto = new MoviePhotoBuilder()
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withMovie(movie)
-            .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .buildAndInsert();
+        MBMS_Movie_Photo__c moviePhoto = new MoviePhotoBuilder().buildWithAllFieldsAndInsert();
     }
     
     @isTest
