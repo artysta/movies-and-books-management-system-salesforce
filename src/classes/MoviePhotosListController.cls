@@ -1,5 +1,5 @@
 public with sharing class MoviePhotosListController {
-    private static Integer minimumNumberOfPhotos = 4;
+    public final static Integer MINIMUM_NUMBER_OF_PHOTOS = 4;
     
     @AuraEnabled
     public static List<MBMS_Movie_Photo__c> getPhotos() {
@@ -12,7 +12,7 @@ public with sharing class MoviePhotosListController {
         return [SELECT Id, Name, MBMS_Photo_URL__c, MBMS_Movie__r.MBMS_Title__c
                 FROM MBMS_Movie_Photo__c
                 ORDER BY CreatedDate
-                LIMIT :minimumNumberOfPhotos];
+                LIMIT :MINIMUM_NUMBER_OF_PHOTOS];
     }
     
     public static List<MBMS_Movie_Photo__c> getRequiringActionPhotos() {
@@ -24,11 +24,11 @@ public with sharing class MoviePhotosListController {
     
     @AuraEnabled
     public static Boolean arePhotosAvailable() { 
-        return getLatestPhotos().size() == minimumNumberOfPhotos;
+        return getLatestPhotos().size() == MINIMUM_NUMBER_OF_PHOTOS;
     }
     
     @AuraEnabled
     public static Integer getMinimumNumberOfPhotos() {
-        return minimumNumberOfPhotos;
+        return MINIMUM_NUMBER_OF_PHOTOS;
     }
 }
