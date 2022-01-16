@@ -37,8 +37,8 @@ public class BookBuilder {
     
     public MBMS_Book__c buildWithAllFields() {
         MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
-            
-		return this
+        
+        return this
             .withArtist(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
