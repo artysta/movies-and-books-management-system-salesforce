@@ -26,6 +26,12 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>ArtistTrigger</members>
+        <members>BookTrigger</members>
+        <members>MovieTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>artistsList</members>
         <members>booksList</members>
         <members>moviePhotosList</members>
