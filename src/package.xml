@@ -5,6 +5,7 @@
         <members>ArtistBuilder</members>
         <members>ArtistBuilderTest</members>
         <members>ArtistTriggerHandler</members>
+        <members>ArtistTriggerHandlerTest</members>
         <members>ArtistsListController</members>
         <members>ArtistsListControllerTest</members>
         <members>BookBuilder</members>
@@ -12,6 +13,7 @@
         <members>BookTriggerHandler</members>
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
+        <members>BooktTriggerHandlerTest</members>
         <members>MBMS_Constants</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
@@ -22,6 +24,7 @@
         <members>MoviePhotosListController</members>
         <members>MoviePhotosListControllerTest</members>
         <members>MovieTriggerHandler</members>
+        <members>MovieTriggerHandlerTest</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
         <members>RequiringActionRecordsController</members>
