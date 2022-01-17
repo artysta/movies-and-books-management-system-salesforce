@@ -22,6 +22,7 @@
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
         <members>RequiringActionRecordsController</members>
+        <members>RequiringActionRecordsControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
