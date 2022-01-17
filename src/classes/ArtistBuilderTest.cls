@@ -31,9 +31,35 @@ private class ArtistBuilderTest {
         MBMS_Artist__c artist = [SELECT Name
                                  FROM MBMS_Artist__c
                                  LIMIT 1];
+        
+        artist.Name = MBMS_Constants.MBMS_TEST_STRING_VALUE;
+        update artist;
+        
         Test.stopTest();
         
         System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.Name);
+    }
+    
+    @isTest
+    static void artistShouldHaveAFirstName() {
+        Test.startTest();        
+        MBMS_Artist__c artist = [SELECT MBMS_First_Name__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.MBMS_First_Name__c);
+    }
+    
+    @isTest
+    static void artistShouldHaveALastName() {
+        Test.startTest();        
+        MBMS_Artist__c artist = [SELECT MBMS_Last_Name__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.MBMS_Last_Name__c);
     }
     
     @isTest

@@ -10,6 +10,16 @@ public class ArtistBuilder {
         return this;
     }
     
+    public ArtistBuilder withFirstName(String firstName) {
+        this.artist.MBMS_First_Name__c = firstName;
+        return this;
+    }
+    
+    public ArtistBuilder withLastName(String lastName) {
+        this.artist.MBMS_Last_Name__c = lastName;
+        return this;
+    }
+    
     public ArtistBuilder withBirthplace(String birthplace) {
         this.artist.MBMS_Birthplace__c = birthplace;
         return this;
@@ -43,6 +53,8 @@ public class ArtistBuilder {
     public MBMS_Artist__c buildWithAllFields() {
         return this
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withFirstName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withLastName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withBirthplace(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDateOfBirth(MBMS_Constants.MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY)
             .withDateOfDeath(MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY)

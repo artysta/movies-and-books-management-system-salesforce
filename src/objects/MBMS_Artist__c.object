@@ -198,6 +198,30 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>MBMS_First_Name__c</fullName>
+        <description>A field that stores a first name of the Artist.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First name of the Artist.</inlineHelpText>
+        <label>First Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MBMS_Last_Name__c</fullName>
+        <description>A field that stores a last name of the Artist.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last name of the Artist.</inlineHelpText>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>MBMS_Roles__c</fullName>
         <description>A field that stores a roles of the Artist.</description>
         <externalId>false</externalId>
