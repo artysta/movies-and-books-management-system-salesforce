@@ -18,4 +18,6 @@ public class MBMS_Constants {
     public final static String MBMS_STATUS_INITIAL = 'Initial';
     public final static String MBMS_STATUS_APPROVED = 'Approved';
     public final static String MBMS_STATUS_REJECTED = 'Rejected';
+    
+    public final static Date MBMS_RECORDS_RETENTION_DATE =  Date.today().addDays(-7);
 }
