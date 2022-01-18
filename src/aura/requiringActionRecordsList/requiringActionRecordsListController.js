@@ -1,7 +1,7 @@
 ({
     getRequiringActionRecordsFunction: function (component, event, helper) {
         component.set('v.columns', [
-            {label: 'Id', fieldName: 'Id', type: 'text'},
+            {label: 'Id', fieldName: 'recordURL', type: 'url', typeAttributes: {label: { fieldName: 'Id' }}},
             {label: 'Name', fieldName: 'Name', type: 'text'},
             {label: 'Status', fieldName: 'MBMS_Status__c', type: 'text'},
             {label: 'Created Date', fieldName: 'CreatedDate', type: 'date'}
@@ -11,7 +11,13 @@
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === 'SUCCESS') {                
-                component.set('v.sObjects', response.getReturnValue());
+                let sObjects = response.getReturnValue();
+                
+                sObjects.forEach(function(sObject){
+                    sObject.recordURL = `/${sObject.Id}`;
+                });
+                
+                component.set('v.sObjects', sObjects);
             }
         });
         
