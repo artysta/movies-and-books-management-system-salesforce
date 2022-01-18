@@ -8,6 +8,8 @@
         <members>ArtistTriggerHandlerTest</members>
         <members>ArtistsListController</members>
         <members>ArtistsListControllerTest</members>
+        <members>ArtistsRemovalBatch</members>
+        <members>ArtistsRemovalBatchTest</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
         <members>BookTriggerHandler</members>
