@@ -30,6 +30,8 @@
         <members>MovieTriggerHandlerTest</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
+        <members>MoviesRemovalBatch</members>
+        <members>MoviesRemovalBatchTest</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
         <name>ApexClass</name>
