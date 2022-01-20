@@ -1,13 +1,11 @@
-public class ArtistsRemovalBatch implements Database.Batchable<sObject>, Database.Stateful {
-    private BatchRunLogger logger;
+public class ArtistsRemovalBatch extends VirtualBatchRunLogger implements Database.Batchable<sObject>, Database.Stateful {
     
     public ArtistsRemovalBatch() {
-        this.logger = new BatchRunLogger(String.valueOf(ArtistsRemovalBatch.class));
+        super(String.valueOf(ArtistsRemovalBatch.class));
     }
     
-    
     public Database.QueryLocator start(Database.BatchableContext context) {
-        logger.startLogging();
+        super.startLogging();
         return Database.getQueryLocator([SELECT Id
                                          FROM MBMS_Artist__c
                                          WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL,
@@ -20,18 +18,17 @@ public class ArtistsRemovalBatch implements Database.Batchable<sObject>, Databas
         
         for (Database.DeleteResult result : deleteResults) {
             if (result.isSuccess()) {
-                logger.incrementSuccessesCount();
+                super.incrementSuccessesCount();
                 continue;
             }
             
             for (Database.Error error : result.getErrors()) {
-                logger.incrementErrorsCount();
-                logger.logErrorMessage(error.getMessage());
+                super.logErrorMessage(error.getMessage());
             }
         }
     }
     
     public void finish(Database.BatchableContext context) {
-        logger.stopLogging();
+        super.stopLogging();
     }
 }

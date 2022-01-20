@@ -1,13 +1,10 @@
-public class MoviesRemovalBatch implements Database.Batchable<sObject>, Database.Stateful {
-    private BatchRunLogger logger;
-    
+public class MoviesRemovalBatch extends VirtualBatchRunLogger implements Database.Batchable<sObject>, Database.Stateful {
     public MoviesRemovalBatch() {
-		this.logger = new BatchRunLogger(String.valueOf(MoviesRemovalBatch.class));
+        super(String.valueOf(MoviesRemovalBatch.class));
     }
     
-    
     public Database.QueryLocator start(Database.BatchableContext context) {
-        logger.startLogging();
+        startLogging();
         return Database.getQueryLocator([SELECT Id
                                          FROM MBMS_Movie__c
                                          WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL,
@@ -20,18 +17,17 @@ public class MoviesRemovalBatch implements Database.Batchable<sObject>, Database
         
         for (Database.DeleteResult result : deleteResults) {
             if (result.isSuccess()) {
-                logger.incrementSuccessesCount();
+                incrementSuccessesCount();
                 continue;
             }
             
             for (Database.Error error : result.getErrors()) {
-                logger.incrementErrorsCount();
-                logger.logErrorMessage(error.getMessage());
+                logErrorMessage(error.getMessage());
             }
         }
     }
     
     public void finish(Database.BatchableContext context) {
-        logger.stopLogging();
+        stopLogging();
     }
 }

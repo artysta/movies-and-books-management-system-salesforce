@@ -29,6 +29,7 @@ public virtual class BatchRunLogger {
     }
     
     public void logErrorMessage(String message) {
+        this.incrementErrorsCount();
         System.debug(String.format('[ {0} ] Error occurred: {1}.', new List<String> { this.batchName, message }));
     }
     
@@ -36,7 +37,7 @@ public virtual class BatchRunLogger {
         this.successesCount++;
     }
 
-    public void incrementErrorsCount() {
+    private void incrementErrorsCount() {
         this.errorsCount++;
     }
     
