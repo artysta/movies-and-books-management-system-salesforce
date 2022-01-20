@@ -64,6 +64,9 @@
         <members>MBMS_Artist__c.MBMS_Roles__c</members>
         <members>MBMS_Artist__c.MBMS_Status__c</members>
         <members>MBMS_Artist__c.MBMS_Title__c</members>
+        <members>MBMS_Batch_Log__c.MBMS_Batch_Name__c</members>
+        <members>MBMS_Batch_Log__c.MBMS_Message__c</members>
+        <members>MBMS_Batch_Log__c.MBMS_Records_Processed__c</members>
         <members>MBMS_Book__c.MBMS_Artist__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image_URL__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image__c</members>
@@ -85,6 +88,7 @@
     </types>
     <types>
         <members>MBMS_Artist__c</members>
+        <members>MBMS_Batch_Log__c</members>
         <members>MBMS_Book__c</members>
         <members>MBMS_Movie_Actor__c</members>
         <members>MBMS_Movie_Photo__c</members>
@@ -93,6 +97,7 @@
     </types>
     <types>
         <members>MBMS_Artist__c</members>
+        <members>MBMS_Batch_Log__c</members>
         <members>MBMS_Book__c</members>
         <members>MBMS_Movie_Actor__c</members>
         <members>MBMS_Movie_Photo__c</members>
@@ -110,6 +115,7 @@
     </types>
     <types>
         <members>MBMS_Artist__c-Artist Layout</members>
+        <members>MBMS_Batch_Log__c-Batch Log Layout</members>
         <members>MBMS_Book__c-Book Layout</members>
         <members>MBMS_Movie_Actor__c-Movie Actor Layout</members>
         <members>MBMS_Movie_Photo__c-Photo Layout</members>
@@ -118,6 +124,7 @@
     </types>
     <types>
         <members>MBMS_Artist__c.All</members>
+        <members>MBMS_Batch_Log__c.All</members>
         <members>MBMS_Book__c.All</members>
         <members>MBMS_Movie_Actor__c.All</members>
         <members>MBMS_Movie_Photo__c.All</members>
