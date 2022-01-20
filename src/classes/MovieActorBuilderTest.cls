@@ -2,13 +2,17 @@
 private class MovieActorBuilderTest {
     @testSetup
     static void testDataSetup() {       
-        MBMS_Movie_Actor__c movieActor = new MovieActorBuilder().buildWithAllFieldsAndInsert();
+        new MovieActorBuilder()
+            .createNewRecord()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest
     static void movieActorShouldNotBeNull() {
         Test.startTest();        
-        MBMS_Movie_Actor__c movieActor = new MovieActorBuilder().build();
+        MBMS_Movie_Actor__c movieActor = new MovieActorBuilder()
+            .createNewRecord()
+            .build();
         Test.stopTest();
         
         System.assertNotEquals(null, movieActor);

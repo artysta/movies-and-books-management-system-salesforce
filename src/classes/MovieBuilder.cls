@@ -1,8 +1,9 @@
 public class MovieBuilder {   
     private MBMS_Movie__c movie;
-    
-    public MovieBuilder() {
+       
+    public MovieBuilder createNewRecord() {
         this.movie = new MBMS_Movie__c();
+        return this;
     }
     
     public MovieBuilder withDescription(String description) {
@@ -35,10 +36,15 @@ public class MovieBuilder {
         return this;
     }
     
+    /*
+     Should not be used in the loops due to SOQL limit - it inserts related fields.
+     This method is used to create a single record (with all fields) for test purposes.
+     */
     public MBMS_Movie__c buildWithAllFields() {
         MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
         
         return this
+            .createNewRecord()
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDirector(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)

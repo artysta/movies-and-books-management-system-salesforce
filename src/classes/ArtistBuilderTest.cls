@@ -2,13 +2,17 @@
 private class ArtistBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        new ArtistBuilder()
+            .createNewRecord()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest
     static void artistShouldNotBeNull() {
         Test.startTest();        
-        MBMS_Artist__c artist = new ArtistBuilder().build();
+        MBMS_Artist__c artist = new ArtistBuilder()
+            .createNewRecord()
+            .build();
         Test.stopTest();
         
         System.assertNotEquals(null, artist);

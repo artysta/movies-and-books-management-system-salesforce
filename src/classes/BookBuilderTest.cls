@@ -2,13 +2,17 @@
 private class BookBuilderTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Book__c book = new BookBuilder().buildWithAllFieldsAndInsert();
+        new BookBuilder()
+            .createNewRecord()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest
     static void bookShouldNotBeNull() {
         Test.startTest();        
-        MBMS_Book__c book = new BookBuilder().build();
+        MBMS_Book__c book = new BookBuilder()
+            .createNewRecord()
+            .build();
         Test.stopTest();
         
         System.assertNotEquals(null, book);

@@ -1,8 +1,9 @@
 public class BookBuilder {   
     private MBMS_Book__c book;
     
-    public BookBuilder() {
+    public BookBuilder createNewRecord() {
         this.book = new MBMS_Book__c();
+        return this;
     }
     
     public BookBuilder withArtist(MBMS_Artist__c artist) {
@@ -35,10 +36,15 @@ public class BookBuilder {
         return this;
     }
     
+    /*
+     Should not be used in the loops due to SOQL limit - it inserts related fields.
+     This method is used to create a single record (with all fields) for test purposes.
+     */
     public MBMS_Book__c buildWithAllFields() {
         MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
         
         return this
+            .createNewRecord()
             .withArtist(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)

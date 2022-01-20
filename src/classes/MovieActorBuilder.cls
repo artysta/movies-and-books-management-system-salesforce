@@ -1,8 +1,9 @@
 public class MovieActorBuilder {
     private MBMS_Movie_Actor__c movieActor;
     
-    public MovieActorBuilder() {
+    public MovieActorBuilder createNewRecord() {
         this.movieActor = new MBMS_Movie_Actor__c();
+        return this;
     }
     
     public MovieActorBuilder withActor(MBMS_Artist__c artist) {
@@ -15,11 +16,16 @@ public class MovieActorBuilder {
         return this;
     }
     
+    /*
+     Should not be used in the loops due to SOQL limit - it inserts related fields.
+     This method is used to create a single record (with all fields) for test purposes.
+     */
     public MBMS_Movie_Actor__c buildWithAllFields() {
         MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
         MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
         
         return this
+            .createNewRecord()
             .withActor(artist)
             .withMovie(movie)
             .build();
