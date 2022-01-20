@@ -7,6 +7,7 @@ public class MBMS_Constants {
     public final static Date MBMS_TEST_DATE_10_DAYS_AFTER_TODAY =  Date.today().addDays(10);
     public final static Date MBMS_TEST_DATE_200_DAYS_AFTER_TODAY =  Date.today().addDays(200);
     public final static String MBMS_SEMICOLON = ';';
+    public final static Integer MBMS_TEST_NUMBER = 100;
     
     // Artist roles.
     public final static String MBMS_ROLE_AUTHOR = 'MBMS_Author';
