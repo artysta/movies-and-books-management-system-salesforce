@@ -36,6 +36,7 @@
         <members>MoviesRemovalBatchTest</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
+        <members>VirtualBatchRunLogger</members>
         <name>ApexClass</name>
     </types>
     <types>
