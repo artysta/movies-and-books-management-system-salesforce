@@ -1,6 +1,6 @@
 public virtual class BatchRunLogger {
     private MBMS_Batch_Log__c batchLog;
-	private String batchName;
+    private String batchName;
     private Long startTimeInMilliseconds;
     private Integer successesCount = 0;
     private Integer errorsCount = 0;
@@ -46,6 +46,7 @@ public virtual class BatchRunLogger {
     
     private void buildAndInsertBatchLog() {
         this.batchLog = new BatchLogBuilder()
+            .createNewRecord()
             .withName(String.format('{0} Log {1}', new List<String> { this.batchName, String.valueOf(Datetime.now()) }))
             .withBatchName(this.batchName)
             .withMessage(message)

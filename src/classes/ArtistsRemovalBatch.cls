@@ -2,7 +2,7 @@ public class ArtistsRemovalBatch implements Database.Batchable<sObject>, Databas
     private BatchRunLogger logger;
     
     public ArtistsRemovalBatch() {
-		this.logger = new BatchRunLogger(String.valueOf(ArtistsRemovalBatch.class));
+        this.logger = new BatchRunLogger(String.valueOf(ArtistsRemovalBatch.class));
     }
     
     
