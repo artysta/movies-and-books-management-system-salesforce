@@ -10,6 +10,8 @@
         <members>ArtistsListControllerTest</members>
         <members>ArtistsRemovalBatch</members>
         <members>ArtistsRemovalBatchTest</members>
+        <members>BatchLogBuilder</members>
+        <members>BatchLogBuilderTest</members>
         <members>BatchRunLogger</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
