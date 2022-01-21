@@ -12,6 +12,8 @@
         <members>ArtistsRemovalBatchTest</members>
         <members>BatchLogBuilder</members>
         <members>BatchLogBuilderTest</members>
+        <members>BatchLogsListController</members>
+        <members>BatchLogsListControllerTest</members>
         <members>BatchRunLogger</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
@@ -47,6 +49,7 @@
     </types>
     <types>
         <members>artistsList</members>
+        <members>batchLogsList</members>
         <members>booksList</members>
         <members>moviePhotosList</members>
         <members>moviesList</members>
