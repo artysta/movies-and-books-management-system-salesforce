@@ -29,3 +29,15 @@ To deploy and run this application on your Salesforce Organization you have to:
  - deploy the application files
  
         sfdx force:mdapi:deploy --deploydir ./src
+
+## **#2** Post Deployment Steps:
+
+Add **Home Page** to the app **Navigation Bar**:
+
+ - Click **Personalize your nav bar** (pen icon in the upper right corner on the navigation bar)
+ - Click **Add More Items** button
+ - Under **Available Items** click **All**
+ - Search for **Home**
+ - Click "**Plus**" button next to **Home**
+ - Click **Add 1 Nav Item button**
+ - Click **Save** button
