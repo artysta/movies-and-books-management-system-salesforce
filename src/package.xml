@@ -18,9 +18,9 @@
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
         <members>BookTriggerHandler</members>
+        <members>BookTriggerHandlerTest</members>
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
-        <members>BooktTriggerHandlerTest</members>
         <members>MBMS_Constants</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
