@@ -1,15 +1,31 @@
 # movies-and-books-management-system
 
 To deploy and run this application on your Salesforce Organization you have to:
+
  - install [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
+
+ - create a Hands-On Org (Trailhead Playground) and get your login credentials (it is the easiest way)
+
  - clone this repo
         
         git clone https://github.com/artysta/movies-and-books-management-system
 
- - enter project directory
+ - enter the project directory
  
         cd movies-and-books-management-system
+
+ - create a sfdx project
+
+       sfdx force:project:create -n ./
  
- - deploy files
+ - authorize your org
+
+       sfdx auth:web:login -a mbms-app
+
+ - set org as a default one
+
+       sfdx force:config:set defaultusername=mbms-app
+
+ - deploy the application files
  
         sfdx force:mdapi:deploy --deploydir ./src
