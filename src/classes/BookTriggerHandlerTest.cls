@@ -1,5 +1,5 @@
 @isTest
-private class BooktTriggerHandlerTest {
+private class BookTriggerHandlerTest {
     @testSetup
     static void testDataSetup() {
         MBMS_Book__c book = new BookBuilder().buildWithAllFieldsAndInsert();
