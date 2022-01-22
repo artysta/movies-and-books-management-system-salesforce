@@ -3,7 +3,7 @@ private class BatchLogBuilderTest {
     @testSetup
     static void testDataSetup() {
         new BatchLogBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     
@@ -11,7 +11,7 @@ private class BatchLogBuilderTest {
     static void batchLogShouldNotBeNull() {
         Test.startTest();        
         MBMS_Batch_Log__c batchLog = new BatchLogBuilder()
-            .createNewRecord()
+            .create()
             .build();
         Test.stopTest();
         

@@ -47,7 +47,7 @@ public virtual class BatchRunLogger {
     
     private void buildAndInsertBatchLog() {
         this.batchLog = new BatchLogBuilder()
-            .createNewRecord()
+            .create()
             .withName(String.format('{0} Log {1}', new List<String> { this.batchName, String.valueOf(Datetime.now()) }))
             .withBatchName(this.batchName)
             .withMessage(message)

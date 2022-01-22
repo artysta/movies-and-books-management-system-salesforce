@@ -2,7 +2,9 @@
 private class MoviePhotosListControllerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Movie_Photo__c moviePhoto = new MoviePhotoBuilder().buildWithAllFieldsAndInsert();
+        new MoviePhotoBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest
@@ -65,7 +67,7 @@ private class MoviePhotosListControllerTest {
         // Add missing Movie Photos to reach MINIMUM_NUMBER_OF_PHOTOS size.
         if (moviePhotosFromDb.size() < MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS) {
             for (Integer i = 0; i < MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS - moviePhotosFromDb.size(); i++) {
-                moviePhotosToInsert.add(new MoviePhotoBuilder().buildWithAllFields());
+                moviePhotosToInsert.add(new MoviePhotoBuilder().create().buildWithAllFields());
             }            
         }
         

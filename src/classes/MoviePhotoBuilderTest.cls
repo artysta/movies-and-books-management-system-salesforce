@@ -3,7 +3,7 @@ private class MoviePhotoBuilderTest {
     @testSetup
     static void testDataSetup() {
         new MoviePhotoBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     
@@ -11,7 +11,7 @@ private class MoviePhotoBuilderTest {
     static void moviePhotoShouldNotBeNull() {
         Test.startTest();        
         MBMS_Movie_Photo__c moviePhoto = new MoviePhotoBuilder()
-            .createNewRecord()
+            .create()
             .build();
         Test.stopTest();
         

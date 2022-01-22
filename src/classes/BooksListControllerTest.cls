@@ -2,7 +2,9 @@
 private class BooksListControllerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Book__c book = new BookBuilder().buildWithAllFieldsAndInsert();
+        new BookBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest

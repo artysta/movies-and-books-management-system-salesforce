@@ -1,7 +1,7 @@
 public class MovieBuilder {   
     private MBMS_Movie__c movie;
        
-    public MovieBuilder createNewRecord() {
+    public MovieBuilder create() {
         this.movie = new MBMS_Movie__c();
         return this;
     }
@@ -41,10 +41,11 @@ public class MovieBuilder {
      This method is used to create a single record (with all fields) for test purposes.
      */
     public MBMS_Movie__c buildWithAllFields() {
-        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        MBMS_Artist__c artist = new ArtistBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
         
         return this
-            .createNewRecord()
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withDirector(artist)
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)

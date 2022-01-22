@@ -2,7 +2,9 @@
 private class BookTriggerHandlerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Book__c book = new BookBuilder().buildWithAllFieldsAndInsert();
+        MBMS_Book__c book = new BookBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest

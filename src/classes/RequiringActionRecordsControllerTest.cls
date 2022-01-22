@@ -2,9 +2,9 @@
 private class RequiringActionRecordsControllerTest {
     @testSetup
     static void testDataSetup() {
-        Test.startTest();
-        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
-        Test.stopTest();
+        new ArtistBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest

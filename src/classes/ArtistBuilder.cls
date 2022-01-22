@@ -1,7 +1,7 @@
 public class ArtistBuilder {
     private MBMS_Artist__c artist;
     
-    public ArtistBuilder createNewRecord() {
+    public ArtistBuilder create() {
         this.artist = new MBMS_Artist__c();
         return this;
     }
@@ -53,7 +53,6 @@ public class ArtistBuilder {
     
     public MBMS_Artist__c buildWithAllFields() {
         return this
-            .createNewRecord()
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withFirstName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withLastName(MBMS_Constants.MBMS_TEST_STRING_VALUE)

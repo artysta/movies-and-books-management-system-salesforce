@@ -2,7 +2,9 @@
 private class ArtistsListControllerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        new ArtistBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest

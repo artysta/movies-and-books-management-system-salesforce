@@ -3,7 +3,7 @@ private class ArtistBuilderTest {
     @testSetup
     static void testDataSetup() {
         new ArtistBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     
@@ -11,7 +11,7 @@ private class ArtistBuilderTest {
     static void artistShouldNotBeNull() {
         Test.startTest();        
         MBMS_Artist__c artist = new ArtistBuilder()
-            .createNewRecord()
+            .create()
             .build();
         Test.stopTest();
         

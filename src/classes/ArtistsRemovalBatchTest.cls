@@ -2,13 +2,15 @@
 private class ArtistsRemovalBatchTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Artist__c artist = new ArtistBuilder().buildWithAllFieldsAndInsert();
+        new ArtistBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest
     private static void shouldDeleteExistingArtists() {
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
-
+        
         for (MBMS_Artist__c artist : artists) {
             Test.setCreatedDate(artist.Id, MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY);
             artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
@@ -34,12 +36,12 @@ private class ArtistsRemovalBatchTest {
         
         for (Integer i = 0; i < 200; i++) {
             artists.add(builder
-                       .createNewRecord()
-                       .withFirstName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-                       .withLastName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-                       .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
-                       .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
-                       .build());
+                        .create()
+                        .withFirstName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+                        .withLastName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+                        .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
+                        .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
+                        .build());
         }
         
         insert artists;

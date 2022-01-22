@@ -3,7 +3,7 @@ private class BatchLogsListControllerTest {
     @testSetup
     static void testDataSetup() {
         new BatchLogBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     

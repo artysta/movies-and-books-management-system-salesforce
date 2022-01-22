@@ -2,7 +2,9 @@
 private class MoviesListControllerTest {
     @testSetup
     static void testDataSetup() {
-        MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
+        new MovieBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
     }
     
     @isTest

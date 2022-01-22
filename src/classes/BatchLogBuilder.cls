@@ -1,7 +1,7 @@
 public class BatchLogBuilder {
     private MBMS_Batch_Log__c batchLog;
     
-    public BatchLogBuilder createNewRecord() {
+    public BatchLogBuilder create() {
         this.batchLog = new MBMS_Batch_Log__c();
         return this;
     }
@@ -28,7 +28,6 @@ public class BatchLogBuilder {
     
     public MBMS_Batch_Log__c buildWithAllFields() {
         return this
-            .createNewRecord()
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withMessage(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withRecordsProcessed(MBMS_Constants.MBMS_TEST_NUMBER)

@@ -3,7 +3,7 @@ private class BookBuilderTest {
     @testSetup
     static void testDataSetup() {
         new BookBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     
@@ -11,7 +11,7 @@ private class BookBuilderTest {
     static void bookShouldNotBeNull() {
         Test.startTest();        
         MBMS_Book__c book = new BookBuilder()
-            .createNewRecord()
+            .create()
             .build();
         Test.stopTest();
         

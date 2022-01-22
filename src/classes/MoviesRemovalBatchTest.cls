@@ -3,7 +3,7 @@ private class MoviesRemovalBatchTest {
     @testSetup
     static void testDataSetup() {
         new MovieBuilder()
-            .createNewRecord()
+            .create()
             .buildWithAllFieldsAndInsert();
     }
     
@@ -36,7 +36,7 @@ private class MoviesRemovalBatchTest {
         
         for (Integer i = 0; i < 200; i++) {
             movies.add(builder
-                       .createNewRecord()
+                       .create()
                        .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
                        .build());
         }

@@ -1,7 +1,7 @@
 public class MoviePhotoBuilder {
     private MBMS_Movie_Photo__c moviePhoto;
     
-    public MoviePhotoBuilder createNewRecord() {
+    public MoviePhotoBuilder create() {
         this.moviePhoto = new MBMS_Movie_Photo__c();
         return this;
     }
@@ -31,10 +31,11 @@ public class MoviePhotoBuilder {
      This method is used to create a single record (with all fields) for test purposes.
      */
     public MBMS_Movie_Photo__c buildWithAllFields() {
-        MBMS_Movie__c movie = new MovieBuilder().buildWithAllFieldsAndInsert();
+        MBMS_Movie__c movie = new MovieBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
         
         return this
-            .createNewRecord()
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withMovie(movie)
             .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
