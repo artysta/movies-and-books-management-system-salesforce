@@ -14,6 +14,8 @@
         <members>BatchLogBuilderTest</members>
         <members>BatchLogsListController</members>
         <members>BatchLogsListControllerTest</members>
+        <members>BatchLogsRemovalBatch</members>
+        <members>BatchLogsRemovalBatchTest</members>
         <members>BatchRunLogger</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
