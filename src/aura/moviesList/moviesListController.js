@@ -23,5 +23,15 @@
         });
         
         $A.enqueueAction(action);
+    },
+    arePhotosAvailableFunction: function (component, event, helper) {
+        var action = component.get("c.areMoviesAvailable");
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.moviesAvailable", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(action);
     }
 })

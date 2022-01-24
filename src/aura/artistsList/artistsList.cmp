@@ -1,11 +1,18 @@
 <aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="ArtistsListController" access="global">
     <aura:attribute name="columns" type="list"/>
     <aura:attribute name="artists" type="MBMS_Artist__c[]"/>
+    <aura:attribute name="artistsAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getArtists}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.areArtistsAvailableFunction}" value="{!this}"/>
     <lightning:card title="Artists List">
-        <lightning:datatable keyField="id"
-                             data="{!v.artists}"
-                             columns="{!v.columns}"
-                             hideCheckboxColumn="true"/>
+        <aura:if isTrue="{!v.artistsAvailable}">
+            <lightning:datatable keyField="id"
+                                 data="{!v.artists}"
+                                 columns="{!v.columns}"
+                                 hideCheckboxColumn="true"/>
+            <aura:set attribute="else">
+                <p>There are no artist records available.</p>
+            </aura:set>
+        </aura:if>
     </lightning:card>
 </aura:component>

@@ -14,7 +14,7 @@
             var state = response.getState();
             if (state === 'SUCCESS') {
                 let batchLogs = response.getReturnValue();
-
+                
                 batchLogs.forEach(function(batchLog){
                     batchLog.recordURL = `/${batchLog.Id}`;
                 });
@@ -23,6 +23,16 @@
             }
         });
         
+        $A.enqueueAction(action);
+    },
+    areBatchLogsAvailableFunction: function (component, event, helper) {
+        var action = component.get("c.areBatchLogsAvailable");
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.batchLogsAvailable", response.getReturnValue());
+            }
+        });
         $A.enqueueAction(action);
     }
 })

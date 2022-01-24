@@ -12,4 +12,9 @@ public with sharing class ArtistsListController {
                 WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL, :MBMS_Constants.MBMS_STATUS_REJECTED)
                 ORDER BY CreatedDate];
     }
+    
+    @AuraEnabled
+    public static Boolean areArtistsAvailable() { 
+        return getArtistsList().size() > 0;
+    }
 }

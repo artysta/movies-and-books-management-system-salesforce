@@ -11,4 +11,9 @@ public with sharing class BooksListController {
                 WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL, :MBMS_Constants.MBMS_STATUS_REJECTED)
                 ORDER BY CreatedDate];
     }
+    
+    @AuraEnabled
+    public static Boolean areBooksAvailable() { 
+        return getBooksList().size() > 0;
+    }
 }

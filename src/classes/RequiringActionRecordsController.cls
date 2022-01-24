@@ -10,4 +10,9 @@ public with sharing class RequiringActionRecordsController {
 
         return result;
     }
+    
+    @AuraEnabled
+    public static Boolean areRequiringActionRecordsAvailable() { 
+        return getRequiringActionRecords().size() > 0;
+    }
 }

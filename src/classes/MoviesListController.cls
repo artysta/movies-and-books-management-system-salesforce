@@ -12,4 +12,9 @@ public with sharing class MoviesListController {
                 WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL, :MBMS_Constants.MBMS_STATUS_REJECTED)
                 ORDER BY CreatedDate];
     }
+    
+    @AuraEnabled
+    public static Boolean areMoviesAvailable() { 
+        return getMoviesList().size() > 0 ;
+    }
 }

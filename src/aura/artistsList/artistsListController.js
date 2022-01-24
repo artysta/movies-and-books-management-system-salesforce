@@ -23,5 +23,15 @@
         });
         
         $A.enqueueAction(action);
+    },
+    areArtistsAvailableFunction: function (component, event, helper) {
+        var action = component.get("c.areArtistsAvailable");
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.artistsAvailable", response.getReturnValue());
+            }
+        });
+        $A.enqueueAction(action);
     }
 })

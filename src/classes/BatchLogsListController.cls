@@ -5,4 +5,9 @@ public with sharing class BatchLogsListController {
                 MBMS_Message__c, CreatedDate
                 FROM MBMS_Batch_Log__c];
     }
+    
+    @AuraEnabled
+    public static Boolean areBatchLogsAvailable() { 
+        return getBatchLogs().size() > 0;
+    }
 }

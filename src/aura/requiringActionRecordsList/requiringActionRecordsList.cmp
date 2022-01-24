@@ -1,11 +1,18 @@
 <aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="RequiringActionRecordsController" access="global">
     <aura:attribute name="columns" type="list"/>
     <aura:attribute name="sObjects" type="sObject[]"/>
+    <aura:attribute name="requiringActionRecordsAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getRequiringActionRecordsFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.areRequiringActionRecordsAvailableFunction}" value="{!this}"/>
     <lightning:card title="Records That Require An Action">
-        <lightning:datatable keyField="id"
-                             data="{!v.sObjects}"
-                             columns="{!v.columns}"
-                             hideCheckboxColumn="true"/>
+        <aura:if isTrue="{!v.booksAvailable}">
+            <lightning:datatable keyField="id"
+                                 data="{!v.sObjects}"
+                                 columns="{!v.columns}"
+                                 hideCheckboxColumn="true"/>
+            <aura:set attribute="else">
+                <p>There are no requiring action records.</p>
+            </aura:set>
+        </aura:if>
     </lightning:card>
 </aura:component>
