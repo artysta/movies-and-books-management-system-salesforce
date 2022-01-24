@@ -1,5 +1,5 @@
 public class MBMS_Utilities {
-    public static String getObjectAPIName(Id recordId) {          
+    public static String getObjectName(Id recordId) {          
         Schema.sObjectType entityType = recordId.getSObjectType();
         
         String entityName = String.valueOf(entityType);
@@ -16,5 +16,20 @@ public class MBMS_Utilities {
         }
         
         return entityName;
+    }
+    
+    public static Integer getRandomNumber(Integer max) {
+        return Integer.valueof((Math.random() * max));
+    }
+    
+    public static Integer getRandomNumber(Integer min, Integer max) {
+        return Integer.valueof((Math.random() * max) + min);
+    }
+    
+    public static Date getRandomPastDate(Integer yearsMin, Integer yearsMax, Integer months, Integer days) {
+        return Date.today()
+            .addYears(-getRandomNumber(yearsMin, yearsMax))
+            .addDays(getRandomNumber(months))
+            .addMonths(getRandomNumber(days));
     }
 }
