@@ -18,12 +18,14 @@ public class MBMS_Utilities {
         return entityName;
     }
     
+    // Returns number >= 0 and <= max.
     public static Integer getRandomNumber(Integer max) {
-        return Integer.valueof((Math.random() * max));
+        return getRandomNumber(0, max);
     }
     
+    // Returns number >= min and <= max.
     public static Integer getRandomNumber(Integer min, Integer max) {
-        return Integer.valueof((Math.random() * max) + min);
+        return Integer.valueof((Math.random() * (max - min + 1) + min));
     }
     
     public static Date getRandomPastDate(Integer yearsMin, Integer yearsMax, Integer months, Integer days) {
