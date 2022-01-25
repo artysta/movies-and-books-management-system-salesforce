@@ -156,7 +156,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>MBMS_Artist__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <deleteConstraint>Restrict</deleteConstraint>
         <description>A field that stores a lookup to the Artist object.</description>
         <externalId>false</externalId>
         <inlineHelpText>Artist.</inlineHelpText>
@@ -164,7 +164,7 @@
         <referenceTo>MBMS_Artist__c</referenceTo>
         <relationshipLabel>Movie Actors</relationshipLabel>
         <relationshipName>Movie_Actors</relationshipName>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
@@ -175,14 +175,14 @@
         <inlineHelpText>Character name.</inlineHelpText>
         <label>Character Name</label>
         <length>255</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>MBMS_Movie__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
+        <deleteConstraint>Restrict</deleteConstraint>
         <description>A field that stores a lookup to the Movie object.</description>
         <externalId>false</externalId>
         <inlineHelpText>Movie.</inlineHelpText>
@@ -190,7 +190,7 @@
         <referenceTo>MBMS_Movie__c</referenceTo>
         <relationshipLabel>Movie Actors</relationshipLabel>
         <relationshipName>Movie_Actors</relationshipName>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
