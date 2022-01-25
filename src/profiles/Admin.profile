@@ -2296,6 +2296,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MBMS_Movie_Actor__c.MBMS_Character_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MBMS_Movie_Actor__c.MBMS_Movie__c</field>
         <readable>true</readable>
     </fieldPermissions>
