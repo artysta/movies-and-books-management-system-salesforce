@@ -2,8 +2,8 @@
     <aura:attribute name="columns" type="list"/>
     <aura:attribute name="movies" type="MBMS_Movie__c[]"/>
     <aura:attribute name="moviesAvailable" type="Boolean"/>
-    <aura:handler name='init' action="{!c.getMovies}" value="{!this}"/>
-    <aura:handler name='init' action="{!c.arePhotosAvailableFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.getMoviesFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.areMoviesAvailableFunction}" value="{!this}"/>
     <lightning:card title="Movies List">
         <aura:if isTrue="{!v.moviesAvailable}">
             <lightning:datatable keyField="id"
