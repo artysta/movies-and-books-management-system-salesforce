@@ -83,6 +83,7 @@
         <members>MBMS_Book__c.MBMS_Status__c</members>
         <members>MBMS_Book__c.MBMS_Title__c</members>
         <members>MBMS_Movie_Actor__c.MBMS_Artist__c</members>
+        <members>MBMS_Movie_Actor__c.MBMS_Character_Name__c</members>
         <members>MBMS_Movie_Actor__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Photo_URL__c</members>

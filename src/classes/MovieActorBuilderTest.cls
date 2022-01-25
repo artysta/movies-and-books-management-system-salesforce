@@ -50,4 +50,15 @@ private class MovieActorBuilderTest {
         
         System.assertNotEquals(null, movieActor.MBMS_Movie__c);
     }
+    
+    @isTest
+    static void movieActorShouldHaveACharacterName() {
+        Test.startTest();        
+        MBMS_Movie_Actor__c movieActor = [SELECT MBMS_Character_Name__c
+                                          FROM MBMS_Movie_Actor__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieActor.MBMS_Character_Name__c);
+    }
 }

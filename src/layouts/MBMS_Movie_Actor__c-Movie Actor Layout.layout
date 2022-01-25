@@ -18,6 +18,10 @@
                 <behavior>Edit</behavior>
                 <field>MBMS_Artist__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MBMS_Character_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

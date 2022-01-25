@@ -16,6 +16,11 @@ public class MovieActorBuilder {
         return this;
     }
     
+    public MovieActorBuilder withCharacterName(String characterName) {
+        this.movieActor.MBMS_Character_Name__c = characterName;
+        return this;
+    }
+    
     /*
      Should not be used in the loops due to SOQL limit - it inserts related fields.
      This method is used to create a single record (with all fields) for test purposes.
@@ -32,6 +37,7 @@ public class MovieActorBuilder {
         return this
             .withActor(artist)
             .withMovie(movie)
+            .withCharacterName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .build();
     }
     

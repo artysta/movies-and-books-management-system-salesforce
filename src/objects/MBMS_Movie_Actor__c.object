@@ -169,6 +169,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>MBMS_Character_Name__c</fullName>
+        <description>A field that stores the name of the character played by the actor.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Character name.</inlineHelpText>
+        <label>Character Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>MBMS_Movie__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>A field that stores a lookup to the Movie object.</description>
