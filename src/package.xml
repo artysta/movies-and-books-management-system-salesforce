@@ -28,6 +28,8 @@
         <members>MBMS_UtilitiesTest</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
+        <members>MovieActorTriggerHandler</members>
+        <members>MovieActorTriggerHandlerTest</members>
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
         <members>MoviePhotoBuilder</members>
@@ -48,6 +50,7 @@
     <types>
         <members>ArtistTrigger</members>
         <members>BookTrigger</members>
+        <members>MovieActorTrigger</members>
         <members>MovieTrigger</members>
         <name>ApexTrigger</name>
     </types>
