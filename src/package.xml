@@ -73,7 +73,6 @@
         <members>MBMS_Artist__c.MBMS_Last_Name__c</members>
         <members>MBMS_Artist__c.MBMS_Roles__c</members>
         <members>MBMS_Artist__c.MBMS_Status__c</members>
-        <members>MBMS_Artist__c.MBMS_Title__c</members>
         <members>MBMS_Batch_Log__c.MBMS_Batch_Name__c</members>
         <members>MBMS_Batch_Log__c.MBMS_Message__c</members>
         <members>MBMS_Batch_Log__c.MBMS_Records_Processed__c</members>
