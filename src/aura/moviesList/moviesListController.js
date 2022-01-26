@@ -4,8 +4,8 @@
             {label: 'Id', fieldName: 'recordURL', type: 'url', typeAttributes: {label: { fieldName: 'Id' }}},
             {label: 'Name', fieldName: 'Name', type: 'text'},
             {label: 'Title', fieldName: 'MBMS_Title__c', type: 'text'},
-            {label: 'Director', fieldName: 'directorName', type: 'text'},
-            {label: 'Writer', fieldName: 'writerName', type: 'text'}
+            {label: 'Director', fieldName: 'directorNameURL', type: 'url', typeAttributes: {label: { fieldName: 'directorName' }}},
+            {label: 'Writer', fieldName: 'writerNameURL', type: 'url', typeAttributes: {label: { fieldName: 'writerName' }}}
         ]);
         
         var action = component.get('c.getMoviesList');
@@ -15,8 +15,9 @@
                 let movies = response.getReturnValue();
                 
                 movies.forEach(function(movie){
-                    console.log(movie);
                     movie.recordURL = `/${movie.Id}`;
+                    movie.directorNameURL = `/${movie.MBMS_Director__c}`;
+                    movie.writerNameURL = `/${movie.MBMS_Writer__c}`;
                     movie.directorName = movie.MBMS_Director__r['Name'];
                     movie.writerName = movie.MBMS_Writer__r['Name'];
                 });
