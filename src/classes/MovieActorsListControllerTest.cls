@@ -28,4 +28,25 @@ private class MovieActorsListControllerTest {
         System.assert(movieActors.size() > 0);
         System.assertNotEquals(null, movieActors[0]);
     }
+    
+    @isTest
+    static void artistsShouldNotBeAvailable() {
+        Test.startTest();
+        MBMS_Movie_Actor__c movieActor = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
+        delete movieActor;
+        
+        Boolean areMovieActorsAvailable = MovieActorsListController.areMovieActorsAvailable();
+        Test.stopTest();
+        
+        System.assert(!areMovieActorsAvailable);
+    }
+    
+    @isTest
+    static void artistsShouldBeAvailable() {
+        Test.startTest();
+        Boolean areMovieActorsAvailable = MovieActorsListController.areMovieActorsAvailable();
+        Test.stopTest();
+        
+        System.assert(areMovieActorsAvailable);
+    }
 }

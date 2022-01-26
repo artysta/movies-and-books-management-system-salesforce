@@ -28,4 +28,25 @@ private class BatchLogsListControllerTest {
         System.assert(batchLogs.size() > 0);
         System.assertNotEquals(null, batchLogs[0]);
     }
+    
+    @isTest
+    static void batchLogsShouldNotBeAvailable() {
+        Test.startTest();
+        MBMS_Batch_Log__c batchLog = [SELECT Id FROM MBMS_Batch_Log__c LIMIT 1];
+        delete batchLog;
+        
+        Boolean areBatchLogsAvailable = BatchLogsListController.areBatchLogsAvailable();
+        Test.stopTest();
+        
+        System.assert(!areBatchLogsAvailable);
+    }
+    
+    @isTest
+    static void batchLogsShouldBeAvailable() {
+        Test.startTest();
+        Boolean areBatchLogsAvailable = BatchLogsListController.areBatchLogsAvailable();
+        Test.stopTest();
+        
+        System.assert(areBatchLogsAvailable);
+    }
 }

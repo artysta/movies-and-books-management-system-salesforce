@@ -59,4 +59,25 @@ private class BooksListControllerTest {
         System.assert(booksList.size() > 0);
         System.assertNotEquals(null, booksList[0]);
     }
+    
+    @isTest
+    static void booksShouldNotBeAvailable() {
+        Test.startTest();
+        MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        delete book;
+        
+        Boolean areBooksAvailable = BooksListController.areBooksAvailable();
+        Test.stopTest();
+        
+        System.assert(!areBooksAvailable);
+    }
+    
+    @isTest
+    static void booksShouldBeAvailable() {
+        Test.startTest();
+        Boolean areBooksAvailable = BooksListController.areBooksAvailable();
+        Test.stopTest();
+        
+        System.assert(areBooksAvailable);
+    }
 }

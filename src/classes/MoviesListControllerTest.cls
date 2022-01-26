@@ -59,4 +59,25 @@ private class MoviesListControllerTest {
         System.assert(moviesList.size() > 0);
         System.assertNotEquals(null, moviesList[0]);
     }
+    
+    @isTest
+    static void moviesShouldNotBeAvailable() {
+        Test.startTest();
+        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        delete movie;
+        
+        Boolean areMoviesAvailable = MoviesListController.areMoviesAvailable();
+        Test.stopTest();
+        
+        System.assert(!areMoviesAvailable);
+    }
+    
+    @isTest
+    static void moviesShouldBeAvailable() {
+        Test.startTest();
+        Boolean areMoviesAvailable = MoviesListController.areMoviesAvailable();
+        Test.stopTest();
+        
+        System.assert(areMoviesAvailable);
+    }
 }

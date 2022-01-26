@@ -59,4 +59,25 @@ private class ArtistsListControllerTest {
         System.assert(artistsList.size() > 0);
         System.assertNotEquals(null, artistsList[0]);
     }
+    
+    @isTest
+    static void artistsShouldNotBeAvailable() {
+        Test.startTest();
+        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        delete artist;
+        
+        Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
+        Test.stopTest();
+        
+        System.assert(!areArtistsAvailable);
+    }
+    
+    @isTest
+    static void artistsShouldBeAvailable() {
+        Test.startTest();
+        Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
+        Test.stopTest();
+        
+        System.assert(areArtistsAvailable);
+    }
 }
