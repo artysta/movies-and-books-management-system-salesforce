@@ -1,7 +1,13 @@
-trigger MovieTrigger on MBMS_Movie__c (before insert) {
+trigger MovieTrigger on MBMS_Movie__c (before insert, before delete) {
     MovieTriggerHandler movieHandler = new MovieTriggerHandler();
-
-    if (Trigger.isInsert && Trigger.isBefore) {
-        movieHandler.onBeforeInsert(Trigger.New);
+    
+    if (Trigger.isBefore) {
+        if (Trigger.isInsert) {
+            movieHandler.onBeforeInsert(Trigger.New);
+        }
+        
+        if (Trigger.isDelete) {
+            movieHandler.onBeforeDelete(Trigger.Old);
+        }
     }
 }
