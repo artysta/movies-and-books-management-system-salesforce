@@ -13,6 +13,11 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>movieActorsList</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>batchLogsList</componentName>
             </componentInstance>
         </itemInstances>

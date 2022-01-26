@@ -30,6 +30,8 @@
         <members>MovieActorBuilderTest</members>
         <members>MovieActorTriggerHandler</members>
         <members>MovieActorTriggerHandlerTest</members>
+        <members>MovieActorsListController</members>
+        <members>MovieActorsListControllerTest</members>
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
         <members>MoviePhotoBuilder</members>
@@ -58,6 +60,7 @@
         <members>artistsList</members>
         <members>batchLogsList</members>
         <members>booksList</members>
+        <members>movieActorsList</members>
         <members>moviePhotosList</members>
         <members>moviesList</members>
         <members>requiringActionRecordsList</members>
