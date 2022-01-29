@@ -140,6 +140,10 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>helloWorldLWC</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
         <members>MBMS_Artist__c.All</members>
         <members>MBMS_Batch_Log__c.All</members>
         <members>MBMS_Book__c.All</members>
