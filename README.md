@@ -1,4 +1,6 @@
-# movies-and-books-management-system
+# Movies & Books Management System - Salesforce
+
+**Movies & Books Management System** is a simple application which presents the capabilities of the **Salesforce** cloud platform. At the moment application allows you to manage books, movies, artists and so on.
 
 To deploy and run this application on your Salesforce Organization you have to:
 
