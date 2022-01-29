@@ -91,10 +91,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>MBMS_Movie__c.MBMS_Writer__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <relatedList>MBMS_Movie_Actor__c.MBMS_Artist__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
