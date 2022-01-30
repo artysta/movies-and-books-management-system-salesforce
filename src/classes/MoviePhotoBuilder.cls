@@ -26,6 +26,11 @@ public class MoviePhotoBuilder {
         return this;
     }
     
+    public MoviePhotoBuilder withStatusComment(String statusComment) {
+        this.moviePhoto.MBMS_Status_Comment__c = statusComment;
+        return this;
+    }
+    
     /*
      Should not be used in the loops due to SOQL limit - it inserts related fields.
      This method is used to create a single record (with all fields) for test purposes.
@@ -40,6 +45,7 @@ public class MoviePhotoBuilder {
             .withMovie(movie)
             .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .build();
     }
     

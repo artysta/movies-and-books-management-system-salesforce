@@ -94,4 +94,15 @@ private class BookBuilderTest {
         
         System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, book.MBMS_Status__c);
     }
+    
+    @isTest
+    static void bookShouldHaveAStatusComment() {
+        Test.startTest();        
+        MBMS_Book__c book = [SELECT MBMS_Status_Comment__c
+                             FROM MBMS_Book__c
+                             LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Status_Comment__c);
+    }
 }

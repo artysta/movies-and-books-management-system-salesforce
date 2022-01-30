@@ -180,6 +180,17 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>MBMS_Status_Comment__c</fullName>
+        <description>A field that stores a comment related to the status of the Movie.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Movie status comment.</inlineHelpText>
+        <label>Status Comment</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>MBMS_Status__c</fullName>
         <description>A field that stores a status of the Movie record.</description>
         <externalId>false</externalId>

@@ -83,7 +83,7 @@ private class MovieBuilderTest {
         
         System.assertNotEquals(null, movie.MBMS_Writer__c);
     }
-
+    
     @isTest
     static void movieShouldHaveAStatus() {
         Test.startTest();        
@@ -93,5 +93,16 @@ private class MovieBuilderTest {
         Test.stopTest();
         
         System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, movie.MBMS_Status__c);
+    }
+    
+    @isTest
+    static void movieShouldHaveAStatusComment() {
+        Test.startTest();        
+        MBMS_Movie__c movie = [SELECT MBMS_Status_Comment__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.MBMS_Status_Comment__c);
     }
 }

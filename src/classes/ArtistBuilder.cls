@@ -51,6 +51,11 @@ public class ArtistBuilder {
         return this;
     }
     
+    public ArtistBuilder withStatusComment(String statusComment) {
+        this.artist.MBMS_Status_Comment__c = statusComment;
+        return this;
+    }
+    
     public MBMS_Artist__c buildWithAllFields() {
         return this
             .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
@@ -62,6 +67,7 @@ public class ArtistBuilder {
             .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
             .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
+            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .build();
     }
     

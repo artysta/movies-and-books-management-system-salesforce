@@ -61,4 +61,15 @@ private class MoviePhotoBuilderTest {
         
         System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, moviePhoto.MBMS_Status__c);
     }
+    
+    @isTest
+    static void moviePhotoShouldHaveAStatusComment() {
+        Test.startTest();        
+        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Status_Comment__c
+                                          FROM MBMS_Movie_Photo__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, moviePhoto.MBMS_Status_Comment__c);
+    }
 }

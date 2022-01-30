@@ -134,4 +134,15 @@ private class ArtistBuilderTest {
         
         System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, artist.MBMS_Status__c);
     }
+    
+    @isTest
+    static void artistShouldHaveAStatusComment() {
+        Test.startTest();        
+        MBMS_Artist__c artist = [SELECT MBMS_Status_Comment__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.MBMS_Status_Comment__c);
+    }
 }
