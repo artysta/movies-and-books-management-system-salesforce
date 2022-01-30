@@ -5,7 +5,7 @@
     <aura:handler name='init' action="{!c.getLatestPhotosFunction}" value="{!this}"/>
     <aura:handler name='init' action="{!c.arePhotosAvailableFunction}" value="{!this}"/>
     <aura:handler name='init' action="{!c.getMinimumNumberOfPhotosFunction}" value="{!this}"/>
-    <lightning:card title="Latest Movie Photos">
+    <lightning:card title="Latest Movie Photos" iconName="custom:custom38">
         <aura:if isTrue="{!v.photosAvailable}">
             <div class="mbms-photo-row">
                 <div class="mbms-photo-column">

@@ -4,7 +4,7 @@
     <aura:attribute name="moviesAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getMoviesFunction}" value="{!this}"/>
     <aura:handler name='init' action="{!c.areMoviesAvailableFunction}" value="{!this}"/>
-    <lightning:card title="Movies List">
+    <lightning:card title="Movies List" iconName="custom:custom100">
         <aura:if isTrue="{!v.moviesAvailable}">
             <lightning:datatable keyField="id"
                                  data="{!v.movies}"

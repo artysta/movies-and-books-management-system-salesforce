@@ -4,7 +4,7 @@
     <aura:attribute name="booksAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getBooks}" value="{!this}"/>
     <aura:handler name='init' action="{!c.areBooksAvailableFunction}" value="{!this}"/>
-    <lightning:card title="Books List">
+    <lightning:card title="Books List" iconName="custom:custom55">
         <aura:if isTrue="{!v.booksAvailable}">
             <lightning:datatable keyField="id"
                                  data="{!v.books}"

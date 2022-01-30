@@ -4,7 +4,7 @@
     <aura:attribute name="requiringActionRecordsAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getRequiringActionRecordsFunction}" value="{!this}"/>
     <aura:handler name='init' action="{!c.areRequiringActionRecordsAvailableFunction}" value="{!this}"/>
-    <lightning:card title="Records That Require An Action">
+    <lightning:card title="Records That Require An Action" iconName="custom:custom11">
         <aura:if isTrue="{!v.booksAvailable}">
             <lightning:datatable keyField="id"
                                  data="{!v.sObjects}"

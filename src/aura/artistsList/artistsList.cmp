@@ -4,7 +4,7 @@
     <aura:attribute name="artistsAvailable" type="Boolean"/>
     <aura:handler name='init' action="{!c.getArtists}" value="{!this}"/>
     <aura:handler name='init' action="{!c.areArtistsAvailableFunction}" value="{!this}"/>
-    <lightning:card title="Artists List">
+    <lightning:card title="Artists List" iconName="custom:custom15">
         <aura:if isTrue="{!v.artistsAvailable}">
             <lightning:datatable keyField="id"
                                  data="{!v.artists}"
