@@ -36,4 +36,15 @@ private class MovieTriggerHandlerTest {
         
         System.assertEquals(0, movieActors.size());
     }
+    
+    @isTest
+    static void triggerShouldUpdateMovieStatusComment() {
+        Test.startTest();
+        MBMS_Movie__c movie = [SELECT MBMS_Status_Comment__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c);
+    }
 }

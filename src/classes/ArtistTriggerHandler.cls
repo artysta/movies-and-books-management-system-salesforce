@@ -2,7 +2,11 @@ public class ArtistTriggerHandler {
     public void onBeforeInsert(List<MBMS_Artist__c> artists) {
         for (MBMS_Artist__c artist : artists) {
             artist.Name = String.format('{0} {1}', new List<String> { artist.MBMS_First_Name__c, artist.MBMS_Last_Name__c });
-        }   
+        }
+        
+        for (MBMS_Artist__c artist : artists) {
+            artist.MBMS_Status_Comment__c = MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT;
+        }
     }
     
     public void onBeforeDelete(List<MBMS_Artist__c> artists) {

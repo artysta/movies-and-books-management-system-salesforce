@@ -25,4 +25,6 @@ public class MBMS_Constants {
     
     public final static String MBMS_NAMESPACE_PREFIX = 'MBMS_';
     public final static String MBMS_CUSTOM_OBJECT_SUFFIX = '__c';
+    
+    public final static String MBMS_INITIAL_STATUS_COMMENT = 'This record is in the initial status.';
 }

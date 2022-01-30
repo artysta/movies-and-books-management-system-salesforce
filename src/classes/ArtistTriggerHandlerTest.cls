@@ -38,4 +38,15 @@ private class ArtistTriggerHandlerTest {
         
         System.assertEquals(0, movieActors.size());
     }
+    
+    @isTest
+    static void triggerShouldUpdateArtistStatusComment() {
+        Test.startTest();
+        MBMS_Artist__c artist = [SELECT MBMS_Status_Comment__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        Test.stopTest();
+                
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, artist.MBMS_Status_Comment__c);
+    }
 }
