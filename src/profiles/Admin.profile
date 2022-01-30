@@ -2235,6 +2235,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>MBMS_Artist__c.MBMS_Status_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>MBMS_Artist__c.MBMS_Status__c</field>
         <readable>true</readable>
@@ -2281,6 +2286,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MBMS_Book__c.MBMS_Status_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MBMS_Book__c.MBMS_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2321,6 +2331,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>MBMS_Movie_Photo__c.MBMS_Status_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>MBMS_Movie_Photo__c.MBMS_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2332,6 +2347,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>MBMS_Movie__c.MBMS_Director__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MBMS_Movie__c.MBMS_Status_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
