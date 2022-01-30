@@ -36,6 +36,8 @@
         <members>MovieBuilderTest</members>
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
+        <members>MoviePhotoTriggerHandler</members>
+        <members>MoviePhotoTriggerHandlerTest</members>
         <members>MoviePhotosListController</members>
         <members>MoviePhotosListControllerTest</members>
         <members>MovieTriggerHandler</members>
@@ -54,6 +56,7 @@
         <members>ArtistTrigger</members>
         <members>BookTrigger</members>
         <members>MovieActorTrigger</members>
+        <members>MoviePhotoTrigger</members>
         <members>MovieTrigger</members>
         <name>ApexTrigger</name>
     </types>
