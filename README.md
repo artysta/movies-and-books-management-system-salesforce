@@ -1,6 +1,10 @@
 # Movies & Books Management System - Salesforce
 
+## **#1** Description
+
 **Movies & Books Management System** is a simple application which presents the capabilities of the **Salesforce** cloud platform. At the moment application allows you to manage books, movies, artists and so on.
+
+## **#2** Deployment instructions
 
 To deploy and run this application on your Salesforce Organization you have to:
 
@@ -44,7 +48,17 @@ To deploy and run this application on your Salesforce Organization you have to:
     sfdx force:mdapi:deploy --deploydir ./src
     ```
 
-## **#2** Post Deployment Steps:
+## **#3** Sample Data
+
+You can run the below code in the Apex Anonymous Window to insert sample records to the database.
+
+```console
+SampleDataFactory.createAndInsertSampleRecords();
+```
+
+## **#4** Post Deployment Steps
+
+There are some post deployment steps you should take in order to make this application look and work as it should. Ofcourse these steps are not required, but I just suggest you to take them.
 
 Add **Home Page** to the app **Navigation Bar**:
 
