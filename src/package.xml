@@ -104,6 +104,7 @@
         <members>MBMS_Movie_Photo__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Description__c</members>
         <members>MBMS_Movie__c.MBMS_Director__c</members>
+        <members>MBMS_Movie__c.MBMS_Producer__c</members>
         <members>MBMS_Movie__c.MBMS_Status_Comment__c</members>
         <members>MBMS_Movie__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Title__c</members>

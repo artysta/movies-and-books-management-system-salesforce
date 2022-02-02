@@ -105,4 +105,15 @@ private class MovieBuilderTest {
         
         System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.MBMS_Status_Comment__c);
     }
+    
+    @isTest
+    static void movieShouldHaveAProducer() {
+        Test.startTest();        
+        MBMS_Movie__c movie = [SELECT MBMS_Producer__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        Test.stopTest();
+        
+        System.assertNotEquals(null, movie.MBMS_Producer__c);
+    }
 }

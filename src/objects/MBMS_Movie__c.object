@@ -180,6 +180,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>MBMS_Producer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A field that stores a lookup to the Artist object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Movie producer.</inlineHelpText>
+        <label>Producer</label>
+        <referenceTo>MBMS_Artist__c</referenceTo>
+        <relationshipLabel>Movies (Producer)</relationshipLabel>
+        <relationshipName>Movies</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>MBMS_Status_Comment__c</fullName>
         <description>A field that stores a comment related to the status of the Movie.</description>
         <externalId>false</externalId>
