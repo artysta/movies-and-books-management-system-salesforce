@@ -6,6 +6,7 @@
         <members>ArtistBuilderTest</members>
         <members>ArtistTriggerHandler</members>
         <members>ArtistTriggerHandlerTest</members>
+        <members>ArtistTriggerUtility</members>
         <members>ArtistsListController</members>
         <members>ArtistsListControllerTest</members>
         <members>ArtistsRemovalBatch</members>
@@ -21,6 +22,7 @@
         <members>BookBuilderTest</members>
         <members>BookTriggerHandler</members>
         <members>BookTriggerHandlerTest</members>
+        <members>BookTriggerUtility</members>
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
         <members>MBMS_Constants</members>
@@ -30,6 +32,7 @@
         <members>MovieActorBuilderTest</members>
         <members>MovieActorTriggerHandler</members>
         <members>MovieActorTriggerHandlerTest</members>
+        <members>MovieActorTriggerUtility</members>
         <members>MovieActorsListController</members>
         <members>MovieActorsListControllerTest</members>
         <members>MovieBuilder</members>
@@ -38,10 +41,12 @@
         <members>MoviePhotoBuilderTest</members>
         <members>MoviePhotoTriggerHandler</members>
         <members>MoviePhotoTriggerHandlerTest</members>
+        <members>MoviePhotoTriggerUtility</members>
         <members>MoviePhotosListController</members>
         <members>MoviePhotosListControllerTest</members>
         <members>MovieTriggerHandler</members>
         <members>MovieTriggerHandlerTest</members>
+        <members>MovieTriggerUtility</members>
         <members>MoviesListController</members>
         <members>MoviesListControllerTest</members>
         <members>MoviesRemovalBatch</members>
@@ -69,6 +74,10 @@
         <members>moviesList</members>
         <members>requiringActionRecordsList</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Movies_and_Books_Management_System_Android</members>
+        <name>ConnectedApp</name>
     </types>
     <types>
         <members>Movies_and_Books_Management_System</members>
@@ -159,10 +168,6 @@
         <members>MBMS_Movie_Photo__c.All</members>
         <members>MBMS_Movie__c.All</members>
         <name>ListView</name>
-    </types>
-    <types>
-        <members>Movies_and_Books_Management_System_Android</members>
-        <name>ConnectedApp</name>
     </types>
     <version>53.0</version>
 </Package>

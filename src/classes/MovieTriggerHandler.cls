@@ -1,12 +1,7 @@
 public class MovieTriggerHandler {
     public void onBeforeInsert(List<MBMS_Movie__c> movies) {
-        for (MBMS_Movie__c movie : movies) {
-            movie.Name = movie.MBMS_Title__c;
-        }
-        
-        for (MBMS_Movie__c movie : movies) {
-            movie.MBMS_Status_Comment__c = MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT;
-        }
+        MovieTriggerUtility.updateMovieNames(movies);
+        MovieTriggerUtility.updateMovieStatusComments(movies);
     }
     
     public void onBeforeDelete(List<MBMS_Movie__c> movies) {
