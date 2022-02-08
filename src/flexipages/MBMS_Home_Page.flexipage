@@ -4,21 +4,25 @@
         <itemInstances>
             <componentInstance>
                 <componentName>artistsList</componentName>
+                <identifier>artistsList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>booksList</componentName>
+                <identifier>booksList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>movieActorsList</componentName>
+                <identifier>movieActorsList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>batchLogsList</componentName>
+                <identifier>batchLogsList</identifier>
             </componentInstance>
         </itemInstances>
         <name>top</name>
@@ -28,6 +32,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>moviePhotosList</componentName>
+                <identifier>moviePhotosList</identifier>
             </componentInstance>
         </itemInstances>
         <name>bottomLeft</name>
@@ -37,6 +42,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>requiringActionRecordsList</componentName>
+                <identifier>requiringActionRecordsList</identifier>
             </componentInstance>
         </itemInstances>
         <name>bottomRight</name>
@@ -46,11 +52,13 @@
         <itemInstances>
             <componentInstance>
                 <componentName>moviesList</componentName>
+                <identifier>moviesList</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>helloWorldLWC</componentName>
+                <identifier>helloWorldLWC</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>
