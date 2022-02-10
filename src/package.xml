@@ -41,6 +41,8 @@
         <members>MovieActorsListControllerTest</members>
         <members>MovieBuilder</members>
         <members>MovieBuilderTest</members>
+        <members>MovieNewsBuilder</members>
+        <members>MovieNewsBuilderTest</members>
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
         <members>MoviePhotoTriggerHandler</members>
@@ -118,6 +120,10 @@
         <members>MBMS_Movie_Actor__c.MBMS_Artist__c</members>
         <members>MBMS_Movie_Actor__c.MBMS_Character_Name__c</members>
         <members>MBMS_Movie_Actor__c.MBMS_Movie__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Content__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Movie__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Tags__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Title__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Photo_URL__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Photo__c</members>
@@ -139,6 +145,7 @@
         <members>MBMS_Book_News__c</members>
         <members>MBMS_Book__c</members>
         <members>MBMS_Movie_Actor__c</members>
+        <members>MBMS_Movie_News__c</members>
         <members>MBMS_Movie_Photo__c</members>
         <members>MBMS_Movie__c</members>
         <name>CustomObject</name>
@@ -168,6 +175,7 @@
         <members>MBMS_Book_News__c-Book News Layout</members>
         <members>MBMS_Book__c-Book Layout</members>
         <members>MBMS_Movie_Actor__c-Movie Actor Layout</members>
+        <members>MBMS_Movie_News__c-Movie News Layout</members>
         <members>MBMS_Movie_Photo__c-Photo Layout</members>
         <members>MBMS_Movie__c-Movie Layout</members>
         <name>Layout</name>
