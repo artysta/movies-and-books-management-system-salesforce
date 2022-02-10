@@ -22,6 +22,8 @@
         <members>BatchRunLogger</members>
         <members>BookBuilder</members>
         <members>BookBuilderTest</members>
+        <members>BookNewsBuilder</members>
+        <members>BookNewsBuilderTest</members>
         <members>BookTriggerHandler</members>
         <members>BookTriggerHandlerTest</members>
         <members>BookTriggerUtility</members>
@@ -102,6 +104,10 @@
         <members>MBMS_Batch_Log__c.MBMS_Batch_Name__c</members>
         <members>MBMS_Batch_Log__c.MBMS_Message__c</members>
         <members>MBMS_Batch_Log__c.MBMS_Records_Processed__c</members>
+        <members>MBMS_Book_News__c.MBMS_Book__c</members>
+        <members>MBMS_Book_News__c.MBMS_Content__c</members>
+        <members>MBMS_Book_News__c.MBMS_Tags__c</members>
+        <members>MBMS_Book_News__c.MBMS_Title__c</members>
         <members>MBMS_Book__c.MBMS_Artist__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image_URL__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image__c</members>
@@ -130,6 +136,7 @@
         <members>MBMS_Artist_News__c</members>
         <members>MBMS_Artist__c</members>
         <members>MBMS_Batch_Log__c</members>
+        <members>MBMS_Book_News__c</members>
         <members>MBMS_Book__c</members>
         <members>MBMS_Movie_Actor__c</members>
         <members>MBMS_Movie_Photo__c</members>
@@ -158,6 +165,7 @@
         <members>MBMS_Artist_News__c-Artist News Layout</members>
         <members>MBMS_Artist__c-Artist Layout</members>
         <members>MBMS_Batch_Log__c-Batch Log Layout</members>
+        <members>MBMS_Book_News__c-Book News Layout</members>
         <members>MBMS_Book__c-Book Layout</members>
         <members>MBMS_Movie_Actor__c-Movie Actor Layout</members>
         <members>MBMS_Movie_Photo__c-Photo Layout</members>
