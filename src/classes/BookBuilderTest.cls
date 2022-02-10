@@ -103,6 +103,6 @@ private class BookBuilderTest {
                              LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c);
     }
 }

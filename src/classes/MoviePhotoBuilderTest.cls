@@ -70,6 +70,6 @@ private class MoviePhotoBuilderTest {
                                           LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, moviePhoto.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, moviePhoto.MBMS_Status_Comment__c);
     }
 }

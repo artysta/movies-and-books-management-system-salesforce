@@ -103,7 +103,7 @@ private class MovieBuilderTest {
                                LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c);
     }
     
     @isTest

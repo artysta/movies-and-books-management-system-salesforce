@@ -143,6 +143,6 @@ private class ArtistBuilderTest {
                                  LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artist.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, artist.MBMS_Status_Comment__c);
     }
 }
