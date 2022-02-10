@@ -4,6 +4,8 @@
     <types>
         <members>ArtistBuilder</members>
         <members>ArtistBuilderTest</members>
+        <members>ArtistNewsBuilder</members>
+        <members>ArtistNewsBuilderTest</members>
         <members>ArtistTriggerHandler</members>
         <members>ArtistTriggerHandlerTest</members>
         <members>ArtistTriggerUtility</members>
@@ -84,6 +86,10 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>MBMS_Artist_News__c.MBMS_Artist__c</members>
+        <members>MBMS_Artist_News__c.MBMS_Content__c</members>
+        <members>MBMS_Artist_News__c.MBMS_Tags__c</members>
+        <members>MBMS_Artist_News__c.MBMS_Title__c</members>
         <members>MBMS_Artist__c.MBMS_Birthplace__c</members>
         <members>MBMS_Artist__c.MBMS_Date_of_Birth__c</members>
         <members>MBMS_Artist__c.MBMS_Date_of_Death__c</members>
@@ -121,6 +127,7 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>MBMS_Artist_News__c</members>
         <members>MBMS_Artist__c</members>
         <members>MBMS_Batch_Log__c</members>
         <members>MBMS_Book__c</members>
@@ -148,6 +155,7 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
+        <members>MBMS_Artist_News__c-Artist News Layout</members>
         <members>MBMS_Artist__c-Artist Layout</members>
         <members>MBMS_Batch_Log__c-Batch Log Layout</members>
         <members>MBMS_Book__c-Book Layout</members>
