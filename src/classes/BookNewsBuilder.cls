@@ -31,6 +31,11 @@ public class BookNewsBuilder {
         return this;
     }
     
+    public BookNewsBuilder withImageURL(String imageURL) {
+        this.bookNews.MBMS_Image_URL__c = imageURL;
+        return this;
+    }
+    
     /*
      Should not be used in the loops due to SOQL limit - it inserts related fields.
      This method is used to create a single record (with all fields) for test purposes.
@@ -46,6 +51,7 @@ public class BookNewsBuilder {
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withContent(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .withTags(new List<String> { MBMS_Constants.MBMS_TEST_STRING_VALUE, MBMS_Constants.MBMS_TEST_STRING_VALUE })
+            .withImageURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
             .build();
     }
     

@@ -84,4 +84,15 @@ private class ArtistNewsBuilderTest {
         
         System.assertNotEquals(null, artistNews.MBMS_Artist__c);
     }
+    
+    @isTest
+    static void artistNewsShouldHaveImageURL() {
+        Test.startTest();        
+        MBMS_Artist_News__c artistNews = [SELECT MBMS_Image_URL__c
+                                          FROM MBMS_Artist_News__c
+                                          LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artistNews.MBMS_Image_URL__c);
+    }
 }

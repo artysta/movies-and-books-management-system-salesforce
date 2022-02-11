@@ -92,6 +92,8 @@
     <types>
         <members>MBMS_Artist_News__c.MBMS_Artist__c</members>
         <members>MBMS_Artist_News__c.MBMS_Content__c</members>
+        <members>MBMS_Artist_News__c.MBMS_Image_URL__c</members>
+        <members>MBMS_Artist_News__c.MBMS_Image__c</members>
         <members>MBMS_Artist_News__c.MBMS_Tags__c</members>
         <members>MBMS_Artist_News__c.MBMS_Title__c</members>
         <members>MBMS_Artist__c.MBMS_Birthplace__c</members>
@@ -108,6 +110,8 @@
         <members>MBMS_Batch_Log__c.MBMS_Records_Processed__c</members>
         <members>MBMS_Book_News__c.MBMS_Book__c</members>
         <members>MBMS_Book_News__c.MBMS_Content__c</members>
+        <members>MBMS_Book_News__c.MBMS_Image_URL__c</members>
+        <members>MBMS_Book_News__c.MBMS_Image__c</members>
         <members>MBMS_Book_News__c.MBMS_Tags__c</members>
         <members>MBMS_Book_News__c.MBMS_Title__c</members>
         <members>MBMS_Book__c.MBMS_Artist__c</members>
@@ -121,6 +125,8 @@
         <members>MBMS_Movie_Actor__c.MBMS_Character_Name__c</members>
         <members>MBMS_Movie_Actor__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_News__c.MBMS_Content__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Image_URL__c</members>
+        <members>MBMS_Movie_News__c.MBMS_Image__c</members>
         <members>MBMS_Movie_News__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_News__c.MBMS_Tags__c</members>
         <members>MBMS_Movie_News__c.MBMS_Title__c</members>

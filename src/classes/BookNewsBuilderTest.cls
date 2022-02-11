@@ -84,4 +84,15 @@ private class BookNewsBuilderTest {
         
         System.assertNotEquals(null, bookNews.MBMS_Book__c);
     }
+    
+    @isTest
+    static void bookNewsShouldHaveImageURL() {
+        Test.startTest();        
+        MBMS_Book_News__c bookNews = [SELECT MBMS_Image_URL__c
+                                      FROM MBMS_Book_News__c
+                                      LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Image_URL__c);
+    }
 }

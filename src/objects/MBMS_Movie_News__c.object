@@ -166,6 +166,29 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>MBMS_Image_URL__c</fullName>
+        <description>A field that stores an URL of the News image.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL of news image.</inlineHelpText>
+        <label>Image URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MBMS_Image__c</fullName>
+        <description>A formula field that displays news image image or string value (if the image URL is not available).</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(MBMS_Image_URL__c)), IMAGE(MBMS_Image_URL__c, &apos;Image&apos;), &quot;News image is not available.&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>News image.</inlineHelpText>
+        <label>Image</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>MBMS_Movie__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>A field that stores a lookup to the Movie object.</description>

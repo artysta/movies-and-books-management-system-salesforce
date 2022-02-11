@@ -84,4 +84,15 @@ private class MovieNewsBuilderTest {
         
         System.assertNotEquals(null, movieNews.MBMS_Movie__c);
     }
+    
+    @isTest
+    static void movieNewsShouldHaveImageURL() {
+        Test.startTest();        
+        MBMS_Movie_News__c movieNews = [SELECT MBMS_Image_URL__c
+                                        FROM MBMS_Movie_News__c
+                                        LIMIT 1];
+        Test.stopTest();
+        
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Image_URL__c);
+    }
 }
