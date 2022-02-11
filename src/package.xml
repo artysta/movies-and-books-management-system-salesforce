@@ -6,6 +6,7 @@
         <members>ArtistBuilderTest</members>
         <members>ArtistNewsBuilder</members>
         <members>ArtistNewsBuilderTest</members>
+        <members>ArtistNewsController</members>
         <members>ArtistTriggerHandler</members>
         <members>ArtistTriggerHandlerTest</members>
         <members>ArtistTriggerUtility</members>
@@ -24,6 +25,7 @@
         <members>BookBuilderTest</members>
         <members>BookNewsBuilder</members>
         <members>BookNewsBuilderTest</members>
+        <members>BookNewsController</members>
         <members>BookTriggerHandler</members>
         <members>BookTriggerHandlerTest</members>
         <members>BookTriggerUtility</members>
@@ -43,6 +45,7 @@
         <members>MovieBuilderTest</members>
         <members>MovieNewsBuilder</members>
         <members>MovieNewsBuilderTest</members>
+        <members>MovieNewsController</members>
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
         <members>MoviePhotoTriggerHandler</members>
@@ -190,7 +193,10 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>artistNewsLWC</members>
+        <members>bookNewsLWC</members>
         <members>helloWorldLWC</members>
+        <members>movieNewsLWC</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

@@ -1,0 +1,11 @@
+<template>
+  <template if:true={bookNews.data}>
+    <lightning-card title={bookNews.data.MBMS_Title__c} icon-name="custom:custom23">
+      <img style="padding: 10px" src={bookNews.data.MBMS_Image_URL__c}/>
+      <p class="slds-p-horizontal_small">{bookNews.data.MBMS_Content__c}</p>
+      <footer class="slds-card__footer">
+        <p class="slds-card__footer-action">Tags: {bookNews.data.MBMS_Tags__c}</p>
+      </footer>
+    </lightning-card>
+  </template>
+</template>
