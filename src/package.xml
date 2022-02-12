@@ -7,6 +7,7 @@
         <members>ArtistNewsBuilder</members>
         <members>ArtistNewsBuilderTest</members>
         <members>ArtistNewsController</members>
+        <members>ArtistNewsControllerTest</members>
         <members>ArtistTriggerHandler</members>
         <members>ArtistTriggerHandlerTest</members>
         <members>ArtistTriggerUtility</members>
@@ -26,6 +27,7 @@
         <members>BookNewsBuilder</members>
         <members>BookNewsBuilderTest</members>
         <members>BookNewsController</members>
+        <members>BookNewsControllerTest</members>
         <members>BookTriggerHandler</members>
         <members>BookTriggerHandlerTest</members>
         <members>BookTriggerUtility</members>
@@ -46,6 +48,7 @@
         <members>MovieNewsBuilder</members>
         <members>MovieNewsBuilderTest</members>
         <members>MovieNewsController</members>
+        <members>MovieNewsControllerTest</members>
         <members>MoviePhotoBuilder</members>
         <members>MoviePhotoBuilderTest</members>
         <members>MoviePhotoTriggerHandler</members>
