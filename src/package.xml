@@ -195,7 +195,6 @@
     <types>
         <members>artistNewsLWC</members>
         <members>bookNewsLWC</members>
-        <members>helloWorldLWC</members>
         <members>movieNewsLWC</members>
         <name>LightningComponentBundle</name>
     </types>
