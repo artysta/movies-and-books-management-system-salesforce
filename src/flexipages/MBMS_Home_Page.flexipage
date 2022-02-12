@@ -55,24 +55,6 @@
                 <identifier>moviesList</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>artistNewsLWC</componentName>
-                <identifier>c_artistNewsLWC1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>bookNewsLWC</componentName>
-                <identifier>c_bookNewsLWC1</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>movieNewsLWC</componentName>
-                <identifier>c_movieNewsLWC1</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
