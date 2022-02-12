@@ -172,7 +172,10 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Artist_Record_Page</members>
+        <members>Book_Record_Page</members>
         <members>MBMS_Home_Page</members>
+        <members>Movie_Record_Page</members>
         <members>Movies_and_Books_Management_System_UtilityBar</members>
         <name>FlexiPage</name>
     </types>
