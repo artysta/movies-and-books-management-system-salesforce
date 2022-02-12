@@ -1,6 +1,8 @@
 import { LightningElement, api, wire } from 'lwc';
-import getLatestBookNews from '@salesforce/apex/BookNewsController.getLatestBookNews';
+import getLatestBookNewsByBookId from '@salesforce/apex/BookNewsController.getLatestBookNewsByBookId';
 
-export default class BookNewsLWC extends LightningElement {
-    @wire(getLatestBookNews) bookNews;
+export default class ArtistNewsLWC extends LightningElement {
+    @api recordId;
+    @wire(getLatestBookNewsByBookId, {bookId: '$recordId'})
+    bookNews;
 }

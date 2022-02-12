@@ -1,6 +1,8 @@
 import { LightningElement, api, wire } from 'lwc';
-import getLatestMovieNews from '@salesforce/apex/MovieNewsController.getLatestMovieNews';
+import getLatestMovieNewsByMovieId from '@salesforce/apex/MovieNewsController.getLatestMovieNewsByMovieId';
 
-export default class MovieNewsLWC extends LightningElement {
-    @wire(getLatestMovieNews) movieNews;
+export default class ArtistNewsLWC extends LightningElement {
+    @api recordId;
+    @wire(getLatestMovieNewsByMovieId, {movieId: '$recordId'})
+    movieNews;
 }
