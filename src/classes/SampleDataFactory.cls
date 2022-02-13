@@ -5,12 +5,18 @@ public class SampleDataFactory {
         List<MBMS_Book__c> books = new List<MBMS_Book__c>();
         List<MBMS_Movie_Photo__c> moviePhotos = new List<MBMS_Movie_Photo__c>();
         List<MBMS_Movie_Actor__c> movieActors = new List<MBMS_Movie_Actor__c>();
+        List<MBMS_Artist_News__c> artistNewsList = new List<MBMS_Artist_News__c>();
+        List<MBMS_Book_News__c> bookNewsList = new List<MBMS_Book_News__c>();
+        List<MBMS_Movie_News__c> movieNewsList = new List<MBMS_Movie_News__c>();
         
         ArtistBuilder artistBuilder = new ArtistBuilder();
         MovieBuilder movieBuilder = new MovieBuilder();
         BookBuilder bookBuilder = new BookBuilder();
         MoviePhotoBuilder moviePhotoBuilder = new MoviePhotoBuilder();
         MovieActorBuilder movieActorBuilder = new MovieActorBuilder();
+        ArtistNewsBuilder artistNewsBuilder = new ArtistNewsBuilder();
+        BookNewsBuilder bookNewsBuilder = new BookNewsBuilder();
+        MovieNewsBuilder movieNewsBuilder = new MovieNewsBuilder();
         
         // Artists.
         
@@ -35,7 +41,7 @@ public class SampleDataFactory {
             .withStatus(MBMS_Constants.MBMS_STATUS_INITIAL)
             .build();
         artists.add(jkRowling);
-                
+        
         MBMS_Artist__c umaThurman = artistBuilder.create()
             .withFirstName('Uma')
             .withLastName('Thurman')
@@ -247,7 +253,7 @@ public class SampleDataFactory {
         insert books;
         
         // Movie Photos.
-
+        
         MBMS_Movie_Photo__c moviePhoto1 = moviePhotoBuilder.create()
             .withName('Sample Photo 1')
             .withMovie(killBillVolume1)
@@ -422,8 +428,59 @@ public class SampleDataFactory {
             .withCharacterName('Naomi Lapaglia')
             .build();
         movieActors.add(naomiLapaglia);
-
+        
         insert movieActors;
+        
+        // News.
+        
+        MBMS_Artist_News__c artistNews = new MBMS_Artist_News__c();
+        MBMS_Book_News__c bookNews = new MBMS_Book_News__c();
+        MBMS_Movie_News__c movieNews = new MBMS_Movie_News__c();
+        
+        // Create 5 news records for every Artist, Book, Movie.
+        for (Integer i = 0; i < 5; i++) {
+            for (MBMS_Artist__c artist : artists) {
+                artistNews = artistNewsBuilder.create()
+                    .withArtist(artist)
+                    .withTitle(String.format('News {0} about {1} {2}', new List<String> { String.valueOf(i), artist.MBMS_First_Name__c, artist.MBMS_Last_Name__c }))
+                    .withTags(new List<String> { 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'})
+                    .withImageURL('https://cdn.pixabay.com/photo/2021/12/23/03/58/indoor-6888603_960_720.jpg')
+                    .build();
+                artistNewsList.add(artistNews);
+            }
+            
+            for (MBMS_Book__c book : books) {
+                bookNews = bookNewsBuilder.create()
+                    .withBook(book)
+                    .withTitle(String.format('News {0} about {1}', new List<String> { String.valueOf(i), book.MBMS_Title__c }))
+                    .withTags(new List<String> { 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'})
+                    .withImageURL('https://cdn.pixabay.com/photo/2021/12/23/03/58/indoor-6888603_960_720.jpg')
+                    .build();
+                bookNewsList.add(bookNews);
+            }
+            
+            for (MBMS_Movie__c movie : movies) {
+                movieNews = movieNewsBuilder.create()
+                    .withMovie(movie)
+                    .withTitle(String.format('News {0} about {1}', new List<String> { String.valueOf(i), movie.MBMS_Title__c }))
+                    .withTags(new List<String> { 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'})
+                    .withImageURL('https://cdn.pixabay.com/photo/2021/12/23/03/58/indoor-6888603_960_720.jpg')
+                    .build();
+                movieNewsList.add(movieNews);
+            }
+        }
+        
+        insert artistNewsList;
+        insert bookNewsList;
+        insert movieNewsList;
+        
+        Set<Id> allIds = new Set<Id>();
+        
+        allIds.addAll((new Map<Id, SObject>(artistNewsList)).keySet());
+        allIds.addAll((new Map<Id, SObject>(bookNewsList)).keySet());
+        allIds.addAll((new Map<Id, SObject>(movieNewsList)).keySet());
+        
+        NewsUtilitiesFuture.updateFieldsFuture(allIds);
     }
     
     public static void removeAllRecords() {
@@ -432,5 +489,8 @@ public class SampleDataFactory {
         delete [SELECT Id FROM MBMS_Book__c];
         delete [SELECT Id FROM MBMS_Movie_Photo__c];
         delete [SELECT Id FROM MBMS_Movie_Actor__c];
+        delete [SELECT Id FROM MBMS_Artist_News__c];
+        delete [SELECT Id FROM MBMS_Book_News__c];
+        delete [SELECT Id FROM MBMS_Movie_News__c];
     }
 }
