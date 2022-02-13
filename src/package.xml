@@ -63,6 +63,7 @@
         <members>MoviesListControllerTest</members>
         <members>MoviesRemovalBatch</members>
         <members>MoviesRemovalBatchTest</members>
+        <members>NewsUtilitiesFuture</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
         <members>SampleDataFactory</members>
