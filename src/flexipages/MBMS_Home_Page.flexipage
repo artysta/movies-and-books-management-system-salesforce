@@ -55,6 +55,12 @@
                 <identifier>moviesList</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>newsList</componentName>
+                <identifier>c_newsList1</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
