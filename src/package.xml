@@ -63,6 +63,8 @@
         <members>MoviesListControllerTest</members>
         <members>MoviesRemovalBatch</members>
         <members>MoviesRemovalBatchTest</members>
+        <members>NewsController</members>
+        <members>NewsControllerTest</members>
         <members>NewsUtilitiesFuture</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
@@ -85,6 +87,7 @@
         <members>movieActorsList</members>
         <members>moviePhotosList</members>
         <members>moviesList</members>
+        <members>newsList</members>
         <members>requiringActionRecordsList</members>
         <name>AuraDefinitionBundle</name>
     </types>
