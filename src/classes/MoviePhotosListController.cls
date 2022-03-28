@@ -11,7 +11,7 @@ public with sharing class MoviePhotosListController {
     public static List<MBMS_Movie_Photo__c> getLatestPhotos() {
         return [SELECT Id, Name, MBMS_Photo_URL__c, MBMS_Movie__r.MBMS_Title__c
                 FROM MBMS_Movie_Photo__c
-                ORDER BY CreatedDate
+                ORDER BY CreatedDate DESC
                 LIMIT :MINIMUM_NUMBER_OF_PHOTOS];
     }
     
