@@ -1,14 +1,20 @@
+// TODO: remove MBMS prefix from variable names.
 public class MBMS_Constants {
     // Constant values for test purposes.
     public final static String MBMS_TEST_STRING_VALUE = 'Test String Value';
+    public final static String MBMS_SEMICOLON = ';';
+    public final static String FIELD_SHOULD_BE_PATTERN = '{0} field should be: {1}.';
+    public final static String FIELD_SHOULD_CONTAIN_PATTERN = '{0} field should contain {1} value.';
+    public final static String FIELD_SHOULD_NOT_BE_NULL_PATTERN = '{0} field should not be null.';
+    public final static String SIZE_SHOULD_BE_GREATER_THAN_0_PATTERN = '{0} collection size should be greater than 0.';
+    public final static String SIZE_SHOULD_BE_EQUAL_TO_0_PATTERN = '{0} collection size should be equal to 0.';
     public final static Date MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY =  Date.today().addDays(-200);
     public final static Date MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY =  Date.today().addDays(-10);
     public final static Date MBMS_TEST_DATE_TODAY = Date.today();
     public final static Date MBMS_TEST_DATE_10_DAYS_AFTER_TODAY =  Date.today().addDays(10);
     public final static Date MBMS_TEST_DATE_200_DAYS_AFTER_TODAY =  Date.today().addDays(200);
-    public final static String MBMS_SEMICOLON = ';';
     public final static Integer MBMS_TEST_NUMBER = 100;
-    
+
     // Artist roles.
     public final static String MBMS_ROLE_AUTHOR = 'MBMS_Author';
     public final static String MBMS_ROLE_ACTOR = 'MBMS_Actor';
