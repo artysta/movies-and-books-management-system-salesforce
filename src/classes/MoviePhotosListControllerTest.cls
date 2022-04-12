@@ -15,7 +15,7 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getPhotos();
         Test.stopTest();
         
-        System.assertEquals(0, moviePhotos.size());
+        System.assertEquals(0, moviePhotos.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'moviePhotos', '0' }));
     }
     
     @isTest
@@ -24,8 +24,8 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getPhotos();
         Test.stopTest();
         
-        System.assert(moviePhotos.size() > 0);
-        System.assertNotEquals(null, moviePhotos[0]);
+        System.assert(moviePhotos.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'moviePhotos', '0' }));
+        System.assertNotEquals(null, moviePhotos[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'moviePhotos' }));
     }
     
     @isTest
@@ -36,7 +36,7 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getLatestPhotos();
         Test.stopTest();
         
-        System.assertEquals(0, moviePhotos.size());
+        System.assertEquals(0, moviePhotos.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'moviePhotos', '0' }));
     }
     
     @isTest
@@ -45,8 +45,8 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getLatestPhotos();
         Test.stopTest();
         
-        System.assert(moviePhotos.size() > 0);
-        System.assertNotEquals(null, moviePhotos[0]);
+        System.assert(moviePhotos.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'moviePhotos', '0' }));
+        System.assertNotEquals(null, moviePhotos[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'moviePhotos' }));
     }
     
     @isTest
@@ -55,7 +55,7 @@ private class MoviePhotosListControllerTest {
         Boolean photosAvailable = MoviePhotosListController.arePhotosAvailable();
         Test.stopTest();
         
-        System.assert(!photosAvailable);
+        System.assert(!photosAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'photosAvailable' }));
     }
     
     @isTest
@@ -76,7 +76,7 @@ private class MoviePhotosListControllerTest {
         Boolean photosAvailable = MoviePhotosListController.arePhotosAvailable();
         Test.stopTest();
         
-        System.assert(photosAvailable);
+        System.assert(photosAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'photosAvailable' }));
     }
     
     @isTest
@@ -85,7 +85,7 @@ private class MoviePhotosListControllerTest {
         Integer minimumNumberOfPhotos = MoviePhotosListController.getMinimumNumberOfPhotos();
         Test.stopTest();
         
-        System.assertEquals(MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS, minimumNumberOfPhotos);
+        System.assertEquals(MoviePhotosListController.MINIMUM_NUMBER_OF_PHOTOS, minimumNumberOfPhotos, String.format(MBMS_Constants.VALUE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { String.valueOf(minimumNumberOfPhotos) }));
     }
     
     @isTest
@@ -94,7 +94,7 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getRequiringActionPhotos();
         Test.stopTest();
         
-        System.assertEquals(0, moviePhotos.size());
+        System.assertEquals(0, moviePhotos.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'moviePhotos', '0' }));
     }
     
     @isTest
@@ -111,7 +111,7 @@ private class MoviePhotosListControllerTest {
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getRequiringActionPhotos();
         Test.stopTest();
         
-        System.assert(moviePhotos.size() > 0);
-        System.assertNotEquals(null, moviePhotos.get(0));
+        System.assert(moviePhotos.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'moviePhotos', '0' }));
+        System.assertNotEquals(null, moviePhotos[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'moviePhotos' }));
     }
 }

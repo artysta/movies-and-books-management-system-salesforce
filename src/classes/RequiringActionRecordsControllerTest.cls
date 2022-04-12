@@ -16,7 +16,7 @@ private class RequiringActionRecordsControllerTest {
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
-        System.assertEquals(0, requiringActionRecords.size());
+        System.assertEquals(0, requiringActionRecords.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
     }
     
     @isTest
@@ -33,8 +33,8 @@ private class RequiringActionRecordsControllerTest {
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
-        System.assert(requiringActionRecords.size() > 0);
-        System.assertNotEquals(null, requiringActionRecords.get(0));
+        System.assert(requiringActionRecords.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
+        System.assertNotEquals(null, requiringActionRecords.get(0), String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'requiringActionRecords' }));
     }
     
     @isTest
@@ -46,7 +46,7 @@ private class RequiringActionRecordsControllerTest {
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
-        System.assert(!areRequiringActionRecordsAvailable);
+        System.assert(!areRequiringActionRecordsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areRequiringActionRecordsAvailable' }));
     }
     
     @isTest
@@ -63,6 +63,6 @@ private class RequiringActionRecordsControllerTest {
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
-        System.assert(areRequiringActionRecordsAvailable);
+        System.assert(areRequiringActionRecordsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areRequiringActionRecordsAvailable' }));
     }
 }

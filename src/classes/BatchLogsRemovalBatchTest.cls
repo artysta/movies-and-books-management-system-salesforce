@@ -21,7 +21,7 @@ private class BatchLogsRemovalBatchTest {
         Test.stopTest();
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
-        System.assertEquals(0, batchLogs.size());
+        System.assertEquals(0, batchLogs.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     @isTest
@@ -50,7 +50,7 @@ private class BatchLogsRemovalBatchTest {
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
         
-        System.assertEquals(0, batchLogs.size());
+        System.assertEquals(0, batchLogs.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     @isTest
@@ -63,7 +63,7 @@ private class BatchLogsRemovalBatchTest {
         Test.stopTest();
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];
-        System.assert(batchLogs.size() > 0);
+        System.assert(batchLogs.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     private static void removeExistingBatchLogs() {

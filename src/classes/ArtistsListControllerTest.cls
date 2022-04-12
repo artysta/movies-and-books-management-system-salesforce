@@ -16,7 +16,7 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getArtistsList();
         Test.stopTest();
         
-        System.assertEquals(0, artistsList.size());
+        System.assertEquals(0, artistsList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
     }
     
     @isTest
@@ -25,8 +25,8 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getArtistsList();
         Test.stopTest();
         
-        System.assert(artistsList.size() > 0);
-        System.assertNotEquals(null, artistsList[0]);
+        System.assert(artistsList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertNotEquals(null, artistsList[0], MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
     }
     
     @isTest
@@ -39,7 +39,7 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
-        System.assertEquals(0, artistsList.size());
+        System.assertEquals(0, artistsList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
     }
     
     @isTest
@@ -56,8 +56,8 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
-        System.assert(artistsList.size() > 0);
-        System.assertNotEquals(null, artistsList[0]);
+        System.assert(artistsList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertNotEquals(null, artistsList[0], MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
     }
     
     @isTest
@@ -69,7 +69,7 @@ private class ArtistsListControllerTest {
         Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
         Test.stopTest();
         
-        System.assert(!areArtistsAvailable);
+        System.assert(!areArtistsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areArtistsAvailable' }));
     }
     
     @isTest
@@ -78,6 +78,6 @@ private class ArtistsListControllerTest {
         Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
         Test.stopTest();
         
-        System.assert(areArtistsAvailable);
+        System.assert(areArtistsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areArtistsAvailable' }));
     }
 }

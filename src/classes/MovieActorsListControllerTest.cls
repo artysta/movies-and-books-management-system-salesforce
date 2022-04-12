@@ -16,7 +16,7 @@ private class MovieActorsListControllerTest {
         List<MBMS_Movie_Actor__c> movieActors = MovieActorsListController.getMovieActors();
         Test.stopTest();
         
-        System.assertEquals(0, movieActors.size());
+        System.assertEquals(0, movieActors.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movieActors', '0' }));
     }
     
     @isTest
@@ -25,8 +25,8 @@ private class MovieActorsListControllerTest {
         List<MBMS_Movie_Actor__c> movieActors = MovieActorsListController.getMovieActors();
         Test.stopTest();
         
-        System.assert(movieActors.size() > 0);
-        System.assertNotEquals(null, movieActors[0]);
+        System.assert(movieActors.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'movieActors', '0' }));
+        System.assertNotEquals(null, movieActors[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'movieActors' }));
     }
     
     @isTest
@@ -38,7 +38,7 @@ private class MovieActorsListControllerTest {
         Boolean areMovieActorsAvailable = MovieActorsListController.areMovieActorsAvailable();
         Test.stopTest();
         
-        System.assert(!areMovieActorsAvailable);
+        System.assert(!areMovieActorsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areMovieActorsAvailable' }));
     }
     
     @isTest
@@ -47,6 +47,6 @@ private class MovieActorsListControllerTest {
         Boolean areMovieActorsAvailable = MovieActorsListController.areMovieActorsAvailable();
         Test.stopTest();
         
-        System.assert(areMovieActorsAvailable);
+        System.assert(areMovieActorsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areMovieActorsAvailable' }));
     }
 }

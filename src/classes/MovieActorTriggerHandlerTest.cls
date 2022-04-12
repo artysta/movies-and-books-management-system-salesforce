@@ -17,6 +17,6 @@ private class MovieActorTriggerHandlerTest {
         
         String expectedName = String.format('{0} as {1}', new List<String> { movieActor.MBMS_Artist__r.Name, movieActor.MBMS_Character_Name__c });
         
-		System.assertEquals(expectedName, movieActor.Name);
+		System.assertEquals(expectedName, movieActor.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', expectedName }));
     }
 }

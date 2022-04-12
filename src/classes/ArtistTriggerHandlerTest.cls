@@ -17,7 +17,7 @@ private class ArtistTriggerHandlerTest {
         
         String expectedName = String.format('{0} {1}', new List<String> { artist.MBMS_First_Name__c, artist.MBMS_Last_Name__c });
         
-        System.assertEquals(expectedName, artist.Name);
+        System.assertEquals(expectedName, artist.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> {'Name', expectedName }));
     }
     
     @isTest
@@ -36,7 +36,7 @@ private class ArtistTriggerHandlerTest {
         
         List<MBMS_Movie_Actor__c> movieActors = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
         
-        System.assertEquals(0, movieActors.size());
+        System.assertEquals(0, movieActors.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movieActors', '0' }));
     }
     
     @isTest
@@ -47,6 +47,6 @@ private class ArtistTriggerHandlerTest {
                                  LIMIT 1];
         Test.stopTest();
                 
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, artist.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, artist.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c' }));
     }
 }

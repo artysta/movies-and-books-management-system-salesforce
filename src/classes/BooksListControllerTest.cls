@@ -16,7 +16,7 @@ private class BooksListControllerTest {
         List<MBMS_Book__c> booksList = BooksListController.getBooksList();
         Test.stopTest();
         
-        System.assertEquals(0, booksList.size());
+        System.assertEquals(0, booksList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'booksList', '0' }));
     }
     
     @isTest
@@ -25,8 +25,8 @@ private class BooksListControllerTest {
         List<MBMS_Book__c> booksList = BooksListController.getBooksList();
         Test.stopTest();
         
-        System.assert(booksList.size() > 0);
-        System.assertNotEquals(null, booksList[0]);
+        System.assert(booksList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'bookList', '0' }));
+        System.assertNotEquals(null, booksList[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'booksList' }));
     }
     
     @isTest
@@ -39,7 +39,7 @@ private class BooksListControllerTest {
         List<MBMS_Book__c> booksList = BooksListController.getRequiringActionBooks();
         Test.stopTest();
         
-        System.assertEquals(0, booksList.size());
+        System.assertEquals(0, booksList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'booksList', '0' }));
     }
     
     @isTest
@@ -56,8 +56,8 @@ private class BooksListControllerTest {
         List<MBMS_Book__c> booksList = BooksListController.getRequiringActionBooks();
         Test.stopTest();
         
-        System.assert(booksList.size() > 0);
-        System.assertNotEquals(null, booksList[0]);
+        System.assert(booksList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'booksList', '0' }));
+        System.assertNotEquals(null, booksList[0], String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'booksList' }));
     }
     
     @isTest
@@ -69,7 +69,7 @@ private class BooksListControllerTest {
         Boolean areBooksAvailable = BooksListController.areBooksAvailable();
         Test.stopTest();
         
-        System.assert(!areBooksAvailable);
+        System.assert(!areBooksAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areBooksAvailable' }));
     }
     
     @isTest
@@ -78,6 +78,6 @@ private class BooksListControllerTest {
         Boolean areBooksAvailable = BooksListController.areBooksAvailable();
         Test.stopTest();
         
-        System.assert(areBooksAvailable);
+        System.assert(areBooksAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areBooksAvailable' }));
     }
 }

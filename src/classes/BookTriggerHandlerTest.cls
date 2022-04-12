@@ -15,7 +15,7 @@ private class BookTriggerHandlerTest {
                              LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(book.MBMS_Title__c, book.Name);
+        System.assertEquals(book.MBMS_Title__c, book.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', book.MBMS_Title__c }));
     }
     
     @isTest
@@ -26,6 +26,6 @@ private class BookTriggerHandlerTest {
                              LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
     }
 }

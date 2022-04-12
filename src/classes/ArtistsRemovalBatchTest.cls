@@ -24,7 +24,7 @@ private class ArtistsRemovalBatchTest {
         Test.stopTest();
         
         artists = [SELECT Id FROM MBMS_Artist__c];
-        System.assertEquals(0, artists.size());
+        System.assertEquals(0, artists.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '0' }));
     }
     
     @isTest
@@ -57,7 +57,7 @@ private class ArtistsRemovalBatchTest {
         
         artists = [SELECT Id FROM MBMS_Artist__c];
         
-        System.assertEquals(0, artists.size());
+        System.assertEquals(0, artists.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '0' }));
     }
     
     @isTest
@@ -70,7 +70,7 @@ private class ArtistsRemovalBatchTest {
         Test.stopTest();
         
         artists = [SELECT Id FROM MBMS_Artist__c];
-        System.assert(artists.size() > 0);
+        System.assertEquals(0, artists.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '0' }));
     }
     
     private static void removeExistingArtists() {

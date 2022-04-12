@@ -15,7 +15,7 @@ private class MovieTriggerHandlerTest {
                                LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(movie.MBMS_Title__c, movie.Name);
+        System.assertEquals(movie.MBMS_Title__c, movie.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', movie.MBMS_Title__c }));
     }
     
     @isTest
@@ -34,7 +34,7 @@ private class MovieTriggerHandlerTest {
         
         List<MBMS_Movie_Actor__c> movieActors = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
         
-        System.assertEquals(0, movieActors.size());
+        System.assertEquals(0, movieActors.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movieActors', '0' }));
     }
     
     @isTest
@@ -45,6 +45,6 @@ private class MovieTriggerHandlerTest {
                                LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c);
+        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
     }
 }

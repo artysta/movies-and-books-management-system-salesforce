@@ -15,7 +15,7 @@ private class MovieNewsBuilderTest {
             .build();
         Test.stopTest();
         
-        System.assertNotEquals(null, movieNews);
+        System.assertNotEquals(null, movieNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_News__c' }));
     }
     
     @isTest
@@ -25,8 +25,8 @@ private class MovieNewsBuilderTest {
                                         FROM MBMS_Movie_News__c
                                         LIMIT 1];
         Test.stopTest();
-        
-        System.assertNotEquals(null, movieNews);
+
+        System.assertNotEquals(null, movieNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_News__c' }));
     }
     
     @isTest
@@ -37,7 +37,7 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.Name);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -48,7 +48,7 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Title__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Title__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -59,7 +59,7 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Content__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Content__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Content__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -70,8 +70,7 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assert(movieNews.MBMS_Tags__c.contains(MBMS_Constants.MBMS_TEST_STRING_VALUE));
-        System.assert(movieNews.MBMS_Tags__c.contains(';'));
+        System.assert(movieNews.MBMS_Tags__c.contains(MBMS_Constants.MBMS_TEST_STRING_VALUE), String.format(MBMS_Constants.FIELD_SHOULD_CONTAIN_PATTERN, new List<String> { 'MBMS_Tags__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -82,7 +81,7 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, movieNews.MBMS_Movie__c);
+        System.assertNotEquals(null, movieNews.MBMS_Movie__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
     }
     
     @isTest
@@ -93,6 +92,6 @@ private class MovieNewsBuilderTest {
                                         LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Image_URL__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movieNews.MBMS_Image_URL__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Image_URL__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
 }

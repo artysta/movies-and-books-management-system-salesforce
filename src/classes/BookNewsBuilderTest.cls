@@ -15,7 +15,7 @@ private class BookNewsBuilderTest {
             .build();
         Test.stopTest();
         
-        System.assertNotEquals(null, bookNews);
+        System.assertNotEquals(null, bookNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book_News__c' }));
     }
     
     @isTest
@@ -26,7 +26,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, bookNews);
+        System.assertNotEquals(null, bookNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book_News__c' }));
     }
     
     @isTest
@@ -37,7 +37,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.Name);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -48,7 +48,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Title__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Title__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -59,7 +59,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Content__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Content__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Content__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -70,8 +70,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assert(bookNews.MBMS_Tags__c.contains(MBMS_Constants.MBMS_TEST_STRING_VALUE));
-        System.assert(bookNews.MBMS_Tags__c.contains(';'));
+        System.assert(bookNews.MBMS_Tags__c.contains(MBMS_Constants.MBMS_TEST_STRING_VALUE), String.format(MBMS_Constants.FIELD_SHOULD_CONTAIN_PATTERN, new List<String> { 'MBMS_Tags__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -82,7 +81,7 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, bookNews.MBMS_Book__c);
+        System.assertNotEquals(null, bookNews.MBMS_Book__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book__c' }));
     }
     
     @isTest
@@ -93,6 +92,6 @@ private class BookNewsBuilderTest {
                                       LIMIT 1];
         Test.stopTest();
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Image_URL__c);
+        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, bookNews.MBMS_Image_URL__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Image_URL__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
     }
 }
