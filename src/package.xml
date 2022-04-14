@@ -33,6 +33,7 @@
         <members>BookTriggerUtility</members>
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
+        <members>CustomNotification</members>
         <members>MBMS_Constants</members>
         <members>MBMS_Utilities</members>
         <members>MBMS_UtilitiesTest</members>
