@@ -156,6 +156,10 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>MBMS_Status_Change_Notification</members>
+        <name>CustomNotificationType</name>
+    </types>
+    <types>
         <members>MBMS_Artist_News__c</members>
         <members>MBMS_Artist__c</members>
         <members>MBMS_Batch_Log__c</members>
