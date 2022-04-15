@@ -226,5 +226,9 @@
         <members>MBMS_Movie__c.All</members>
         <name>ListView</name>
     </types>
+    <types>
+        <members>Approvers_Queue</members>
+        <name>Queue</name>
+    </types>
     <version>53.0</version>
 </Package>
