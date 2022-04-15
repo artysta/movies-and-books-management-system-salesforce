@@ -34,6 +34,7 @@
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
         <members>CustomNotification</members>
+        <members>CustomNotificationTest</members>
         <members>MBMS_Constants</members>
         <members>MBMS_Utilities</members>
         <members>MBMS_UtilitiesTest</members>
