@@ -21,11 +21,6 @@ public class CustomNotification {
         notification.setBody(body);
         notification.setNotificationTypeId(notificationType.Id); 
         notification.setTargetId(targetRecordId);
-        
-        try {
-            notification.send(usersIds);
-        } catch (Exception e) {
-            System.debug('Notification not sent. Exception has been thrown: ' + e.getMessage());
-        }
+        notification.send(usersIds);
     }
 }
