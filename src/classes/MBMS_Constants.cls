@@ -45,4 +45,9 @@ public class MBMS_Constants {
     public final static String MBMS_CUSTOM_OBJECT_SUFFIX = '__c';
     
     public final static String MBMS_INITIAL_STATUS_COMMENT = 'This record is in the initial status.';
+    public final static String PLEASE_TAKE_ACTION = 'Please take action.';
+    public final static String RECORD_TO_APPROVE_PATTERN = 'Record {0} ({1}) is waiting for your approval.';
+
+    public final static String APPROVERS_QUEUE = 'Approvers Queue';
+    public final static String QUEUE_GROUP_TYPE = 'Queue';
 }
