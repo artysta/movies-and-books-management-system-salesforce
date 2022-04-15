@@ -10,4 +10,26 @@ public class BookTriggerUtility {
             book.MBMS_Status_Comment__c = MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT;
         }
     }
+
+    public static void notifyApprovers(List<MBMS_Book__c> books) {
+        Group approversQueue = [SELECT Id
+                                FROM Group WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
+                                AND Name = :MBMS_Constants.APPROVERS_QUEUE
+                                LIMIT 1];
+        
+        List<GroupMember> approvers = [SELECT UserOrGroupId
+                                       FROM GroupMember
+                                       WHERE GroupId = :approversQueue.Id];
+
+        for (MBMS_Book__c book : books) {
+            if (book.MBMS_Status__c == MBMS_Constants.MBMS_STATUS_APPROVED) {
+                continue;
+            }
+
+            for (GroupMember approver : approvers) {
+                CustomNotification notification = new CustomNotification(MBMS_Constants.PLEASE_TAKE_ACTION, String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { book.Name, book.Id }), new Set<String> { approver.UserOrGroupId }, book.Id);
+                notification.send();
+            }
+        }
+    }
 }
