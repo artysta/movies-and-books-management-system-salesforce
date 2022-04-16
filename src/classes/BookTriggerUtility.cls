@@ -21,15 +21,24 @@ public class BookTriggerUtility {
                                        FROM GroupMember
                                        WHERE GroupId = :approversQueue.Id];
 
+        Set<String> approversIds = new Set<String>();
+        
+        for (GroupMember approver : approvers) {
+            approversIds.add(approver.UserOrGroupId);
+        }
+        
         for (MBMS_Book__c book : books) {
             if (book.MBMS_Status__c == MBMS_Constants.MBMS_STATUS_APPROVED) {
                 continue;
             }
-
-            for (GroupMember approver : approvers) {
-                CustomNotification notification = new CustomNotification(MBMS_Constants.PLEASE_TAKE_ACTION, String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { book.Name, book.Id }), new Set<String> { approver.UserOrGroupId }, book.Id);
-                notification.send();
-            }
+            
+            new CustomNotificationBuilder().create()
+                .withTitle(MBMS_Constants.PLEASE_TAKE_ACTION)
+                .withBody(String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { book.Name, book.Id }))
+                .withDefaultNotificationType()
+                .withTargetId(book.Id)
+                .build()
+                .send(approversIds);
         }
     }
 }

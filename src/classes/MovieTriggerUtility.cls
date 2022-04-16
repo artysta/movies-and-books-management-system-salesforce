@@ -28,15 +28,24 @@ public class MovieTriggerUtility {
                                        FROM GroupMember
                                        WHERE GroupId = :approversQueue.Id];
 
+        Set<String> approversIds = new Set<String>();
+        
+        for (GroupMember approver : approvers) {
+            approversIds.add(approver.UserOrGroupId);
+        }
+        
         for (MBMS_Movie__c movie : movies) {
             if (movie.MBMS_Status__c == MBMS_Constants.MBMS_STATUS_APPROVED) {
                 continue;
             }
-
-            for (GroupMember approver : approvers) {
-                CustomNotification notification = new CustomNotification(MBMS_Constants.PLEASE_TAKE_ACTION, String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { movie.Name, movie.Id }), new Set<String> { approver.UserOrGroupId }, movie.Id);
-                notification.send();
-            }
+            
+            new CustomNotificationBuilder().create()
+                .withTitle(MBMS_Constants.PLEASE_TAKE_ACTION)
+                .withBody(String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { movie.Name, movie.Id }))
+                .withDefaultNotificationType()
+                .withTargetId(movie.Id)
+                .build()
+                .send(approversIds);
         }
     }
 }
