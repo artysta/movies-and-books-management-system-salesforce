@@ -32,5 +32,16 @@
             }
         });
         $A.enqueueAction(action);
+    },
+    shouldUserBeAbleToSeeTheComponentFunction: function (component, event, helper) {
+        var action = component.get("c.shouldUserBeAbleToSeeTheComponent");
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.userShouldBeAbleToSeeTheComponent", response.getReturnValue());
+                console.log('done');
+            }
+        });
+        $A.enqueueAction(action);
     }
 })

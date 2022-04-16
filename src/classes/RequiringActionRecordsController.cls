@@ -15,4 +15,25 @@ public with sharing class RequiringActionRecordsController {
     public static Boolean areRequiringActionRecordsAvailable() { 
         return getRequiringActionRecords().size() > 0;
     }
+
+    @AuraEnabled
+    public static Boolean shouldUserBeAbleToSeeTheComponent() {
+        List<GroupMember> groupMembers = [SELECT GroupId FROM GroupMember WHERE UserOrGroupId = :UserInfo.getUserId()];
+        
+        Set<Id> userGroupsIds = new Set<Id>();
+        
+        for (GroupMember member : groupMembers) {
+            userGroupsIds.add(member.GroupId);
+        }
+        
+        List<Group> queues = [SELECT Name FROM Group WHERE Id IN :userGroupsIds];
+        
+        for (Group queue : queues) {
+            if (queue.Name == MBMS_Constants.APPROVERS_QUEUE) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
