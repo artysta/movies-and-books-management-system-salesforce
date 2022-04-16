@@ -4,7 +4,7 @@ public class BookTriggerHandler {
         BookTriggerUtility.updateBookStatusComments(books);
     }
 
-    public void onAfterUpdate(List<MBMS_Book__c> books) {
+    public void onBeforeUpdate(List<MBMS_Book__c> books) {
         BookTriggerUtility.notifyApprovers(books);
     }
 }

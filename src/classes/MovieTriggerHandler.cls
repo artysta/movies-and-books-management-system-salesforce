@@ -11,7 +11,7 @@ public class MovieTriggerHandler {
         delete movieActors;
     }
 
-    public void onAfterUpdate(List<MBMS_Movie__c> movies) {
+    public void onBeforeUpdate(List<MBMS_Movie__c> movies) {
         MovieTriggerUtility.notifyApprovers(movies);
     }
 }

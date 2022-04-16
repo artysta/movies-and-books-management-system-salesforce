@@ -3,7 +3,7 @@ public class MoviePhotoTriggerHandler {
         MoviePhotoTriggerUtility.updateMoviePhotoStatusComments(moviePhotos);
     }
 
-    public void onAfterUpdate(List<MBMS_Movie_Photo__c> moviePhotos) {
+    public void onBeforeUpdate(List<MBMS_Movie_Photo__c> moviePhotos) {
         MoviePhotoTriggerUtility.notifyApprovers(moviePhotos);
     }
 }

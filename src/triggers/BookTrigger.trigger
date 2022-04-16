@@ -1,11 +1,13 @@
-trigger BookTrigger on MBMS_Book__c (before insert, after update) {
+trigger BookTrigger on MBMS_Book__c (before insert, before update) {
     BookTriggerHandler bookHandler = new BookTriggerHandler();
 
-    if (Trigger.isInsert && Trigger.isBefore) {
-        bookHandler.onBeforeInsert(Trigger.New);
-    }
+    if (Trigger.isBefore) {
+        if (Trigger.isInsert) {
+            bookHandler.onBeforeInsert(Trigger.New);
+        }
 
-    if (Trigger.isUpdate && Trigger.isAfter) {
-        bookHandler.onAfterUpdate(Trigger.New);
+        if (Trigger.isUpdate) {
+            bookHandler.onBeforeUpdate(Trigger.New);
+        }
     }
 }
