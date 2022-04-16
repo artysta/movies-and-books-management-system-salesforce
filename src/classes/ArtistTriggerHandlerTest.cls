@@ -49,4 +49,26 @@ private class ArtistTriggerHandlerTest {
                 
         System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, artist.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c' }));
     }
+
+    @isTest
+    static void triggerShouldUpdateRecordOwner() {
+        Test.startTest();
+        MBMS_Artist__c artist = [SELECT OwnerId
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+        update artist;
+
+        Group approversQueue = [SELECT Id
+                                FROM Group WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
+                                AND Name = :MBMS_Constants.APPROVERS_QUEUE
+                                LIMIT 1];
+        Test.stopTest();
+
+        artist = [SELECT OwnerId
+                  FROM MBMS_Artist__c
+                  LIMIT 1];
+        
+        System.assertEquals(approversQueue.Id, artist.OwnerId, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
+    }
 }

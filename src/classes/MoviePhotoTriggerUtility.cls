@@ -26,6 +26,8 @@ public class MoviePhotoTriggerUtility {
                 continue;
             }
             
+            moviePhoto.OwnerId = approversQueue.Id;
+            
             new CustomNotificationBuilder().create()
                 .withTitle(MBMS_Constants.PLEASE_TAKE_ACTION)
                 .withBody(String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { moviePhoto.Name, moviePhoto.Id }))
