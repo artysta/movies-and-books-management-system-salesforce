@@ -71,6 +71,7 @@
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
         <members>SampleDataFactory</members>
+        <members>UserBuilder</members>
         <members>VirtualBatchRunLogger</members>
         <name>ApexClass</name>
     </types>
