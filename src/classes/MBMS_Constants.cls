@@ -10,6 +10,7 @@ public class MBMS_Constants {
     public final static String COMMUNITY_NICKNAME = 'Community Nickname';
     public final static String EN_US_LOCALE = 'en_US';
     public final static String ENCODING_UTF_8 = 'UTF-8';
+    public final static String TIME_ZONE = 'GMT';
     public final static String FIELD_SHOULD_BE_PATTERN = '{0} field should be: {1}.';
     public final static String FIELD_SHOULD_CONTAIN_PATTERN = '{0} field should contain {1} value.';
     public final static String OBJECT_SHOULD_NOT_BE_NULL_PATTERN = '{0} object should not be null.';
