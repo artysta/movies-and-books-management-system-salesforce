@@ -70,6 +70,7 @@ public class UserBuilder {
             .withUsername(MBMS_Constants.USERNAME)
             .withCommunityNickname(MBMS_Constants.COMMUNITY_NICKNAME)
             .withLocaleSidKey(MBMS_Constants.EN_US_LOCALE)
+            .withTimeZoneSidKey(MBMS_Constants.TIME_ZONE)
             .withProfile(profile.Id)
             .withLanguageLocaleKey(MBMS_Constants.EN_US_LOCALE)
             .withEmailEncodingKeyString(MBMS_Constants.ENCODING_UTF_8)
