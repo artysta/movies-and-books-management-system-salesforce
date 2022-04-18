@@ -65,10 +65,10 @@ public class UserBuilder {
         
         return this
             .withLastName(MBMS_Constants.LAST_NAME)
-            .withEmail(MBMS_Constants.LAST_EMAIL)
+            .withEmail(MBMS_Constants.EMAIL)
             .withAlias(MBMS_Constants.ALIAS)
-            .withUsername(MBMS_Constants.LAST_USERNAME)
-            .withCommunityNickname(MBMS_Constants.LAST_COMMUNITY_NICKNAME)
+            .withUsername(MBMS_Constants.USERNAME)
+            .withCommunityNickname(MBMS_Constants.COMMUNITY_NICKNAME)
             .withLocaleSidKey(MBMS_Constants.EN_US_LOCALE)
             .withProfile(profile.Id)
             .withLanguageLocaleKey(MBMS_Constants.EN_US_LOCALE)

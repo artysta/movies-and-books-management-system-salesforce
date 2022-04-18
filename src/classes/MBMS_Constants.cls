@@ -5,9 +5,9 @@ public class MBMS_Constants {
     public final static String MBMS_SEMICOLON = ';';
     public final static String LAST_NAME = 'Test Last Name';
     public final static String ALIAS = 'alias';
-    public final static String LAST_EMAIL = 'test1@test.pl';
-    public final static String LAST_USERNAME = 'test1@test.pl';
-    public final static String LAST_COMMUNITY_NICKNAME = 'Community Nickname';
+    public final static String EMAIL = 'test1@test.pl';
+    public final static String USERNAME = 'test1@test.pl';
+    public final static String COMMUNITY_NICKNAME = 'Community Nickname';
     public final static String EN_US_LOCALE = 'en_US';
     public final static String ENCODING_UTF_8 = 'UTF-8';
     public final static String FIELD_SHOULD_BE_PATTERN = '{0} field should be: {1}.';
