@@ -7,52 +7,52 @@ public class UserBuilder {
     }
     
     public UserBuilder withLastName(String lastName) {
-        user.LastName = lastName;
+        this.user.LastName = lastName;
         return this;
     }
     
     public UserBuilder withEmail(String email) {
-        user.Email = email;
+        this.user.Email = email;
         return this;
     }
     
     public UserBuilder withAlias(String alias) {
-        user.Alias = alias;
+        this.user.Alias = alias;
         return this;
     }
     
     public UserBuilder withUsername(String username) {
-        user.Username = username;
+        this.user.Username = username;
         return this;
     }
     
     public UserBuilder withCommunityNickname(String communityNickname) {
-        user.CommunityNickname = communityNickname;
+        this.user.CommunityNickname = communityNickname;
         return this;
     }
     
     public UserBuilder withLocaleSidKey(String localeSidKey) {
-        user.LocaleSidKey = localeSidKey;
+        this.user.LocaleSidKey = localeSidKey;
         return this;
     }
     
     public UserBuilder withTimeZoneSidKey(String timeZoneSidKey) {
-        user.TimeZoneSidKey = timeZoneSidKey;
+        this.user.TimeZoneSidKey = timeZoneSidKey;
         return this;
     }
     
     public UserBuilder withProfile(String profileId) {
-        user.ProfileId = profileId;
+        this.user.ProfileId = profileId;
         return this;
     }
     
     public UserBuilder withLanguageLocaleKey(String languageLocaleKey) {
-        user.LanguageLocaleKey = languageLocaleKey;
+        this.user.LanguageLocaleKey = languageLocaleKey;
         return this;
     }
     
-    public UserBuilder withEmailEncodingKeyString(String emailEncodingKey) {
-        user.EmailEncodingKey = emailEncodingKey;
+    public UserBuilder withEmailEncodingKey(String emailEncodingKey) {
+        this.user.EmailEncodingKey = emailEncodingKey;
         return this;
     }
     
@@ -73,14 +73,14 @@ public class UserBuilder {
             .withTimeZoneSidKey(MBMS_Constants.TIME_ZONE)
             .withProfile(profile.Id)
             .withLanguageLocaleKey(MBMS_Constants.EN_US_LOCALE)
-            .withEmailEncodingKeyString(MBMS_Constants.ENCODING_UTF_8)
+            .withEmailEncodingKey(MBMS_Constants.ENCODING_UTF_8)
             .build();
     }
     
     public User buildWithAllFieldsAndInsert() {
         this.user = this.buildWithAllFields();
-        insert user;
-        return user;
+        insert this.user;
+        return this.user;
     }
     
     public User build() {       
