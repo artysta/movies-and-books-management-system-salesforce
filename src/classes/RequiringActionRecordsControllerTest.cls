@@ -2,21 +2,9 @@
 private class RequiringActionRecordsControllerTest {
     @testSetup
     static void testDataSetup() {
-        // TODO: Create builder or factory class for User object (+ some constant values).
-        Profile profile = [SELECT Id FROM Profile LIMIT 1];
-
-        User user = new User();
-        user.LastName = MBMS_Constants.MBMS_TEST_STRING_VALUE;
-        user.Email = 'test1@test.pl';
-        user.Alias = 'test';
-        user.Username = 'test123@test.pl';
-        user.CommunityNickname = MBMS_Constants.MBMS_TEST_STRING_VALUE;
-        user.LocaleSidKey = 'en_US';
-        user.TimeZoneSidKey = 'GMT';
-        user.ProfileId = profile.Id;
-        user.LanguageLocaleKey = 'en_US';
-        user.EmailEncodingKey = 'UTF-8';
-        insert user;
+        User user = new UserBuilder()
+            .create()
+            .buildWithAllFieldsAndInsert();
 
         new ArtistBuilder()
             .create()
