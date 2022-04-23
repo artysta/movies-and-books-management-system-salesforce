@@ -230,6 +230,17 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>All_With_Details</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>MBMS_Title__c</columns>
+        <columns>MBMS_Movie__c</columns>
+        <columns>MBMS_Tags__c</columns>
+        <columns>MBMS_Image_URL__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>All With Details</label>
+    </listViews>
     <nameField>
         <label>Movie News Name</label>
         <type>Text</type>

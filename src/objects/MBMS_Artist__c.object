@@ -295,6 +295,27 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <listViews>
+        <fullName>All_With_Details</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>MBMS_Birthplace__c</columns>
+        <columns>MBMS_Date_of_Birth__c</columns>
+        <columns>MBMS_Roles__c</columns>
+        <columns>MBMS_Status__c</columns>
+        <columns>MBMS_Status_Comment__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>All With Details</label>
+    </listViews>
+    <listViews>
+        <fullName>Approvers_Queue_MBMS_Artist</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Approvers Queue</label>
+        <queue>Approvers_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
     <nameField>
         <label>Artist Name</label>
         <type>Text</type>
