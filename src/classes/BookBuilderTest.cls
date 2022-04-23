@@ -48,7 +48,7 @@ private class BookBuilderTest {
                              LIMIT 1];
         Test.stopTest();
         
-        System.assertNotEquals(null, book.MBMS_Artist__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Name' }));
+        System.assertNotEquals(null, book.Name, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Name' }));
     }
     
     @isTest
