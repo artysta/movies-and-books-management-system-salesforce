@@ -68,6 +68,8 @@
         <members>NewsController</members>
         <members>NewsControllerTest</members>
         <members>NewsUtilitiesFuture</members>
+        <members>RemovalBatchScheduler</members>
+        <members>RemovalBatchSchedulerTest</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
         <members>SampleDataFactory</members>
