@@ -28,6 +28,9 @@ public class MBMS_Constants {
     public final static String NO_ROWS_FOR_ASSIGMENT = 'List has no rows for assignment to SObject';
     public final static String ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL = 'The element of the collection should not be null.';
     public final static String NAME_OF_SOBJECT_SHOULD_BE = 'The name of {0} sObject should be {1}.';
+    public final static String SCHEDULED_APEX = 'ScheduledApex';
+    public final static String BATCH_APEX = 'BatchApex';
+    public final static String CRON_EXP = '0 0 0 15 3 ? *';
     public final static Date MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY =  Date.today().addDays(-200);
     public final static Date MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY =  Date.today().addDays(-10);
     public final static Date MBMS_TEST_DATE_TODAY = Date.today();
