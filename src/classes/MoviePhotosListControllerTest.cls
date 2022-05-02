@@ -2,16 +2,19 @@
 private class MoviePhotosListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new MoviePhotoBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfMoviePhotos() {
-        Test.startTest();
         MBMS_Movie_Photo__c moviePhoto = [SELECT Id FROM MBMS_Movie_Photo__c LIMIT 1];
         delete moviePhoto;
+
+        Test.startTest();
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getPhotos();
         Test.stopTest();
         
@@ -30,9 +33,10 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfLatestMoviePhotos() {
-        Test.startTest();
         MBMS_Movie_Photo__c moviePhoto = [SELECT Id FROM MBMS_Movie_Photo__c LIMIT 1];
         delete moviePhoto;
+
+        Test.startTest();
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getLatestPhotos();
         Test.stopTest();
         
@@ -60,7 +64,6 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void latestPhotosListShouldBeAvailable() {
-        Test.startTest();
         List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
         List<MBMS_Movie_Photo__c> moviePhotosToInsert = new List<MBMS_Movie_Photo__c>();
         
@@ -73,6 +76,7 @@ private class MoviePhotosListControllerTest {
         
         insert moviePhotosToInsert;
         
+        Test.startTest();
         Boolean photosAvailable = MoviePhotosListController.arePhotosAvailable();
         Test.stopTest();
         
@@ -99,7 +103,6 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void requiringActionPhotosListShouldNotBeEmpty() {
-        Test.startTest();
 		List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
         
         for (MBMS_Movie_Photo__c moviePhoto : moviePhotosFromDb) {
@@ -108,6 +111,7 @@ private class MoviePhotosListControllerTest {
         
         update moviePhotosFromDb;
 
+        Test.startTest();
         List<MBMS_Movie_Photo__c> moviePhotos = MoviePhotosListController.getRequiringActionPhotos();
         Test.stopTest();
         

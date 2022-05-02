@@ -2,6 +2,7 @@
 private class ArtistsListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new ArtistBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
@@ -9,10 +10,10 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfArtists() {
-        Test.startTest();
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
         delete artist;
         
+        Test.startTest();
         List<MBMS_Artist__c> artistsList = ArtistsListController.getArtistsList();
         Test.stopTest();
         
@@ -31,11 +32,11 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionArtists() {
-        Test.startTest();
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
         artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_APPROVED;
         update artist;
         
+        Test.startTest();
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
@@ -44,7 +45,6 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionArtists() {
-        Test.startTest();
         List<MBMS_Artist__c> artistsFromDb = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artistsFromDb) {
@@ -53,6 +53,7 @@ private class ArtistsListControllerTest {
         
         update artistsFromDb;
         
+        Test.startTest();
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
@@ -62,10 +63,10 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void artistsShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
         delete artist;
         
+        Test.startTest();
         Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
         Test.stopTest();
         

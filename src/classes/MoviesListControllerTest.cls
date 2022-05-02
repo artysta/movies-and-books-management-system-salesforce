@@ -2,17 +2,19 @@
 private class MoviesListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new MovieBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfMovies() {
-        Test.startTest();
         MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
         delete movie;
         
+        Test.startTest();
         List<MBMS_Movie__c> moviesList = MoviesListController.getMoviesList();
         Test.stopTest();
         
@@ -31,11 +33,11 @@ private class MoviesListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionMovies() {
-        Test.startTest();
         MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
         movie.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_APPROVED;
         update movie;
         
+        Test.startTest();
         List<MBMS_Movie__c> moviesList = MoviesListController.getRequiringActionMovies();
         Test.stopTest();
         
@@ -44,7 +46,6 @@ private class MoviesListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionMovies() {
-        Test.startTest();
         List<MBMS_Movie__c> moviesFromDb = [SELECT Id FROM MBMS_Movie__c];
         
         for (MBMS_Movie__c movie : moviesFromDb) {
@@ -53,6 +54,7 @@ private class MoviesListControllerTest {
         
         update moviesFromDb;
         
+        Test.startTest();
         List<MBMS_Movie__c> moviesList = MoviesListController.getRequiringActionMovies();
         Test.stopTest();
         
@@ -62,10 +64,10 @@ private class MoviesListControllerTest {
     
     @isTest
     static void moviesShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
         delete movie;
         
+        Test.startTest();
         Boolean areMoviesAvailable = MoviesListController.areMoviesAvailable();
         Test.stopTest();
         

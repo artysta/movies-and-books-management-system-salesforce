@@ -2,9 +2,11 @@
 private class MoviesRemovalBatchTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new MovieBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
@@ -19,8 +21,7 @@ private class MoviesRemovalBatchTest {
         update movies;
         
         Test.startTest();
-        MoviesRemovalBatch removalBatch = new MoviesRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new MoviesRemovalBatch());
         Test.stopTest();
         
         movies = [SELECT Id FROM MBMS_Movie__c];
@@ -49,8 +50,7 @@ private class MoviesRemovalBatchTest {
         }
                 
         Test.startTest();
-        MoviesRemovalBatch removalBatch = new MoviesRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new MoviesRemovalBatch());
         Test.stopTest();
         
         movies = [SELECT Id FROM MBMS_Movie__c];
@@ -63,8 +63,7 @@ private class MoviesRemovalBatchTest {
         List<MBMS_Movie__c> movies = [SELECT Id FROM MBMS_Movie__c];
         
         Test.startTest();
-        MoviesRemovalBatch removalBatch = new MoviesRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new MoviesRemovalBatch());
         Test.stopTest();
         
         movies = [SELECT Id FROM MBMS_Movie__c];

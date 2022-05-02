@@ -2,19 +2,21 @@
 public class ArtistNewsControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new ArtistNewsBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldThrowException() {
-        Test.startTest();
         MBMS_Artist_News__c artistNews = [SELECT Id FROM MBMS_Artist_News__c LIMIT 1];
         delete artistNews;
         
         Integer exceptionsCount = 0;
         
+        Test.startTest();
         try {
             artistNews = ArtistNewsController.getLatestArtistNews();
         } catch (Exception e) {
@@ -38,8 +40,9 @@ public class ArtistNewsControllerTest {
     
     @isTest
     static void shouldReturnArtistNewsByArtistId() {
-        Test.startTest();
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+
+        Test.startTest();
         MBMS_Artist_News__c artistNews = ArtistNewsController.getLatestArtistNewsByArtistId(artist.Id);
         Test.stopTest();
         

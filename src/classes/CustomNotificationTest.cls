@@ -2,7 +2,6 @@
 private class CustomNotificationTest {
     @isTest
     static void exceptionShouldNotBeThrown() {
-        Test.startTest();
         List<User> users = [SELECT Id FROM User LIMIT 1];
         Messaging.CustomNotification notification = new CustomNotificationBuilder().create()
             .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
@@ -13,13 +12,13 @@ private class CustomNotificationTest {
 
         Integer exceptionsCount = 0;
 
+        Test.startTest();
         try {
             notification.send(new Set<String> { users[0].Id });
         } catch (Exception e) {
             exceptionsCount++;
             System.assertNotEquals(null, e, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Exception' }));
         }
-
         Test.stopTest();
 
         System.assertNotEquals(null, notification, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Messaging.CustomNotification' }));

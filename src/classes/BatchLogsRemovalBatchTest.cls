@@ -2,9 +2,11 @@
 private class BatchLogsRemovalBatchTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new BatchLogBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
@@ -16,8 +18,7 @@ private class BatchLogsRemovalBatchTest {
         }
         
         Test.startTest();
-        BatchLogsRemovalBatch removalBatch = new BatchLogsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
@@ -44,8 +45,7 @@ private class BatchLogsRemovalBatchTest {
         }
         
         Test.startTest();
-        BatchLogsRemovalBatch removalBatch = new BatchLogsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
@@ -58,8 +58,7 @@ private class BatchLogsRemovalBatchTest {
         List<MBMS_Batch_Log__c> batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];
         
         Test.startTest();
-        BatchLogsRemovalBatch removalBatch = new BatchLogsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
         batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];

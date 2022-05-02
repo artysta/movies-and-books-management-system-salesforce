@@ -2,19 +2,21 @@
 public class BookNewsControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new BookNewsBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldThrowException() {
-        Test.startTest();
         MBMS_Book_News__c bookNews = [SELECT Id FROM MBMS_Book_News__c LIMIT 1];
         delete bookNews;
         
         Integer exceptionsCount = 0;
         
+        Test.startTest();
         try {
             bookNews = BookNewsController.getLatestBookNews();
         } catch (Exception e) {
@@ -24,7 +26,7 @@ public class BookNewsControllerTest {
         }
         Test.stopTest();
         
-        System.assert(exceptionsCount > 0);
+        System.assert(exceptionsCount > 0, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'exceptionsCount', '0' }));
     }
     
     @isTest
@@ -38,8 +40,9 @@ public class BookNewsControllerTest {
     
     @isTest
     static void shouldReturnBookNewsByBookId() {
-        Test.startTest();
         MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        
+        Test.startTest();
         MBMS_Book_News__c bookNews = BookNewsController.getLatestBookNewsByBookId(book.Id);
         Test.stopTest();
         

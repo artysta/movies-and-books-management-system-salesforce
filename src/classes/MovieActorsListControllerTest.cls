@@ -2,17 +2,19 @@
 private class MovieActorsListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new MovieActorBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfMovieActors() {
-        Test.startTest();
         MBMS_Movie_Actor__c movieActor = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
         delete movieActor;
         
+        Test.startTest();
         List<MBMS_Movie_Actor__c> movieActors = MovieActorsListController.getMovieActors();
         Test.stopTest();
         
@@ -31,10 +33,10 @@ private class MovieActorsListControllerTest {
     
     @isTest
     static void artistsShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Movie_Actor__c movieActor = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
         delete movieActor;
         
+        Test.startTest();
         Boolean areMovieActorsAvailable = MovieActorsListController.areMovieActorsAvailable();
         Test.stopTest();
         

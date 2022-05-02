@@ -2,17 +2,19 @@
 private class BooksListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new BookBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfBooks() {
-        Test.startTest();
         MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
         delete book;
         
+        Test.startTest();
         List<MBMS_Book__c> booksList = BooksListController.getBooksList();
         Test.stopTest();
         
@@ -31,11 +33,11 @@ private class BooksListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionBooks() {
-        Test.startTest();
         MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
         book.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_APPROVED;
         update book;
         
+        Test.startTest();
         List<MBMS_Book__c> booksList = BooksListController.getRequiringActionBooks();
         Test.stopTest();
         
@@ -44,7 +46,6 @@ private class BooksListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionBooks() {
-        Test.startTest();
         List<MBMS_Book__c> booksFromDb = [SELECT Id FROM MBMS_Book__c];
         
         for (MBMS_Book__c book : booksFromDb) {
@@ -53,6 +54,7 @@ private class BooksListControllerTest {
         
         update booksFromDb;
         
+        Test.startTest();
         List<MBMS_Book__c> booksList = BooksListController.getRequiringActionBooks();
         Test.stopTest();
         
@@ -62,10 +64,10 @@ private class BooksListControllerTest {
     
     @isTest
     static void booksShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
         delete book;
         
+        Test.startTest();
         Boolean areBooksAvailable = BooksListController.areBooksAvailable();
         Test.stopTest();
         

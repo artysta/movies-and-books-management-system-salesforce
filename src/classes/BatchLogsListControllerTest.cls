@@ -2,17 +2,19 @@
 private class BatchLogsListControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new BatchLogBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfBatchLogs() {
-        Test.startTest();
         MBMS_Batch_Log__c batchLog = [SELECT Id FROM MBMS_Batch_Log__c LIMIT 1];
         delete batchLog;
         
+        Test.startTest();
         List<MBMS_Batch_Log__c> batchLogs = BatchLogsListController.getBatchLogs();
         Test.stopTest();
         
@@ -31,10 +33,10 @@ private class BatchLogsListControllerTest {
     
     @isTest
     static void batchLogsShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Batch_Log__c batchLog = [SELECT Id FROM MBMS_Batch_Log__c LIMIT 1];
         delete batchLog;
         
+        Test.startTest();
         Boolean areBatchLogsAvailable = BatchLogsListController.areBatchLogsAvailable();
         Test.stopTest();
         

@@ -2,19 +2,21 @@
 public class MovieNewsControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new MovieNewsBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldThrowException() {
-        Test.startTest();
         MBMS_Movie_News__c movieNews = [SELECT Id FROM MBMS_Movie_News__c LIMIT 1];
         delete movieNews;
         
         Integer exceptionsCount = 0;
         
+        Test.startTest();
         try {
             movieNews = MovieNewsController.getLatestMovieNews();
         } catch (Exception e) {
@@ -24,7 +26,7 @@ public class MovieNewsControllerTest {
         }
         Test.stopTest();
         
-        System.assert(exceptionsCount > 0, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'exceptionsCount' }));
+        System.assert(exceptionsCount > 0, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'exceptionsCount', '0' }));
     }
     
     @isTest
@@ -38,8 +40,9 @@ public class MovieNewsControllerTest {
     
     @isTest
     static void shouldReturnMovieNewsByMovieId() {
-        Test.startTest();
         MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+
+        Test.startTest();
         MBMS_Movie_News__c movieNews = MovieNewsController.getLatestMovieNewsByMovieId(movie.Id);
         Test.stopTest();
         

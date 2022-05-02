@@ -2,9 +2,11 @@
 private class ArtistsRemovalBatchTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new ArtistBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
@@ -19,8 +21,7 @@ private class ArtistsRemovalBatchTest {
         update artists;
         
         Test.startTest();
-        ArtistsRemovalBatch removalBatch = new ArtistsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
         artists = [SELECT Id FROM MBMS_Artist__c];
@@ -51,8 +52,7 @@ private class ArtistsRemovalBatchTest {
         }
         
         Test.startTest();
-        ArtistsRemovalBatch removalBatch = new ArtistsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
         artists = [SELECT Id FROM MBMS_Artist__c];
@@ -65,8 +65,7 @@ private class ArtistsRemovalBatchTest {
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         
         Test.startTest();
-        ArtistsRemovalBatch removalBatch = new ArtistsRemovalBatch();
-        Database.executeBatch(removalBatch);
+        Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
         artists = [SELECT Id FROM MBMS_Artist__c];

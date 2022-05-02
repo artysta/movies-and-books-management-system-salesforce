@@ -2,21 +2,23 @@
 private class RequiringActionRecordsControllerTest {
     @testSetup
     static void testDataSetup() {
-        User user = new UserBuilder()
+        Test.startTest();
+        new UserBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
 
         new ArtistBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void  shouldReturnEmptyListOfRequiringActionRecords() {
-        Test.startTest();
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         delete artists;
         
+        Test.startTest();
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
@@ -25,7 +27,6 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void  shouldReturnNotEmptyListOfRequiringActionRecords() {
-        Test.startTest();
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artists) {
@@ -34,6 +35,7 @@ private class RequiringActionRecordsControllerTest {
         
         update artists;
         
+        Test.startTest();
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
@@ -43,10 +45,10 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void requiringActionRecordsShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
         delete artist;
         
+        Test.startTest();
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
@@ -55,7 +57,6 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void requiringActionRecordsShouldBeAvailable() {
-        Test.startTest();
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artists) {
@@ -64,6 +65,7 @@ private class RequiringActionRecordsControllerTest {
         
         update artists;
         
+        Test.startTest();
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
@@ -72,10 +74,8 @@ private class RequiringActionRecordsControllerTest {
 
     @isTest
     static void userShouldBeAbleToSeeTheComponent() {
-        User user = [SELECT Id FROM User WHERE Email = 'test1@test.pl' LIMIT 1];
+        User user = [SELECT Id FROM User WHERE Email = :MBMS_Constants.EMAIL LIMIT 1];
         System.runAs(user) {
-            Test.startTest();
-
             Group queue = [SELECT Id
                            FROM Group
                            WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
@@ -86,6 +86,7 @@ private class RequiringActionRecordsControllerTest {
             groupMember.GroupId = queue.Id;
             insert groupMember;
 
+            Test.startTest();
             Boolean isUserAbleToSeeTheComponent = RequiringActionRecordsController.shouldUserBeAbleToSeeTheComponent();
             Test.stopTest();
 

@@ -2,17 +2,19 @@
 private class NewsControllerTest {
     @testSetup
     static void testDataSetup() {
+        Test.startTest();
         new ArtistNewsBuilder()
             .create()
             .buildWithAllFieldsAndInsert();
+        Test.stopTest();
     }
     
     @isTest
     static void shouldReturnEmptyListOfNews() {
-        Test.startTest();
         List<MBMS_Artist_News__c> artistNews = [SELECT Id FROM MBMS_Artist_News__c];
         delete artistNews;
         
+        Test.startTest();
         List<sObject> allNews = NewsController.getNews();
         Test.stopTest();
         
@@ -21,10 +23,10 @@ private class NewsControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfNews() {
-        Test.startTest();
         List<MBMS_Artist_News__c> artistNews = [SELECT Id FROM MBMS_Artist_News__c];
         update artistNews;
         
+        Test.startTest();
         List<sObject> allNews = NewsController.getNews();
         Test.stopTest();
         
@@ -34,10 +36,10 @@ private class NewsControllerTest {
     
     @isTest
     static void newsShouldNotBeAvailable() {
-        Test.startTest();
         MBMS_Artist_News__c artistNews = [SELECT Id FROM MBMS_Artist_News__c LIMIT 1];
         delete artistNews;
         
+        Test.startTest();
         Boolean areNewsAvailable = NewsController.areNewsAvailable();
         Test.stopTest();
         

@@ -2,21 +2,25 @@
 private class MBMS_UtilitiesTest {
     @isTest
     static void shouldReturnValidCustomObjectName() {
-        Test.startTest();
         MBMS_Movie_Actor__c movieActor = new MovieActorBuilder().create().buildWithAllFieldsAndInsert();
+        
+        Test.startTest();
+        String objectName = MBMS_Utilities.getObjectName(movieActor.Id);
         Test.stopTest();
         
-        System.assertEquals('Movie Actor', MBMS_Utilities.getObjectName(movieActor.Id), String.format(MBMS_Constants.NAME_OF_SOBJECT_SHOULD_BE, new List<String> { 'MBMS_Movie_Actor__c', 'Movie Actor' }));
+        System.assertEquals('Movie Actor', objectName, String.format(MBMS_Constants.NAME_OF_SOBJECT_SHOULD_BE, new List<String> { 'MBMS_Movie_Actor__c', 'Movie Actor' }));
     }
     
     @isTest
     static void shouldReturnValidStandardObjectName() {
-        Test.startTest();
         Case caseObject = new Case();
         insert caseObject;
+
+        Test.startTest();
+        String objectName = MBMS_Utilities.getObjectName(caseObject.Id);
         Test.stopTest();
         
-        System.assertEquals('Case', MBMS_Utilities.getObjectName(caseObject.Id), String.format(MBMS_Constants.NAME_OF_SOBJECT_SHOULD_BE, new List<String> { 'Case', 'Case' }));
+        System.assertEquals('Case', objectName, String.format(MBMS_Constants.NAME_OF_SOBJECT_SHOULD_BE, new List<String> { 'Case', 'Case' }));
     }
     
     @isTest
@@ -26,13 +30,13 @@ private class MBMS_UtilitiesTest {
         
         Test.startTest();
         Integer randomNumber = MBMS_Utilities.getRandomNumber(max);
+        Integer randomNumber2 = MBMS_Utilities.getRandomNumber(min, max);
+        Test.stopTest();
+
         System.assert(randomNumber >= 0, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber', '0' }));
         System.assert(randomNumber <= max, String.format(MBMS_Constants.VALUE_SHOULD_BE_LESS_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber', String.valueOf(max) }));
-        
-        randomNumber = MBMS_Utilities.getRandomNumber(min, max);
-        System.assert(randomNumber >= min, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber', String.valueOf(min) }));
-        System.assert(randomNumber <= max, String.format(MBMS_Constants.VALUE_SHOULD_BE_LESS_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber', String.valueOf(max) }));
-        Test.stopTest();
+        System.assert(randomNumber2 >= min, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber2', String.valueOf(min) }));
+        System.assert(randomNumber2 <= max, String.format(MBMS_Constants.VALUE_SHOULD_BE_LESS_OR_EQUAL_TO_PATTERN, new List<String> { 'randomNumber2', String.valueOf(max) }));
     }
     
     @isTest
