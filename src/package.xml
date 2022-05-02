@@ -220,14 +220,23 @@
     </types>
     <types>
         <members>MBMS_Artist_News__c.All</members>
+        <members>MBMS_Artist_News__c.All_With_Details</members>
         <members>MBMS_Artist__c.All</members>
+        <members>MBMS_Artist__c.All_With_Details</members>
         <members>MBMS_Batch_Log__c.All</members>
+        <members>MBMS_Batch_Log__c.All_With_Details</members>
         <members>MBMS_Book_News__c.All</members>
+        <members>MBMS_Book_News__c.All_With_Details</members>
         <members>MBMS_Book__c.All</members>
+        <members>MBMS_Book__c.All_With_Details</members>
         <members>MBMS_Movie_Actor__c.All</members>
+        <members>MBMS_Movie_Actor__c.All_With_Details</members>
         <members>MBMS_Movie_News__c.All</members>
+        <members>MBMS_Movie_News__c.All_With_Details</members>
         <members>MBMS_Movie_Photo__c.All</members>
+        <members>MBMS_Movie_Photo__c.All_With_Details</members>
         <members>MBMS_Movie__c.All</members>
+        <members>MBMS_Movie__c.All_With_Details</members>
         <name>ListView</name>
     </types>
     <types>
