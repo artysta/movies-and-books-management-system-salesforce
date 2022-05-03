@@ -47,11 +47,11 @@ public class BookNewsBuilder {
         
         return this
             .withBook(book)
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withContent(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTags(new List<String> { MBMS_Constants.MBMS_TEST_STRING_VALUE, MBMS_Constants.MBMS_TEST_STRING_VALUE })
-            .withImageURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withName(Constants.TEST_STRING_VALUE)
+            .withTitle(Constants.TEST_STRING_VALUE)
+            .withContent(Constants.TEST_STRING_VALUE)
+            .withTags(new List<String> { Constants.TEST_STRING_VALUE, Constants.TEST_STRING_VALUE })
+            .withImageURL(Constants.TEST_STRING_VALUE)
             .build();
     }
     

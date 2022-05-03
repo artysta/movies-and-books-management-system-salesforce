@@ -1,15 +1,15 @@
-public class MBMS_Utilities {
+public class Utilities {
     public static String getObjectName(Id recordId) {          
         Schema.sObjectType entityType = recordId.getSObjectType();
         
         String entityName = String.valueOf(entityType);
         
-        if (!entityName.contains(MBMS_Constants.MBMS_NAMESPACE_PREFIX) && !entityName.contains(MBMS_Constants.MBMS_CUSTOM_OBJECT_SUFFIX)) {
+        if (!entityName.contains(Constants.NAMESPACE_PREFIX) && !entityName.contains(Constants.CUSTOM_OBJECT_SUFFIX)) {
             return entityName;
         }
         
-        entityName = entityName.remove(MBMS_Constants.MBMS_NAMESPACE_PREFIX);
-        entityName = entityName.remove(MBMS_Constants.MBMS_CUSTOM_OBJECT_SUFFIX);
+        entityName = entityName.remove(Constants.NAMESPACE_PREFIX);
+        entityName = entityName.remove(Constants.CUSTOM_OBJECT_SUFFIX);
         
         if (entityName.contains('_')) {
             entityName = entityName.replace('_', ' ');

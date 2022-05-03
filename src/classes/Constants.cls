@@ -1,8 +1,6 @@
-// TODO: remove MBMS prefix from variable names.
-public class MBMS_Constants {
+public class Constants {
     // Constant values for test purposes.
-    public final static String MBMS_TEST_STRING_VALUE = 'Test String Value';
-    public final static String MBMS_SEMICOLON = ';';
+    public final static String TEST_STRING_VALUE = 'Test String Value';
     public final static String LAST_NAME = 'Test Last Name';
     public final static String ALIAS = 'alias';
     public final static String EMAIL = 'test1@test.pl';
@@ -31,31 +29,31 @@ public class MBMS_Constants {
     public final static String SCHEDULED_APEX = 'ScheduledApex';
     public final static String BATCH_APEX = 'BatchApex';
     public final static String CRON_EXP = '0 0 0 15 3 ? *';
-    public final static Date MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY =  Date.today().addDays(-200);
-    public final static Date MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY =  Date.today().addDays(-10);
-    public final static Date MBMS_TEST_DATE_TODAY = Date.today();
-    public final static Date MBMS_TEST_DATE_10_DAYS_AFTER_TODAY =  Date.today().addDays(10);
-    public final static Date MBMS_TEST_DATE_200_DAYS_AFTER_TODAY =  Date.today().addDays(200);
-    public final static Integer MBMS_TEST_NUMBER = 100;
+    public final static Date TEST_DATE_200_DAYS_BEFORE_TODAY =  Date.today().addDays(-200);
+    public final static Date TEST_DATE_10_DAYS_BEFORE_TODAY =  Date.today().addDays(-10);
+    public final static Date TEST_DATE_TODAY = Date.today();
+    public final static Date TEST_DATE_10_DAYS_AFTER_TODAY =  Date.today().addDays(10);
+    public final static Date TEST_DATE_200_DAYS_AFTER_TODAY =  Date.today().addDays(200);
+    public final static Integer TEST_NUMBER = 100;
 
     // Artist roles.
-    public final static String MBMS_ROLE_AUTHOR = 'MBMS_Author';
-    public final static String MBMS_ROLE_ACTOR = 'MBMS_Actor';
-    public final static String MBMS_ROLE_DIRECTOR = 'MBMS_Director';
-    public final static String MBMS_ROLE_WRITER = 'MBMS_Writer';
-    public final static List<String> MBMS_ROLES_LIST = new List<String> { MBMS_ROLE_AUTHOR, MBMS_ROLE_ACTOR, MBMS_ROLE_DIRECTOR, MBMS_ROLE_WRITER };
+    public final static String ROLE_AUTHOR = 'MBMS_Author';
+    public final static String ROLE_ACTOR = 'MBMS_Actor';
+    public final static String ROLE_DIRECTOR = 'MBMS_Director';
+    public final static String ROLE_WRITER = 'MBMS_Writer';
+    public final static List<String> ROLES_LIST = new List<String> { ROLE_AUTHOR, ROLE_ACTOR, ROLE_DIRECTOR, ROLE_WRITER };
 
     // Record statuses.
-    public final static String MBMS_STATUS_INITIAL = 'Initial';
-    public final static String MBMS_STATUS_APPROVED = 'Approved';
-    public final static String MBMS_STATUS_REJECTED = 'Rejected';
+    public final static String STATUS_INITIAL = 'Initial';
+    public final static String STATUS_APPROVED = 'Approved';
+    public final static String STATUS_REJECTED = 'Rejected';
     
-    public final static Date MBMS_RECORDS_RETENTION_DATE =  Date.today().addDays(-7);
+    public final static Date RECORDS_RETENTION_DATE =  Date.today().addDays(-7);
     
-    public final static String MBMS_NAMESPACE_PREFIX = 'MBMS_';
-    public final static String MBMS_CUSTOM_OBJECT_SUFFIX = '__c';
+    public final static String NAMESPACE_PREFIX = 'MBMS_';
+    public final static String CUSTOM_OBJECT_SUFFIX = '__c';
     
-    public final static String MBMS_INITIAL_STATUS_COMMENT = 'This record is in the initial status.';
+    public final static String INITIAL_STATUS_COMMENT = 'This record is in the initial status.';
     public final static String PLEASE_TAKE_ACTION = 'Please take action.';
     public final static String RECORD_TO_APPROVE_PATTERN = 'Record {0} ({1}) is waiting for your approval.';
 

@@ -15,7 +15,7 @@ private class BatchLogBuilderTest {
             .create()
             .build();
         
-        System.assertNotEquals(null, batchLog, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'batchLog' }));
+        System.assertNotEquals(null, batchLog, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'batchLog' }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class BatchLogBuilderTest {
                                       FROM MBMS_Batch_Log__c
                                       LIMIT 1];
         
-        System.assertNotEquals(null, batchLog, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'batchLog' }));
+        System.assertNotEquals(null, batchLog, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'batchLog' }));
     }
     
     @isTest
@@ -33,7 +33,7 @@ private class BatchLogBuilderTest {
                                       FROM MBMS_Batch_Log__c
                                       LIMIT 1];        
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, batchLog.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, batchLog.Name, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -42,7 +42,7 @@ private class BatchLogBuilderTest {
                                       FROM MBMS_Batch_Log__c
                                       LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, batchLog.MBMS_Message__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Message__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, batchLog.MBMS_Message__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Message__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -51,6 +51,6 @@ private class BatchLogBuilderTest {
                                       FROM MBMS_Batch_Log__c
                                       LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_NUMBER, batchLog.MBMS_Records_Processed__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Records_Processed__c', String.valueOf(MBMS_Constants.MBMS_TEST_NUMBER)}));
+        System.assertEquals(Constants.TEST_NUMBER, batchLog.MBMS_Records_Processed__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Records_Processed__c', String.valueOf(Constants.TEST_NUMBER)}));
     }
 }

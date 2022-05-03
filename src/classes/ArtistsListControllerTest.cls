@@ -17,7 +17,7 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getArtistsList();
         Test.stopTest();
         
-        System.assertEquals(0, artistsList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertEquals(0, artistsList.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
     }
     
     @isTest
@@ -26,21 +26,21 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getArtistsList();
         Test.stopTest();
         
-        System.assert(artistsList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
-        System.assertNotEquals(null, artistsList[0], MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
+        System.assert(artistsList.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertNotEquals(null, artistsList[0], Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
     }
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionArtists() {
         MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
-        artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_APPROVED;
+        artist.MBMS_Status__c = Constants.STATUS_APPROVED;
         update artist;
         
         Test.startTest();
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
-        System.assertEquals(0, artistsList.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertEquals(0, artistsList.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artistsList', '0' }));
     }
     
     @isTest
@@ -48,7 +48,7 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsFromDb = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artistsFromDb) {
-            artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+            artist.MBMS_Status__c = Constants.STATUS_REJECTED;
         }
         
         update artistsFromDb;
@@ -57,8 +57,8 @@ private class ArtistsListControllerTest {
         List<MBMS_Artist__c> artistsList = ArtistsListController.getRequiringActionArtists();
         Test.stopTest();
         
-        System.assert(artistsList.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
-        System.assertNotEquals(null, artistsList[0], MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
+        System.assert(artistsList.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'artistsList', '0' }));
+        System.assertNotEquals(null, artistsList[0], Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
     }
     
     @isTest
@@ -70,7 +70,7 @@ private class ArtistsListControllerTest {
         Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
         Test.stopTest();
         
-        System.assert(!areArtistsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areArtistsAvailable' }));
+        System.assert(!areArtistsAvailable, String.format(Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areArtistsAvailable' }));
     }
     
     @isTest
@@ -79,6 +79,6 @@ private class ArtistsListControllerTest {
         Boolean areArtistsAvailable = ArtistsListController.areArtistsAvailable();
         Test.stopTest();
         
-        System.assert(areArtistsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areArtistsAvailable' }));
+        System.assert(areArtistsAvailable, String.format(Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areArtistsAvailable' }));
     }
 }

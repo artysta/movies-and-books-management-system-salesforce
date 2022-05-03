@@ -9,7 +9,7 @@ public with sharing class MoviesListController {
     public static List<MBMS_Movie__c> getRequiringActionMovies() {
         return [SELECT Id, Name, MBMS_Status__c, CreatedDate
                 FROM MBMS_Movie__c
-                WHERE MBMS_Status__c IN (:MBMS_Constants.MBMS_STATUS_INITIAL, :MBMS_Constants.MBMS_STATUS_REJECTED)
+                WHERE MBMS_Status__c IN (:Constants.STATUS_INITIAL, :Constants.STATUS_REJECTED)
                 ORDER BY CreatedDate];
     }
     

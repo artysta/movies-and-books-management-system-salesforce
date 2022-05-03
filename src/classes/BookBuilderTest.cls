@@ -15,7 +15,7 @@ private class BookBuilderTest {
             .create()
             .build();
         
-        System.assertNotEquals(null, book, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book__c' }));
+        System.assertNotEquals(null, book, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book__c' }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertNotEquals(null, book, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book__c' }));
+        System.assertNotEquals(null, book, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Book__c' }));
     }
     
     @isTest
@@ -33,7 +33,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertNotEquals(null, book.MBMS_Artist__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist__c' }));
+        System.assertNotEquals(null, book.MBMS_Artist__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist__c' }));
     }
     
     @isTest
@@ -42,7 +42,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertNotEquals(null, book.Name, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Name' }));
+        System.assertNotEquals(null, book.Name, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Name' }));
     }
     
     @isTest
@@ -51,7 +51,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Description__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Description__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, book.MBMS_Description__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Description__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -60,7 +60,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Title__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, book.MBMS_Title__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -69,7 +69,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, book.MBMS_Cover_Image_URL__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Cover_Image_URL__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, book.MBMS_Cover_Image_URL__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Cover_Image_URL__c', Constants.TEST_STRING_VALUE }));
     }
 
     @isTest
@@ -78,7 +78,7 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
 
-        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, book.MBMS_Status__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', MBMS_Constants.MBMS_STATUS_APPROVED }));
+        System.assertEquals(Constants.STATUS_APPROVED, book.MBMS_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', Constants.STATUS_APPROVED }));
     }
     
     @isTest
@@ -87,6 +87,6 @@ private class BookBuilderTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
+        System.assertEquals(Constants.INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }
 }

@@ -7,7 +7,7 @@ public class MovieTriggerUtility {
     
     public static void updateMovieStatusComments(List<MBMS_Movie__c> movies) {
         for (MBMS_Movie__c movie : movies) {
-            movie.MBMS_Status_Comment__c = MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT;
+            movie.MBMS_Status_Comment__c = Constants.INITIAL_STATUS_COMMENT;
         }
     }
     
@@ -20,8 +20,8 @@ public class MovieTriggerUtility {
 
     public static void notifyApprovers(List<MBMS_Movie__c> movies) {
         Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
-                                AND Name = :MBMS_Constants.APPROVERS_QUEUE
+                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
+                                AND Name = :Constants.APPROVERS_QUEUE
                                 LIMIT 1];
         
         List<GroupMember> approvers = [SELECT UserOrGroupId
@@ -35,15 +35,15 @@ public class MovieTriggerUtility {
         }
         
         for (MBMS_Movie__c movie : movies) {
-            if (movie.MBMS_Status__c == MBMS_Constants.MBMS_STATUS_APPROVED) {
+            if (movie.MBMS_Status__c == Constants.STATUS_APPROVED) {
                 continue;
             }
             
             movie.OwnerId = approversQueue.Id;
             
             new CustomNotificationBuilder().create()
-                .withTitle(MBMS_Constants.PLEASE_TAKE_ACTION)
-                .withBody(String.format(MBMS_Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { movie.Name, movie.Id }))
+                .withTitle(Constants.PLEASE_TAKE_ACTION)
+                .withBody(String.format(Constants.RECORD_TO_APPROVE_PATTERN, new List<String> { movie.Name, movie.Id }))
                 .withDefaultNotificationType()
                 .withTargetId(movie.Id)
                 .build()

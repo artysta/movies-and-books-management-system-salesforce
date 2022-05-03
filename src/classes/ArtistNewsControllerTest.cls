@@ -21,12 +21,12 @@ public class ArtistNewsControllerTest {
             artistNews = ArtistNewsController.getLatestArtistNews();
         } catch (Exception e) {
             exceptionsCount++;
-            System.assertNotEquals(null, e, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Exception' }));
-            System.assertEquals(MBMS_Constants.NO_ROWS_FOR_ASSIGMENT, e.getMessage(), String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { MBMS_Constants.NO_ROWS_FOR_ASSIGMENT }));
+            System.assertNotEquals(null, e, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'Exception' }));
+            System.assertEquals(Constants.NO_ROWS_FOR_ASSIGMENT, e.getMessage(), String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { Constants.NO_ROWS_FOR_ASSIGMENT }));
         }
         Test.stopTest();
         
-        System.assert(exceptionsCount > 0, String.format(MBMS_Constants.VALUE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'exceptionsCount', '0' }));
+        System.assert(exceptionsCount > 0, String.format(Constants.VALUE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'exceptionsCount', '0' }));
     }
     
     @isTest
@@ -35,7 +35,7 @@ public class ArtistNewsControllerTest {
         MBMS_Artist_News__c artistNews = ArtistNewsController.getLatestArtistNews();
         Test.stopTest();
         
-        System.assertNotEquals(null, artistNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
+        System.assertNotEquals(null, artistNews, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
     }
     
     @isTest
@@ -46,6 +46,6 @@ public class ArtistNewsControllerTest {
         MBMS_Artist_News__c artistNews = ArtistNewsController.getLatestArtistNewsByArtistId(artist.Id);
         Test.stopTest();
         
-        System.assertNotEquals(null, artistNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
+        System.assertNotEquals(null, artistNews, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
     }
 }

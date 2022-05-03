@@ -22,7 +22,7 @@ private class RequiringActionRecordsControllerTest {
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
-        System.assertEquals(0, requiringActionRecords.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
+        System.assertEquals(0, requiringActionRecords.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
     }
     
     @isTest
@@ -30,7 +30,7 @@ private class RequiringActionRecordsControllerTest {
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artists) {
-            artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+            artist.MBMS_Status__c = Constants.STATUS_REJECTED;
         }
         
         update artists;
@@ -39,8 +39,8 @@ private class RequiringActionRecordsControllerTest {
         List<sObject> requiringActionRecords = RequiringActionRecordsController.getRequiringActionRecords();
         Test.stopTest();
         
-        System.assert(requiringActionRecords.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
-        System.assertNotEquals(null, requiringActionRecords.get(0), String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'requiringActionRecords' }));
+        System.assert(requiringActionRecords.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'requiringActionRecords', '0' }));
+        System.assertNotEquals(null, requiringActionRecords.get(0), String.format(Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'requiringActionRecords' }));
     }
     
     @isTest
@@ -52,7 +52,7 @@ private class RequiringActionRecordsControllerTest {
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
-        System.assert(!areRequiringActionRecordsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areRequiringActionRecordsAvailable' }));
+        System.assert(!areRequiringActionRecordsAvailable, String.format(Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areRequiringActionRecordsAvailable' }));
     }
     
     @isTest
@@ -60,7 +60,7 @@ private class RequiringActionRecordsControllerTest {
         List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
         
         for (MBMS_Artist__c artist : artists) {
-            artist.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+            artist.MBMS_Status__c = Constants.STATUS_REJECTED;
         }
         
         update artists;
@@ -69,17 +69,17 @@ private class RequiringActionRecordsControllerTest {
         Boolean areRequiringActionRecordsAvailable = RequiringActionRecordsController.areRequiringActionRecordsAvailable();
         Test.stopTest();
         
-        System.assert(areRequiringActionRecordsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areRequiringActionRecordsAvailable' }));
+        System.assert(areRequiringActionRecordsAvailable, String.format(Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areRequiringActionRecordsAvailable' }));
     }
 
     @isTest
     static void userShouldBeAbleToSeeTheComponent() {
-        User user = [SELECT Id FROM User WHERE Email = :MBMS_Constants.EMAIL LIMIT 1];
+        User user = [SELECT Id FROM User WHERE Email = :Constants.EMAIL LIMIT 1];
         System.runAs(user) {
             Group queue = [SELECT Id
                            FROM Group
-                           WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
-                           AND Name = :MBMS_Constants.APPROVERS_QUEUE];
+                           WHERE Type = :Constants.QUEUE_GROUP_TYPE
+                           AND Name = :Constants.APPROVERS_QUEUE];
 
             GroupMember groupMember = new GroupMember();
             groupMember.UserOrGroupId = user.Id;
@@ -90,7 +90,7 @@ private class RequiringActionRecordsControllerTest {
             Boolean isUserAbleToSeeTheComponent = RequiringActionRecordsController.shouldUserBeAbleToSeeTheComponent();
             Test.stopTest();
 
-            System.assert(isUserAbleToSeeTheComponent, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'isUserAbleToSeeTheComponent' }));
+            System.assert(isUserAbleToSeeTheComponent, String.format(Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'isUserAbleToSeeTheComponent' }));
         }
     }
 
@@ -102,7 +102,7 @@ private class RequiringActionRecordsControllerTest {
             Boolean isUserAbleToSeeTheComponent = RequiringActionRecordsController.shouldUserBeAbleToSeeTheComponent();
             Test.stopTest();
 
-            System.assert(!isUserAbleToSeeTheComponent, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'isUserAbleToSeeTheComponent' }));
+            System.assert(!isUserAbleToSeeTheComponent, String.format(Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'isUserAbleToSeeTheComponent' }));
         }
     }
 }

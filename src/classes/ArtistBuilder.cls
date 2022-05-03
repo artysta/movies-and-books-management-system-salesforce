@@ -58,16 +58,16 @@ public class ArtistBuilder {
     
     public MBMS_Artist__c buildWithAllFields() {
         return this
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withFirstName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withLastName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withBirthplace(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withDateOfBirth(MBMS_Constants.MBMS_TEST_DATE_200_DAYS_BEFORE_TODAY)
-            .withDateOfDeath(MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY)
-            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withRoles(new List<String> { MBMS_Constants.MBMS_ROLE_AUTHOR, MBMS_Constants.MBMS_ROLE_ACTOR })
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withName(Constants.TEST_STRING_VALUE)
+            .withFirstName(Constants.TEST_STRING_VALUE)
+            .withLastName(Constants.TEST_STRING_VALUE)
+            .withBirthplace(Constants.TEST_STRING_VALUE)
+            .withDateOfBirth(Constants.TEST_DATE_200_DAYS_BEFORE_TODAY)
+            .withDateOfDeath(Constants.TEST_DATE_10_DAYS_BEFORE_TODAY)
+            .withDescription(Constants.TEST_STRING_VALUE)
+            .withRoles(new List<String> { Constants.ROLE_AUTHOR, Constants.ROLE_ACTOR })
+            .withStatus(Constants.STATUS_APPROVED)
+            .withStatusComment(Constants.TEST_STRING_VALUE)
             .build();
     }
     

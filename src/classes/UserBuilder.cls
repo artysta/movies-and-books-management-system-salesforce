@@ -64,16 +64,16 @@ public class UserBuilder {
         Profile profile = [SELECT Id FROM Profile LIMIT 1];
         
         return this
-            .withLastName(MBMS_Constants.LAST_NAME)
-            .withEmail(MBMS_Constants.EMAIL)
-            .withAlias(MBMS_Constants.ALIAS)
-            .withUsername(MBMS_Constants.USERNAME)
-            .withCommunityNickname(MBMS_Constants.COMMUNITY_NICKNAME)
-            .withLocaleSidKey(MBMS_Constants.EN_US_LOCALE)
-            .withTimeZoneSidKey(MBMS_Constants.TIME_ZONE)
+            .withLastName(Constants.LAST_NAME)
+            .withEmail(Constants.EMAIL)
+            .withAlias(Constants.ALIAS)
+            .withUsername(Constants.USERNAME)
+            .withCommunityNickname(Constants.COMMUNITY_NICKNAME)
+            .withLocaleSidKey(Constants.EN_US_LOCALE)
+            .withTimeZoneSidKey(Constants.TIME_ZONE)
             .withProfile(profile.Id)
-            .withLanguageLocaleKey(MBMS_Constants.EN_US_LOCALE)
-            .withEmailEncodingKey(MBMS_Constants.ENCODING_UTF_8)
+            .withLanguageLocaleKey(Constants.EN_US_LOCALE)
+            .withEmailEncodingKey(Constants.ENCODING_UTF_8)
             .build();
     }
     

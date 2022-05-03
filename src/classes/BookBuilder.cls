@@ -52,12 +52,12 @@ public class BookBuilder {
         
         return this
             .withArtist(artist)
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withCoverImageURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withName(Constants.TEST_STRING_VALUE)
+            .withDescription(Constants.TEST_STRING_VALUE)
+            .withTitle(Constants.TEST_STRING_VALUE)
+            .withCoverImageURL(Constants.TEST_STRING_VALUE)
+            .withStatus(Constants.STATUS_APPROVED)
+            .withStatusComment(Constants.TEST_STRING_VALUE)
             .build();
     }
     

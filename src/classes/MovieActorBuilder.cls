@@ -37,7 +37,7 @@ public class MovieActorBuilder {
         return this
             .withActor(artist)
             .withMovie(movie)
-            .withCharacterName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withCharacterName(Constants.TEST_STRING_VALUE)
             .build();
     }
     

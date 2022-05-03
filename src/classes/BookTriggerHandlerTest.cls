@@ -15,7 +15,7 @@ private class BookTriggerHandlerTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(book.MBMS_Title__c, book.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', book.MBMS_Title__c }));
+        System.assertEquals(book.MBMS_Title__c, book.Name, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', book.MBMS_Title__c }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class BookTriggerHandlerTest {
                              FROM MBMS_Book__c
                              LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
+        System.assertEquals(Constants.INITIAL_STATUS_COMMENT, book.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }
 
     @isTest
@@ -32,21 +32,21 @@ private class BookTriggerHandlerTest {
         MBMS_Book__c book = [SELECT OwnerId
                              FROM MBMS_Book__c
                              LIMIT 1];
-        book.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+        book.MBMS_Status__c = Constants.STATUS_REJECTED;
 
         Test.startTest();
         update book;
         Test.stopTest();
 
         Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
-                                AND Name = :MBMS_Constants.APPROVERS_QUEUE
+                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
+                                AND Name = :Constants.APPROVERS_QUEUE
                                 LIMIT 1];
 
         book = [SELECT OwnerId
                 FROM MBMS_Book__c
                 LIMIT 1];
         
-        System.assertEquals(approversQueue.Id, book.OwnerId, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
+        System.assertEquals(approversQueue.Id, book.OwnerId, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
     }
 }

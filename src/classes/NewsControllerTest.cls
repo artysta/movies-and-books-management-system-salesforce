@@ -18,7 +18,7 @@ private class NewsControllerTest {
         List<sObject> allNews = NewsController.getNews();
         Test.stopTest();
         
-        System.assertEquals(0, allNews.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'allNews', '0' }));
+        System.assertEquals(0, allNews.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'allNews', '0' }));
     }
     
     @isTest
@@ -30,8 +30,8 @@ private class NewsControllerTest {
         List<sObject> allNews = NewsController.getNews();
         Test.stopTest();
         
-        System.assert(allNews.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'allNews', '0' }));
-        System.assertNotEquals(null, allNews.get(0), String.format(MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'allNews' }));
+        System.assert(allNews.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'allNews', '0' }));
+        System.assertNotEquals(null, allNews.get(0), String.format(Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL, new List<String> { 'allNews' }));
     }
     
     @isTest
@@ -43,7 +43,7 @@ private class NewsControllerTest {
         Boolean areNewsAvailable = NewsController.areNewsAvailable();
         Test.stopTest();
         
-        System.assert(!areNewsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areNewsAvailable' }));
+        System.assert(!areNewsAvailable, String.format(Constants.VALUE_SHOULD_BE_FALSE, new List<String> { 'areNewsAvailable' }));
     }
     
     @isTest
@@ -52,6 +52,6 @@ private class NewsControllerTest {
         Boolean areNewsAvailable = NewsController.areNewsAvailable();
         Test.stopTest();
         
-        System.assert(areNewsAvailable, String.format(MBMS_Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areNewsAvailable' }));
+        System.assert(areNewsAvailable, String.format(Constants.VALUE_SHOULD_BE_TRUE, new List<String> { 'areNewsAvailable' }));
     }
 }

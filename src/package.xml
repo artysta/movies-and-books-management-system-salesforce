@@ -35,9 +35,9 @@
         <members>BooksListControllerTest</members>
         <members>CustomNotificationBuilder</members>
         <members>CustomNotificationTest</members>
-        <members>MBMS_Constants</members>
-        <members>MBMS_Utilities</members>
-        <members>MBMS_UtilitiesTest</members>
+        <members>Constants</members>
+        <members>Utilities</members>
+        <members>UtilitiesTest</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
         <members>MovieActorTriggerHandler</members>

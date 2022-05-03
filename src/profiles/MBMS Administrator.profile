@@ -193,15 +193,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MBMS_Constants</apexClass>
+        <apexClass>Constants</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MBMS_Utilities</apexClass>
+        <apexClass>Utilities</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MBMS_UtilitiesTest</apexClass>
+        <apexClass>UtilitiesTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

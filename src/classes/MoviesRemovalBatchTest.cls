@@ -14,8 +14,8 @@ private class MoviesRemovalBatchTest {
         List<MBMS_Movie__c> movies = [SELECT Id FROM MBMS_Movie__c];
 
         for (MBMS_Movie__c movie : movies) {
-            Test.setCreatedDate(movie.Id, MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY);
-            movie.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+            Test.setCreatedDate(movie.Id, Constants.TEST_DATE_10_DAYS_BEFORE_TODAY);
+            movie.MBMS_Status__c = Constants.STATUS_REJECTED;
         }
         
         update movies;
@@ -26,7 +26,7 @@ private class MoviesRemovalBatchTest {
         
         movies = [SELECT Id FROM MBMS_Movie__c];
 
-        System.assertEquals(0, movies.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movies', '0' }));
+        System.assertEquals(0, movies.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movies', '0' }));
     }
     
     @isTest
@@ -39,14 +39,14 @@ private class MoviesRemovalBatchTest {
         for (Integer i = 0; i < 200; i++) {
             movies.add(builder
                        .create()
-                       .withStatus(MBMS_Constants.MBMS_STATUS_REJECTED)
+                       .withStatus(Constants.STATUS_REJECTED)
                        .build());
         }
         
         insert movies;
 
         for (MBMS_Movie__c movie : movies) {
-            Test.setCreatedDate(movie.Id, MBMS_Constants.MBMS_TEST_DATE_10_DAYS_BEFORE_TODAY);
+            Test.setCreatedDate(movie.Id, Constants.TEST_DATE_10_DAYS_BEFORE_TODAY);
         }
                 
         Test.startTest();
@@ -55,7 +55,7 @@ private class MoviesRemovalBatchTest {
         
         movies = [SELECT Id FROM MBMS_Movie__c];
         
-        System.assertEquals(0, movies.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movies', '0' }));
+        System.assertEquals(0, movies.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movies', '0' }));
     }
     
     @isTest
@@ -67,7 +67,7 @@ private class MoviesRemovalBatchTest {
         Test.stopTest();
         
         movies = [SELECT Id FROM MBMS_Movie__c];
-        System.assert(movies.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'movies', '0' }));
+        System.assert(movies.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'movies', '0' }));
     }
     
     private static void removeExistingMovies() {

@@ -15,7 +15,7 @@ private class MovieTriggerHandlerTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(movie.MBMS_Title__c, movie.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', movie.MBMS_Title__c }));
+        System.assertEquals(movie.MBMS_Title__c, movie.Name, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', movie.MBMS_Title__c }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class MovieTriggerHandlerTest {
         MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
         MBMS_Movie_Actor__c movieActor = new MovieActorBuilder()
             .create()
-            .withCharacterName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withCharacterName(Constants.TEST_STRING_VALUE)
             .withMovie(movie)
             .withActor(artist)
             .buildAndInsert();
@@ -35,7 +35,7 @@ private class MovieTriggerHandlerTest {
         
         List<MBMS_Movie_Actor__c> movieActors = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
         
-        System.assertEquals(0, movieActors.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movieActors', '0' }));
+        System.assertEquals(0, movieActors.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'movieActors', '0' }));
     }
     
     @isTest
@@ -44,7 +44,7 @@ private class MovieTriggerHandlerTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
+        System.assertEquals(Constants.INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }
 
     @isTest
@@ -52,21 +52,21 @@ private class MovieTriggerHandlerTest {
         MBMS_Movie__c movie = [SELECT OwnerId
                                FROM MBMS_Movie__c
                                LIMIT 1];
-        movie.MBMS_Status__c = MBMS_Constants.MBMS_STATUS_REJECTED;
+        movie.MBMS_Status__c = Constants.STATUS_REJECTED;
 
         Test.startTest();
         update movie;
         Test.stopTest();
 
         Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :MBMS_Constants.QUEUE_GROUP_TYPE
-                                AND Name = :MBMS_Constants.APPROVERS_QUEUE
+                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
+                                AND Name = :Constants.APPROVERS_QUEUE
                                 LIMIT 1];
 
         movie = [SELECT OwnerId
                  FROM MBMS_Movie__c
                  LIMIT 1];
         
-        System.assertEquals(approversQueue.Id, movie.OwnerId, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
+        System.assertEquals(approversQueue.Id, movie.OwnerId, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
     }
 }

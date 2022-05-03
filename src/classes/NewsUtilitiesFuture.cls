@@ -25,15 +25,15 @@ public class NewsUtilitiesFuture {
         List<MBMS_Movie_News__c> movieNewsList = [SELECT Id FROM MBMS_Movie_News__c WHERE Id = :newsIds];
                 
         for (MBMS_Artist_News__c artistNews : artistNewsList) {
-            artistNews.MBMS_Content__c = contentList.get(MBMS_Utilities.getRandomNumber(contentList.size() - 1));
+            artistNews.MBMS_Content__c = contentList.get(Utilities.getRandomNumber(contentList.size() - 1));
         }
         
         for (MBMS_Book_News__c bookNews : bookNewsList) {
-            bookNews.MBMS_Content__c = contentList.get(MBMS_Utilities.getRandomNumber(contentList.size() - 1));
+            bookNews.MBMS_Content__c = contentList.get(Utilities.getRandomNumber(contentList.size() - 1));
         }
         
         for (MBMS_Movie_News__c movieNews : movieNewsList) {
-            movieNews.MBMS_Content__c = contentList.get(MBMS_Utilities.getRandomNumber(contentList.size() - 1));
+            movieNews.MBMS_Content__c = contentList.get(Utilities.getRandomNumber(contentList.size() - 1));
         }
         
         update artistNewsList;

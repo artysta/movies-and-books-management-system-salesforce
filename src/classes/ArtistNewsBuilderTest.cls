@@ -13,7 +13,7 @@ private class ArtistNewsBuilderTest {
             .create()
             .build();
         
-        System.assertNotEquals(null, artistNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
+        System.assertNotEquals(null, artistNews, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
     }
     
     @isTest
@@ -22,7 +22,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertNotEquals(null, artistNews, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
+        System.assertNotEquals(null, artistNews, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
     }
     
     @isTest
@@ -31,7 +31,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artistNews.Name, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, artistNews.Name, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist_News__c' }));
     }
     
     @isTest
@@ -40,7 +40,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artistNews.MBMS_Title__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Title__c' }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, artistNews.MBMS_Title__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Title__c' }));
     }
     
     @isTest
@@ -49,7 +49,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artistNews.MBMS_Content__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Content__c' }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, artistNews.MBMS_Content__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Content__c' }));
     }
     
     @isTest
@@ -58,7 +58,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assert(artistNews.MBMS_Tags__c.contains(MBMS_Constants.MBMS_TEST_STRING_VALUE), String.format(MBMS_Constants.FIELD_SHOULD_CONTAIN_PATTERN, new List<String> { 'MBMS_Tags__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assert(artistNews.MBMS_Tags__c.contains(Constants.TEST_STRING_VALUE), String.format(Constants.FIELD_SHOULD_CONTAIN_PATTERN, new List<String> { 'MBMS_Tags__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -67,7 +67,7 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertNotEquals(null, artistNews.MBMS_Artist__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist__c' }));
+        System.assertNotEquals(null, artistNews.MBMS_Artist__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Artist__c' }));
     }
     
     @isTest
@@ -76,6 +76,6 @@ private class ArtistNewsBuilderTest {
                                           FROM MBMS_Artist_News__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, artistNews.MBMS_Image_URL__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Image_URL__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, artistNews.MBMS_Image_URL__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Image_URL__c', Constants.TEST_STRING_VALUE }));
     }
 }

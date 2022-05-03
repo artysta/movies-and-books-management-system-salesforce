@@ -56,13 +56,13 @@ public class MovieBuilder {
             .buildWithAllFieldsAndInsert();
         
         return this
-            .withDescription(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withDescription(Constants.TEST_STRING_VALUE)
             .withDirector(artist)
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withTitle(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withName(Constants.TEST_STRING_VALUE)
+            .withTitle(Constants.TEST_STRING_VALUE)
             .withWriter(artist)
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withStatus(Constants.STATUS_APPROVED)
+            .withStatusComment(Constants.TEST_STRING_VALUE)
             .withProducer(artist)
             .build();
     }

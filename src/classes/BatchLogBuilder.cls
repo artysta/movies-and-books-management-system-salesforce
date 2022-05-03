@@ -28,9 +28,9 @@ public class BatchLogBuilder {
     
     public MBMS_Batch_Log__c buildWithAllFields() {
         return this
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withMessage(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withRecordsProcessed(MBMS_Constants.MBMS_TEST_NUMBER)
+            .withName(Constants.TEST_STRING_VALUE)
+            .withMessage(Constants.TEST_STRING_VALUE)
+            .withRecordsProcessed(Constants.TEST_NUMBER)
             .build();
     }
     

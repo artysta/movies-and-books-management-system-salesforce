@@ -15,7 +15,7 @@ private class MoviePhotoBuilderTest {
             .create()
             .build();
         
-        System.assertNotEquals(null, moviePhoto, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_Photo__c' }));
+        System.assertNotEquals(null, moviePhoto, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_Photo__c' }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class MoviePhotoBuilderTest {
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];
         
-        System.assertNotEquals(null, moviePhoto, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_Photo__c' }));
+        System.assertNotEquals(null, moviePhoto, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_Photo__c' }));
     }
     
     @isTest
@@ -33,7 +33,7 @@ private class MoviePhotoBuilderTest {
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];
         
-        System.assertNotEquals(null, moviePhoto.MBMS_Movie__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
+        System.assertNotEquals(null, moviePhoto.MBMS_Movie__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
     }
 
     @isTest
@@ -42,7 +42,7 @@ private class MoviePhotoBuilderTest {
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, moviePhoto.MBMS_Photo_URL__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Photo_URL__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, moviePhoto.MBMS_Photo_URL__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Photo_URL__c', Constants.TEST_STRING_VALUE }));
     }
 
     @isTest
@@ -51,7 +51,7 @@ private class MoviePhotoBuilderTest {
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, moviePhoto.MBMS_Status__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', MBMS_Constants.MBMS_STATUS_APPROVED }));
+        System.assertEquals(Constants.STATUS_APPROVED, moviePhoto.MBMS_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', Constants.STATUS_APPROVED }));
     }
     
     @isTest
@@ -60,6 +60,6 @@ private class MoviePhotoBuilderTest {
                                           FROM MBMS_Movie_Photo__c
                                           LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, moviePhoto.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
+        System.assertEquals(Constants.INITIAL_STATUS_COMMENT, moviePhoto.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }
 }

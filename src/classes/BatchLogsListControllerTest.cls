@@ -18,7 +18,7 @@ private class BatchLogsListControllerTest {
         List<MBMS_Batch_Log__c> batchLogs = BatchLogsListController.getBatchLogs();
         Test.stopTest();
         
-        System.assertEquals(0, batchLogs.size(), String.format(MBMS_Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
+        System.assertEquals(0, batchLogs.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     @isTest
@@ -27,8 +27,8 @@ private class BatchLogsListControllerTest {
         List<MBMS_Batch_Log__c> batchLogs = BatchLogsListController.getBatchLogs();
         Test.stopTest();
         
-        System.assert(batchLogs.size() > 0, String.format(MBMS_Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'batchLogs', '0' }));
-        System.assertNotEquals(null, batchLogs[0], MBMS_Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
+        System.assert(batchLogs.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'batchLogs', '0' }));
+        System.assertNotEquals(null, batchLogs[0], Constants.ELEMENT_OF_COLLECTION_SHOULD_NOT_BE_NULL);
     }
     
     @isTest
@@ -40,7 +40,7 @@ private class BatchLogsListControllerTest {
         Boolean areBatchLogsAvailable = BatchLogsListController.areBatchLogsAvailable();
         Test.stopTest();
         
-        System.assert(!areBatchLogsAvailable, MBMS_Constants.VALUE_SHOULD_BE_FALSE);
+        System.assert(!areBatchLogsAvailable, Constants.VALUE_SHOULD_BE_FALSE);
     }
     
     @isTest
@@ -49,6 +49,6 @@ private class BatchLogsListControllerTest {
         Boolean areBatchLogsAvailable = BatchLogsListController.areBatchLogsAvailable();
         Test.stopTest();
         
-        System.assert(areBatchLogsAvailable, MBMS_Constants.VALUE_SHOULD_BE_TRUE);
+        System.assert(areBatchLogsAvailable, Constants.VALUE_SHOULD_BE_TRUE);
     }
 }

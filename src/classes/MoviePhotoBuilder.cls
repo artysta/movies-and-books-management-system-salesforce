@@ -41,11 +41,11 @@ public class MoviePhotoBuilder {
             .buildWithAllFieldsAndInsert();
         
         return this
-            .withName(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withName(Constants.TEST_STRING_VALUE)
             .withMovie(movie)
-            .withPhotoURL(MBMS_Constants.MBMS_TEST_STRING_VALUE)
-            .withStatus(MBMS_Constants.MBMS_STATUS_APPROVED)
-            .withStatusComment(MBMS_Constants.MBMS_TEST_STRING_VALUE)
+            .withPhotoURL(Constants.TEST_STRING_VALUE)
+            .withStatus(Constants.STATUS_APPROVED)
+            .withStatusComment(Constants.TEST_STRING_VALUE)
             .build();
     }
     

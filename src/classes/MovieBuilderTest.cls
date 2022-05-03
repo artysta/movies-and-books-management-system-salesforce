@@ -15,7 +15,7 @@ private class MovieBuilderTest {
             .create()
             .build();
         
-        System.assertNotEquals(null, movie, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
+        System.assertNotEquals(null, movie, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
     }
     
     @isTest
@@ -24,7 +24,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertNotEquals(null, movie, String.format(MBMS_Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
+        System.assertNotEquals(null, movie, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
     }
     
     @isTest
@@ -33,7 +33,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.MBMS_Description__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Description__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, movie.MBMS_Description__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Description__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -42,7 +42,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertNotEquals(null, movie.MBMS_Director__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Director__c' }));
+        System.assertNotEquals(null, movie.MBMS_Director__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Director__c' }));
     }
     
     @isTest
@@ -51,7 +51,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.Name, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, movie.Name, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'Name', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -60,7 +60,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_TEST_STRING_VALUE, movie.MBMS_Title__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', MBMS_Constants.MBMS_TEST_STRING_VALUE }));
+        System.assertEquals(Constants.TEST_STRING_VALUE, movie.MBMS_Title__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Title__c', Constants.TEST_STRING_VALUE }));
     }
     
     @isTest
@@ -69,7 +69,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertNotEquals(null, movie.MBMS_Writer__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Writer__c' }));
+        System.assertNotEquals(null, movie.MBMS_Writer__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Writer__c' }));
     }
     
     @isTest
@@ -78,7 +78,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_STATUS_APPROVED, movie.MBMS_Status__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', MBMS_Constants.MBMS_STATUS_APPROVED }));
+        System.assertEquals(Constants.STATUS_APPROVED, movie.MBMS_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', Constants.STATUS_APPROVED }));
     }
     
     @isTest
@@ -87,7 +87,7 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertEquals(MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c, String.format(MBMS_Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', MBMS_Constants.MBMS_INITIAL_STATUS_COMMENT }));
+        System.assertEquals(Constants.INITIAL_STATUS_COMMENT, movie.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }
     
     @isTest
@@ -96,6 +96,6 @@ private class MovieBuilderTest {
                                FROM MBMS_Movie__c
                                LIMIT 1];
         
-        System.assertNotEquals(null, movie.MBMS_Producer__c, String.format(MBMS_Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Producer__c' }));
+        System.assertNotEquals(null, movie.MBMS_Producer__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Producer__c' }));
     }
 }
