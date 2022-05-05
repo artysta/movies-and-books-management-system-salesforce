@@ -251,7 +251,7 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Previous_Status__c</fullName>
+        <fullName>MBMS_Previous_Status__c</fullName>
         <description>A field that stores a previous status of the Movie record.</description>
         <externalId>false</externalId>
         <inlineHelpText>Previous Status of the Movie record.</inlineHelpText>

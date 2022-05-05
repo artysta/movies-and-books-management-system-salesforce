@@ -161,7 +161,7 @@
         <members>MBMS_Movie__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Title__c</members>
         <members>MBMS_Movie__c.MBMS_Writer__c</members>
-        <members>MBMS_Movie__c.Previous_Status__c</members>
+        <members>MBMS_Movie__c.MBMS_Previous_Status__c</members>
         <name>CustomField</name>
     </types>
     <types>
