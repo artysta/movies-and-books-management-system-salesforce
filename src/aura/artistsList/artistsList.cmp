@@ -6,10 +6,12 @@
     <aura:handler name='init' action="{!c.areArtistsAvailableFunction}" value="{!this}"/>
     <lightning:card title="Artists List" iconName="custom:custom15">
         <aura:if isTrue="{!v.artistsAvailable}">
-            <lightning:datatable keyField="id"
-                                 data="{!v.artists}"
-                                 columns="{!v.columns}"
-                                 hideCheckboxColumn="true"/>
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.artists}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
             <aura:set attribute="else">
                 <p>There are no artist records available.</p>
             </aura:set>

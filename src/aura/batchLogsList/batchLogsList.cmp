@@ -6,10 +6,12 @@
     <aura:handler name='init' action="{!c.areBatchLogsAvailableFunction}" value="{!this}"/>
     <lightning:card title="Batch Logs" iconName="custom:custom67">
         <aura:if isTrue="{!v.batchLogsAvailable}">
-            <lightning:datatable keyField="id"
-                                 data="{!v.batchLogs}"
-                                 columns="{!v.columns}"
-                                 hideCheckboxColumn="true"/>
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.batchLogs}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
             <aura:set attribute="else">
                 <p>There are no batch log records available.</p>
             </aura:set>

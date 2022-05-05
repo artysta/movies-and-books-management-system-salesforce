@@ -6,10 +6,12 @@
     <aura:handler name='init' action="{!c.areBooksAvailableFunction}" value="{!this}"/>
     <lightning:card title="Books List" iconName="custom:custom55">
         <aura:if isTrue="{!v.booksAvailable}">
-            <lightning:datatable keyField="id"
-                                 data="{!v.books}"
-                                 columns="{!v.columns}"
-                                 hideCheckboxColumn="true"/>
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.books}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
             <aura:set attribute="else">
                 <p>There are no book records available.</p>
             </aura:set>

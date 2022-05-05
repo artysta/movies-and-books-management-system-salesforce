@@ -6,10 +6,12 @@
     <aura:handler name='init' action="{!c.areMoviesAvailableFunction}" value="{!this}"/>
     <lightning:card title="Movies List" iconName="custom:custom100">
         <aura:if isTrue="{!v.moviesAvailable}">
-            <lightning:datatable keyField="id"
-                                 data="{!v.movies}"
-                                 columns="{!v.columns}"
-                                 hideCheckboxColumn="true"/>
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.movies}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
             <aura:set attribute="else">
                 <p>There are no movie records available.</p>
             </aura:set>

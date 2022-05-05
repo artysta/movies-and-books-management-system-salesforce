@@ -6,10 +6,12 @@
     <aura:handler name='init' action="{!c.areNewsAvailableFunction}" value="{!this}"/>
     <lightning:card title="Lates News List" iconName="custom:custom15">
         <aura:if isTrue="{!v.newsAvailable}">
-            <lightning:datatable keyField="id"
-                                 data="{!v.sObjects}"
-                                 columns="{!v.columns}"
-                                 hideCheckboxColumn="true"/>
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.sObjects}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
             <aura:set attribute="else">
                 <p>There are no news records available.</p>
             </aura:set>
