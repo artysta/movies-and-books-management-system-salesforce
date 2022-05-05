@@ -118,6 +118,7 @@
         <members>MBMS_Artist__c.MBMS_Description__c</members>
         <members>MBMS_Artist__c.MBMS_First_Name__c</members>
         <members>MBMS_Artist__c.MBMS_Last_Name__c</members>
+        <members>MBMS_Artist__c.MBMS_Previous_Status__c</members>
         <members>MBMS_Artist__c.MBMS_Roles__c</members>
         <members>MBMS_Artist__c.MBMS_Status_Comment__c</members>
         <members>MBMS_Artist__c.MBMS_Status__c</members>
@@ -134,6 +135,7 @@
         <members>MBMS_Book__c.MBMS_Cover_Image_URL__c</members>
         <members>MBMS_Book__c.MBMS_Cover_Image__c</members>
         <members>MBMS_Book__c.MBMS_Description__c</members>
+        <members>MBMS_Book__c.MBMS_Previous_Status__c</members>
         <members>MBMS_Book__c.MBMS_Status_Comment__c</members>
         <members>MBMS_Book__c.MBMS_Status__c</members>
         <members>MBMS_Book__c.MBMS_Title__c</members>
@@ -149,6 +151,7 @@
         <members>MBMS_Movie_Photo__c.MBMS_Movie__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Photo_URL__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Photo__c</members>
+        <members>MBMS_Movie_Photo__c.MBMS_Previous_Status__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Status_Comment__c</members>
         <members>MBMS_Movie_Photo__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Description__c</members>
@@ -158,6 +161,7 @@
         <members>MBMS_Movie__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Title__c</members>
         <members>MBMS_Movie__c.MBMS_Writer__c</members>
+        <members>MBMS_Movie__c.Previous_Status__c</members>
         <name>CustomField</name>
     </types>
     <types>

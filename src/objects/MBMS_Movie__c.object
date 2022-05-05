@@ -250,6 +250,20 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Previous_Status__c</fullName>
+        <description>A field that stores a previous status of the Movie record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Previous Status of the Movie record.</inlineHelpText>
+        <label>Previous Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>MBMS_Status_Values</valueSetName>
+        </valueSet>
+    </fields>
     <label>Movie</label>
     <listViews>
         <fullName>All</fullName>
@@ -268,15 +282,6 @@
         <columns>MBMS_Status_Comment__c</columns>
         <filterScope>Mine</filterScope>
         <label>All With Details</label>
-    </listViews>
-    <listViews>
-        <fullName>Approvers_Queue_MBMS_Movie</fullName>
-        <filterScope>Queue</filterScope>
-        <label>Approvers Queue</label>
-        <queue>Approvers_Queue</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
     </listViews>
     <nameField>
         <label>Movie Name</label>
