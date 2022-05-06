@@ -5,6 +5,12 @@ public class MoviePhotoTriggerUtility {
         }
     }
 
+    public static void updatePreviousStatus(List<MBMS_Movie_Photo__c> oldMoviePhotos, List<MBMS_Movie_Photo__c> newMoviePhotos) {
+        for (Integer i = 0; i < newMoviePhotos.size(); i++) {
+            newMoviePhotos[i].MBMS_Previous_Status__c = oldMoviePhotos[i].MBMS_Status__c;
+        }
+    }
+
     public static void notifyApprovers(List<MBMS_Movie_Photo__c> moviePhotos) {
         Group approversQueue = [SELECT Id
                                 FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
@@ -22,6 +28,10 @@ public class MoviePhotoTriggerUtility {
         }
         
         for (MBMS_Movie_Photo__c moviePhoto : moviePhotos) {
+            if (moviePhoto.MBMS_Status__c == moviePhoto.MBMS_Previous_Status__c) {
+                continue;
+            }
+
             if (moviePhoto.MBMS_Status__c == Constants.STATUS_APPROVED) {
                 continue;
             }

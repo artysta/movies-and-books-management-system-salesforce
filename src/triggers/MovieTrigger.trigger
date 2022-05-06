@@ -11,7 +11,7 @@ trigger MovieTrigger on MBMS_Movie__c (before insert, before delete, before upda
         }
 
         if (Trigger.isUpdate) {
-            movieHandler.onBeforeUpdate(Trigger.New);
+            movieHandler.onBeforeUpdate(Trigger.Old, Trigger.New);
         }
     }
 }

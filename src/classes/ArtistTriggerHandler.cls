@@ -8,7 +8,8 @@ public class ArtistTriggerHandler {
         ArtistTriggerUtility.removeRelatedMovieActors(artists);
     }
 
-    public void onBeforeUpdate(List<MBMS_Artist__c> artists) {
-        ArtistTriggerUtility.notifyApprovers(artists);
+    public void onBeforeUpdate(List<MBMS_Artist__c> oldArtists, List<MBMS_Artist__c> newArtists) {
+        ArtistTriggerUtility.updatePreviousStatus(oldArtists, newArtists);
+        ArtistTriggerUtility.notifyApprovers(newArtists);
     }
 }

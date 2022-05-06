@@ -10,6 +10,12 @@ public class ArtistTriggerUtility {
             artist.MBMS_Status_Comment__c = Constants.INITIAL_STATUS_COMMENT;
         }
     }
+
+    public static void updatePreviousStatus(List<MBMS_Artist__c> oldArtists, List<MBMS_Artist__c> newArtists) {
+        for (Integer i = 0; i < newArtists.size(); i++) {
+            newArtists[i].MBMS_Previous_Status__c = oldArtists[i].MBMS_Status__c;
+        }
+    }
     
     public static void removeRelatedMovieActors(List<MBMS_Artist__c> artists) {
         Set<Id> artistIds = (new Map<Id, MBMS_Artist__c>(artists)).keySet();
@@ -35,10 +41,14 @@ public class ArtistTriggerUtility {
         }
         
         for (MBMS_Artist__c artist : artists) {
+            if (artist.MBMS_Status__c == artist.MBMS_Previous_Status__c) {
+                continue;
+            }
+
             if (artist.MBMS_Status__c == Constants.STATUS_APPROVED) {
                 continue;
             }
-            
+
             artist.OwnerId = approversQueue.Id;
 
             new CustomNotificationBuilder().create()

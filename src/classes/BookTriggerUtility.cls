@@ -11,6 +11,12 @@ public class BookTriggerUtility {
         }
     }
 
+    public static void updatePreviousStatus(List<MBMS_Book__c> oldBooks, List<MBMS_Book__c> newBooks) {
+        for (Integer i = 0; i < newBooks.size(); i++) {
+            newBooks[i].MBMS_Previous_Status__c = oldBooks[i].MBMS_Status__c;
+        }
+    }
+
     public static void notifyApprovers(List<MBMS_Book__c> books) {
         Group approversQueue = [SELECT Id
                                 FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
@@ -28,6 +34,10 @@ public class BookTriggerUtility {
         }
         
         for (MBMS_Book__c book : books) {
+            if (book.MBMS_Status__c == book.MBMS_Previous_Status__c) {
+                continue;
+            }
+
             if (book.MBMS_Status__c == Constants.STATUS_APPROVED) {
                 continue;
             }

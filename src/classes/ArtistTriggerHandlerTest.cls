@@ -71,4 +71,23 @@ private class ArtistTriggerHandlerTest {
         
         System.assertEquals(approversQueue.Id, artist.OwnerId, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
     }
+
+    @isTest
+    static void triggerShouldUpdatePreviousStatus() {
+        MBMS_Artist__c artist = [SELECT MBMS_Status__c
+                                 FROM MBMS_Artist__c
+                                 LIMIT 1];
+        String expectedPreviousStatus = artist.MBMS_Status__c;
+        artist.MBMS_Status__c = Constants.STATUS_REJECTED;
+
+        Test.startTest();
+        update artist;
+        Test.stopTest();
+
+        artist = [SELECT MBMS_Previous_Status__c
+                  FROM MBMS_Artist__c
+                  LIMIT 1];
+        
+        System.assertEquals(expectedPreviousStatus, artist.MBMS_Previous_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Previous_Status__c', expectedPreviousStatus }));
+    }
 }

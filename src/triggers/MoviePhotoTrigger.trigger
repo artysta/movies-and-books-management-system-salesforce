@@ -7,7 +7,7 @@ trigger MoviePhotoTrigger on MBMS_Movie_Photo__c (before insert, before update) 
         }
 
         if (Trigger.isUpdate) {
-            moviePhotoHandler.onBeforeUpdate(Trigger.New);
+            moviePhotoHandler.onBeforeUpdate(Trigger.Old, Trigger.New);
         }
     }
 }

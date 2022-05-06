@@ -69,4 +69,23 @@ private class MovieTriggerHandlerTest {
         
         System.assertEquals(approversQueue.Id, movie.OwnerId, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
     }
+
+    @isTest
+    static void triggerShouldUpdatePreviousStatus() {
+        MBMS_Movie__c movie = [SELECT MBMS_Status__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        String expectedPreviousStatus = movie.MBMS_Status__c;
+        movie.MBMS_Status__c = Constants.STATUS_REJECTED;
+
+        Test.startTest();
+        update movie;
+        Test.stopTest();
+
+        movie = [SELECT MBMS_Previous_Status__c
+                 FROM MBMS_Movie__c
+                 LIMIT 1];
+        
+        System.assertEquals(expectedPreviousStatus, movie.MBMS_Previous_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Previous_Status__c', expectedPreviousStatus }));
+    }
 }

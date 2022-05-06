@@ -10,6 +10,12 @@ public class MovieTriggerUtility {
             movie.MBMS_Status_Comment__c = Constants.INITIAL_STATUS_COMMENT;
         }
     }
+
+    public static void updatePreviousStatus(List<MBMS_Movie__c> oldMovies, List<MBMS_Movie__c> newMovies) {
+        for (Integer i = 0; i < newMovies.size(); i++) {
+            newMovies[i].MBMS_Previous_Status__c = oldMovies[i].MBMS_Status__c;
+        }
+    }
     
     public static void removeRelatedMovieActors(List<MBMS_Movie__c> movies) {
         Set<Id> movieIds = (new Map<Id, MBMS_Movie__c>(movies)).keySet();
@@ -35,6 +41,10 @@ public class MovieTriggerUtility {
         }
         
         for (MBMS_Movie__c movie : movies) {
+            if (movie.MBMS_Status__c == movie.MBMS_Previous_Status__c) {
+                continue;
+            }
+
             if (movie.MBMS_Status__c == Constants.STATUS_APPROVED) {
                 continue;
             }

@@ -7,7 +7,7 @@ trigger BookTrigger on MBMS_Book__c (before insert, before update) {
         }
 
         if (Trigger.isUpdate) {
-            bookHandler.onBeforeUpdate(Trigger.New);
+            bookHandler.onBeforeUpdate(Trigger.Old, Trigger.New);
         }
     }
 }

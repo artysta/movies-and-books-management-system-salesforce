@@ -6,12 +6,12 @@ trigger ArtistTrigger on MBMS_Artist__c (before insert, before delete, before up
             artistHandler.onBeforeInsert(Trigger.New);
         }
 
-        if (Trigger.isUpdate) {
-            artistHandler.onBeforeUpdate(Trigger.New);
+        if (Trigger.isDelete) {
+            artistHandler.onBeforeDelete(Trigger.Old);
         }
-    }
 
-    if (Trigger.isDelete) {
-        artistHandler.onBeforeDelete(Trigger.Old);
+        if (Trigger.isUpdate) {
+            artistHandler.onBeforeUpdate(Trigger.Old, Trigger.New);
+        }
     }
 }

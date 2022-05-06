@@ -49,4 +49,23 @@ private class BookTriggerHandlerTest {
         
         System.assertEquals(approversQueue.Id, book.OwnerId, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'OwnerId', approversQueue.Id }));
     }
+
+    @isTest
+    static void triggerShouldUpdatePreviousStatus() {
+        MBMS_Book__c book = [SELECT MBMS_Status__c
+                             FROM MBMS_Book__c
+                             LIMIT 1];
+        String expectedPreviousStatus = book.MBMS_Status__c;
+        book.MBMS_Status__c = Constants.STATUS_REJECTED;
+
+        Test.startTest();
+        update book;
+        Test.stopTest();
+
+        book = [SELECT MBMS_Previous_Status__c
+                FROM MBMS_Book__c
+                LIMIT 1];
+        
+        System.assertEquals(expectedPreviousStatus, book.MBMS_Previous_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Previous_Status__c', expectedPreviousStatus }));
+    }
 }
