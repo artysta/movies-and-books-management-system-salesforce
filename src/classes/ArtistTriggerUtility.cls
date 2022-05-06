@@ -25,14 +25,8 @@ public class ArtistTriggerUtility {
     }
     
     public static void notifyApprovers(List<MBMS_Artist__c> artists) {
-        Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
-                                AND Name = :Constants.APPROVERS_QUEUE
-                                LIMIT 1];
-        
-        List<GroupMember> approvers = [SELECT UserOrGroupId
-                                       FROM GroupMember
-                                       WHERE GroupId = :approversQueue.Id];
+        Group approversQueue = SObjectsSelector.getApproversQueue();
+        List<GroupMember> approvers = SObjectsSelector.getGroupMembersByGroupId(approversQueue.Id);
         
         Set<String> approversIds = new Set<String>();
         

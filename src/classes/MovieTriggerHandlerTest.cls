@@ -58,10 +58,7 @@ private class MovieTriggerHandlerTest {
         update movie;
         Test.stopTest();
 
-        Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
-                                AND Name = :Constants.APPROVERS_QUEUE
-                                LIMIT 1];
+        Group approversQueue = SObjectsSelector.getApproversQueue();
 
         movie = [SELECT OwnerId
                  FROM MBMS_Movie__c

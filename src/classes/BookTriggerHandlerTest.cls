@@ -38,10 +38,7 @@ private class BookTriggerHandlerTest {
         update book;
         Test.stopTest();
 
-        Group approversQueue = [SELECT Id
-                                FROM Group WHERE Type = :Constants.QUEUE_GROUP_TYPE
-                                AND Name = :Constants.APPROVERS_QUEUE
-                                LIMIT 1];
+        Group approversQueue = SObjectsSelector.getApproversQueue();
 
         book = [SELECT OwnerId
                 FROM MBMS_Book__c

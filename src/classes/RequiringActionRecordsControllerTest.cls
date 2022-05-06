@@ -76,10 +76,7 @@ private class RequiringActionRecordsControllerTest {
     static void userShouldBeAbleToSeeTheComponent() {
         User user = [SELECT Id FROM User WHERE Email = :Constants.EMAIL LIMIT 1];
         System.runAs(user) {
-            Group queue = [SELECT Id
-                           FROM Group
-                           WHERE Type = :Constants.QUEUE_GROUP_TYPE
-                           AND Name = :Constants.APPROVERS_QUEUE];
+            Group queue = SObjectsSelector.getApproversQueue();
 
             GroupMember groupMember = new GroupMember();
             groupMember.UserOrGroupId = user.Id;
