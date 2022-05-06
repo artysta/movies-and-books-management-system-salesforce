@@ -72,6 +72,8 @@
         <members>RemovalBatchSchedulerTest</members>
         <members>RequiringActionRecordsController</members>
         <members>RequiringActionRecordsControllerTest</members>
+        <members>SObjectsSelector</members>
+        <members>SObjectsSelectorTest</members>
         <members>SampleDataFactory</members>
         <members>UserBuilder</members>
         <members>UserBuilderTest</members>
