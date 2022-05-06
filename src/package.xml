@@ -33,11 +33,9 @@
         <members>BookTriggerUtility</members>
         <members>BooksListController</members>
         <members>BooksListControllerTest</members>
+        <members>Constants</members>
         <members>CustomNotificationBuilder</members>
         <members>CustomNotificationTest</members>
-        <members>Constants</members>
-        <members>Utilities</members>
-        <members>UtilitiesTest</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
         <members>MovieActorTriggerHandler</members>
@@ -77,6 +75,8 @@
         <members>SampleDataFactory</members>
         <members>UserBuilder</members>
         <members>UserBuilderTest</members>
+        <members>Utilities</members>
+        <members>UtilitiesTest</members>
         <members>VirtualBatchRunLogger</members>
         <name>ApexClass</name>
     </types>
@@ -158,12 +158,12 @@
         <members>MBMS_Movie_Photo__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Description__c</members>
         <members>MBMS_Movie__c.MBMS_Director__c</members>
+        <members>MBMS_Movie__c.MBMS_Previous_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Producer__c</members>
         <members>MBMS_Movie__c.MBMS_Status_Comment__c</members>
         <members>MBMS_Movie__c.MBMS_Status__c</members>
         <members>MBMS_Movie__c.MBMS_Title__c</members>
         <members>MBMS_Movie__c.MBMS_Writer__c</members>
-        <members>MBMS_Movie__c.MBMS_Previous_Status__c</members>
         <name>CustomField</name>
     </types>
     <types>
