@@ -3,3 +3,5 @@
 force.json
 sfdx-project.json
 .forceignore
+jsconfig.json
+/unpackaged.zip
