@@ -46,6 +46,11 @@ public class MovieBuilder {
         return this;
     }
     
+    public MovieBuilder withMainFilmingLocation(String mainFilmingLocation) {
+        this.movie.MBMS_Main_Filming_Location__c = mainFilmingLocation;
+        return this;
+    }
+    
     /*
      Should not be used in the loops due to SOQL limit - it inserts related fields.
      This method is used to create a single record (with all fields) for test purposes.
@@ -64,6 +69,7 @@ public class MovieBuilder {
             .withStatus(Constants.STATUS_APPROVED)
             .withStatusComment(Constants.TEST_STRING_VALUE)
             .withProducer(artist)
+            .withMainFilmingLocation(Constants.TEST_STRING_VALUE)
             .build();
     }
     

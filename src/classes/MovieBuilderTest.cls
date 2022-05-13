@@ -98,4 +98,13 @@ private class MovieBuilderTest {
         
         System.assertNotEquals(null, movie.MBMS_Producer__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Producer__c' }));
     }
+
+    @isTest
+    static void movieShouldHaveMainFilmingLocation() {
+        MBMS_Movie__c movie = [SELECT MBMS_Main_Filming_Location__c
+                               FROM MBMS_Movie__c
+                               LIMIT 1];
+        
+        System.assertEquals(Constants.TEST_STRING_VALUE, movie.MBMS_Main_Filming_Location__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Main_Filming_Location__c', Constants.TEST_STRING_VALUE }));
+    }
 }
