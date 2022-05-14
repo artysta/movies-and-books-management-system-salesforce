@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="LocationMapController" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer"/>
+    <aura:attribute name="errorThrown" type="Boolean"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <force:recordData aura:id="movieRecord" recordId="{!v.recordId}" targetFields="{!v.MBMS_Movie__c}" layoutType="FULL" />
+    <aura:handler name="init" action="{! c.initializeMapFunction }" value="{! this }"/>
+        <aura:if isTrue="{!v.errorThrown}">
+            <p>Error occurred: <span style="color: #FF0000">{!v.errorMessage}</span></p>
+        </aura:if>
+        <p>Id of current Movie: {!v.recordId}</p>
+        <lightning:map mapMarkers="{! v.mapMarkers }"
+                       zoomLevel="{!v.zoomLevel}" />
+</aura:component>

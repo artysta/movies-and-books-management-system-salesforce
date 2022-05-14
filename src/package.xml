@@ -36,6 +36,8 @@
         <members>Constants</members>
         <members>CustomNotificationBuilder</members>
         <members>CustomNotificationTest</members>
+        <members>LocationMapController</members>
+        <members>LocationMapControllerTest</members>
         <members>MovieActorBuilder</members>
         <members>MovieActorBuilderTest</members>
         <members>MovieActorTriggerHandler</members>
@@ -92,6 +94,7 @@
         <members>artistsList</members>
         <members>batchLogsList</members>
         <members>booksList</members>
+        <members>locationMap</members>
         <members>movieActorsList</members>
         <members>moviePhotosList</members>
         <members>moviesList</members>
