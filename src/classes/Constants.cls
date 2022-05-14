@@ -41,7 +41,8 @@ public class Constants {
     public final static String ROLE_ACTOR = 'MBMS_Actor';
     public final static String ROLE_DIRECTOR = 'MBMS_Director';
     public final static String ROLE_WRITER = 'MBMS_Writer';
-    public final static List<String> ROLES_LIST = new List<String> { ROLE_AUTHOR, ROLE_ACTOR, ROLE_DIRECTOR, ROLE_WRITER };
+    public final static String ROLE_PRODUCER = 'MBMS_Writer';
+    public final static List<String> ROLES_LIST = new List<String> { ROLE_AUTHOR, ROLE_ACTOR, ROLE_DIRECTOR, ROLE_WRITER, ROLE_PRODUCER };
 
     // Record statuses.
     public final static String STATUS_INITIAL = 'Initial';
