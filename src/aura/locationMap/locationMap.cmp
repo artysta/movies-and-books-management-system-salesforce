@@ -6,10 +6,11 @@
     <aura:attribute name="errorMessage" type="String"/>
     <force:recordData aura:id="movieRecord" recordId="{!v.recordId}" targetFields="{!v.MBMS_Movie__c}" layoutType="FULL" />
     <aura:handler name="init" action="{! c.initializeMapFunction }" value="{! this }"/>
+    <lightning:card title="Main Filming Location" iconName="custom:custom15">
         <aura:if isTrue="{!v.errorThrown}">
             <p>Error occurred: <span style="color: #FF0000">{!v.errorMessage}</span></p>
         </aura:if>
-        <p>Id of current Movie: {!v.recordId}</p>
         <lightning:map mapMarkers="{! v.mapMarkers }"
                        zoomLevel="{!v.zoomLevel}" />
+    </lightning:card>
 </aura:component>
