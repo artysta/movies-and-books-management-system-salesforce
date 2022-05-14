@@ -19,7 +19,6 @@ public class SampleDataFactory {
         MovieNewsBuilder movieNewsBuilder = new MovieNewsBuilder();
         
         // Artists.
-        
         MBMS_Artist__c quentinTarantino = artistBuilder.create()
             .withFirstName('Quentin')
             .withLastName('Tarantino')
@@ -152,16 +151,61 @@ public class SampleDataFactory {
             .build();
         artists.add(terenceWinter);
         
+        MBMS_Artist__c lawrenceBender = artistBuilder.create()
+            .withFirstName('Lawrence')
+            .withLastName('Bender')
+            .withBirthplace('New York City, New York, U.S.')
+            .withDateOfBirth(Date.newInstance(1957 , 10, 17))
+            .withDescription('Lawrence Bender (born October 17, 1957) is an American film producer. Throughout his career, Bender-produced films have received 36 Academy Award nominations, resulting in eight wins.')
+            .withRoles(new List<String> { Constants.ROLE_PRODUCER })
+            .withStatus(Constants.STATUS_INITIAL)
+            .build();
+        artists.add(lawrenceBender);
+
+        MBMS_Artist__c staceySher = artistBuilder.create()
+            .withFirstName('Stacey')
+            .withLastName('Sher')
+            .withBirthplace('New York City, U.S.')
+            .withDateOfBirth(Date.newInstance(1962 , 11, 30))
+            .withDescription('Stacey Sher (born November 30, 1962) is an American film producer.')
+            .withRoles(new List<String> { Constants.ROLE_PRODUCER })
+            .withStatus(Constants.STATUS_INITIAL)
+            .build();
+        artists.add(staceySher);
+
+        MBMS_Artist__c douglasWick = artistBuilder.create()
+            .withFirstName('Douglas')
+            .withLastName('Wick')
+            .withBirthplace('United States')
+            .withDateOfBirth(Date.newInstance(1954 , 7, 4))
+            .withDescription('Douglas Wick is an American film producer whose work includes producing Gladiator, Stuart Little, and Memoirs of a Geisha.')
+            .withRoles(new List<String> { Constants.ROLE_PRODUCER })
+            .withStatus(Constants.STATUS_INITIAL)
+            .build();
+        artists.add(douglasWick);
+
+        MBMS_Artist__c davidHeyman = artistBuilder.create()
+            .withFirstName('David')
+            .withLastName('Heyman')
+            .withBirthplace('London, England')
+            .withDateOfBirth(Date.newInstance(1961 , 26, 7))
+            .withDescription('David Jonathan Heyman (born 26 July 1961) is an English film producer and the founder of Heyday Films. Heyman secured the rights to the Harry Potter film series in 1999 and went on to produce all eight installments.')
+            .withRoles(new List<String> { Constants.ROLE_PRODUCER, Constants.ROLE_ACTOR })
+            .withStatus(Constants.STATUS_INITIAL)
+            .build();
+        artists.add(davidHeyman);
+
         insert artists;
         
         // Movies.
-        
         MBMS_Movie__c killBillVolume1 = movieBuilder.create()
             .withTitle('Kill Bill: Volume 1')
             .withDescription('Kill Bill: Volume 1 is a 2003 American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. Her journey takes her to Tokyo, where she battles the yakuza.')
             .withDirector(quentinTarantino)
             .withWriter(quentinTarantino)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('Tokyo')
+            .withProducer(lawrenceBender)
             .build();
         movies.add(killBillVolume1);
         
@@ -171,6 +215,8 @@ public class SampleDataFactory {
             .withDirector(quentinTarantino)
             .withWriter(quentinTarantino)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('Beijing')
+            .withProducer(lawrenceBender)
             .build();
         movies.add(killBillVolume2);
         
@@ -180,6 +226,8 @@ public class SampleDataFactory {
             .withDirector(quentinTarantino)
             .withWriter(quentinTarantino)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('Paris')
+            .withProducer(lawrenceBender)
             .build();
         movies.add(inglouriousBasterds);
         
@@ -189,6 +237,8 @@ public class SampleDataFactory {
             .withDirector(quentinTarantino)
             .withWriter(quentinTarantino)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('Louisiana')
+            .withProducer(staceySher)
             .build();
         movies.add(django);
         
@@ -198,6 +248,8 @@ public class SampleDataFactory {
             .withDirector(jamesMangold)
             .withWriter(jamesMangold)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('Hanover')
+            .withProducer(douglasWick)
             .build();
         movies.add(girlInterrupted);
         
@@ -207,6 +259,8 @@ public class SampleDataFactory {
             .withDirector(quentinTarantino)
             .withWriter(quentinTarantino)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('California')
+            .withProducer(davidHeyman)
             .build();
         movies.add(onceUponATimeInHollywood);
         
@@ -216,13 +270,14 @@ public class SampleDataFactory {
             .withDirector(martinScorsese)
             .withWriter(terenceWinter)
             .withStatus(Constants.STATUS_INITIAL)
+            .withMainFilmingLocation('New York')
+            .withProducer(martinScorsese)
             .build();
         movies.add(theWolfOfWallStreet);
         
         insert movies;
         
         // Books.
-        
         MBMS_Book__c harryPotter = bookBuilder.create()
             .withTitle('Harry Potter and the Philosopher\'s Stone')
             .withDescription('Harry Potter and the Philosopher\'s Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling\'s debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry.')
@@ -253,7 +308,6 @@ public class SampleDataFactory {
         insert books;
         
         // Movie Photos.
-        
         MBMS_Movie_Photo__c moviePhoto1 = moviePhotoBuilder.create()
             .withName('Sample Photo 1')
             .withMovie(killBillVolume1)
@@ -337,7 +391,6 @@ public class SampleDataFactory {
         insert moviePhotos;
         
         // Movie Actors.
-        
         MBMS_Movie_Actor__c theBride = movieActorBuilder.create()
             .withActor(umaThurman)
             .withMovie(killBillVolume1)
@@ -432,7 +485,6 @@ public class SampleDataFactory {
         insert movieActors;
         
         // News.
-        
         MBMS_Artist_News__c artistNews = new MBMS_Artist_News__c();
         MBMS_Book_News__c bookNews = new MBMS_Book_News__c();
         MBMS_Movie_News__c movieNews = new MBMS_Movie_News__c();
