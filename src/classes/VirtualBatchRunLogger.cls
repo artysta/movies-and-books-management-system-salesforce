@@ -20,4 +20,8 @@ public virtual class VirtualBatchRunLogger {
     public void incrementSuccessesCount() {
         logger.incrementSuccessesCount();
     }
+    
+    public void checkDeleteResults(List<Database.DeleteResult> deleteResults) {
+        logger.checkDeleteResults(deleteResults);
+    }
 }

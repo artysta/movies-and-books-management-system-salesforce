@@ -37,6 +37,19 @@ public virtual class BatchRunLogger {
         this.successesCount++;
     }
 
+    public void checkDeleteResults(List<Database.DeleteResult> deleteResults) {
+        for (Database.DeleteResult result : deleteResults) {
+            if (result.isSuccess()) {
+                this.incrementSuccessesCount();
+                continue;
+            }
+            
+            for (Database.Error error : result.getErrors()) {
+                this.logErrorMessage(error.getMessage());
+            }
+        }
+    }
+    
     private void incrementErrorsCount() {
         this.errorsCount++;
     }

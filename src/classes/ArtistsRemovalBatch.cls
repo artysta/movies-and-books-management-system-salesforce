@@ -15,17 +15,7 @@ public class ArtistsRemovalBatch extends VirtualBatchRunLogger implements Databa
     
     public void execute(Database.BatchableContext context, List<MBMS_Artist__c> artists) {
         List<Database.DeleteResult> deleteResults = Database.delete(artists);
-        
-        for (Database.DeleteResult result : deleteResults) {
-            if (result.isSuccess()) {
-                super.incrementSuccessesCount();
-                continue;
-            }
-            
-            for (Database.Error error : result.getErrors()) {
-                super.logErrorMessage(error.getMessage());
-            }
-        }
+        super.checkDeleteResults(deleteResults);
     }
     
     public void finish(Database.BatchableContext context) {

@@ -1,4 +1,5 @@
 public class MoviesRemovalBatch extends VirtualBatchRunLogger implements Database.Batchable<sObject>, Database.Stateful {
+    
     public MoviesRemovalBatch() {
         super(String.valueOf(MoviesRemovalBatch.class));
     }
@@ -14,17 +15,7 @@ public class MoviesRemovalBatch extends VirtualBatchRunLogger implements Databas
     
     public void execute(Database.BatchableContext context, List<MBMS_Movie__c> movies) {
         List<Database.DeleteResult> deleteResults = Database.delete(movies);
-        
-        for (Database.DeleteResult result : deleteResults) {
-            if (result.isSuccess()) {
-                incrementSuccessesCount();
-                continue;
-            }
-            
-            for (Database.Error error : result.getErrors()) {
-                logErrorMessage(error.getMessage());
-            }
-        }
+        super.checkDeleteResults(deleteResults);
     }
     
     public void finish(Database.BatchableContext context) {

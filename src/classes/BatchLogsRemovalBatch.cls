@@ -6,7 +6,6 @@ public class BatchLogsRemovalBatch extends VirtualBatchRunLogger implements Data
     
     public Database.QueryLocator start(Database.BatchableContext context) {
         super.startLogging();
-        System.debug('size: ' + [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate <= :Constants.RECORDS_RETENTION_DATE].size());
         return Database.getQueryLocator([SELECT Id
                                          FROM MBMS_Batch_Log__c
                                          WHERE CreatedDate <= :Constants.RECORDS_RETENTION_DATE]);
@@ -14,17 +13,7 @@ public class BatchLogsRemovalBatch extends VirtualBatchRunLogger implements Data
     
     public void execute(Database.BatchableContext context, List<MBMS_Batch_Log__c> batchLogs) {
         List<Database.DeleteResult> deleteResults = Database.delete(batchLogs);
-        System.debug('deleteResults.size(): ' + deleteResults.size());
-        for (Database.DeleteResult result : deleteResults) {
-            if (result.isSuccess()) {
-                super.incrementSuccessesCount();
-                continue;
-            }
-            
-            for (Database.Error error : result.getErrors()) {
-                super.logErrorMessage(error.getMessage());
-            }
-        }
+        super.checkDeleteResults(deleteResults);
     }
     
     public void finish(Database.BatchableContext context) {
