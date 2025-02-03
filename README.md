@@ -2,12 +2,14 @@
 
 ## **#1** Description
 
-**Movies & Books Management System** is a simple application which presents the capabilities of the **Salesforce** cloud platform. At the moment application allows you to manage books, movies, artists and so on.
+**Movies & Books Management System** Salesforce application was created as part of my engineering thesis. It is a simple application which presents the capabilities of the **Salesforce CRM** cloud platform. At the moment application allows you to manage books, movies, artists and so on.
 
 ## **#2** Deployment instructions
 
 To deploy and run this application on your Salesforce Organization you have to:
 
+ - install [git](https://git-scm.com/)
+ 
  - install [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
 
  - create a Hands-On Org (Trailhead Playground) and get your login credentials (it is the easiest way)
