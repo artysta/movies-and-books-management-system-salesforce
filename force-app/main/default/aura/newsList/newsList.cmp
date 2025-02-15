@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="NewsController" access="global">
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="sObjects" type="sObject[]"/>
+    <aura:attribute name="newsAvailable" type="Boolean"/>
+    <aura:handler name='init' action="{!c.getNewsFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.areNewsAvailableFunction}" value="{!this}"/>
+    <lightning:card title="Lates News List" iconName="custom:custom15">
+        <aura:if isTrue="{!v.newsAvailable}">
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.sObjects}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
+            <aura:set attribute="else">
+                <p>There are no news records available.</p>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>

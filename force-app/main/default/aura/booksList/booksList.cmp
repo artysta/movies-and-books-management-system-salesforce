@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="BooksListController" access="global">
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="books" type="MBMS_Book__c[]"/>
+    <aura:attribute name="booksAvailable" type="Boolean"/>
+    <aura:handler name='init' action="{!c.getBooks}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.areBooksAvailableFunction}" value="{!this}"/>
+    <lightning:card title="Books List" iconName="custom:custom55">
+        <aura:if isTrue="{!v.booksAvailable}">
+            <div style="height: 350px">
+                <lightning:datatable keyField="id"
+                                     data="{!v.books}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"/>
+            </div>
+            <aura:set attribute="else">
+                <p>There are no book records available.</p>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,53 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="MoviePhotosListController" access="global">
+    <aura:attribute name="photos" type="MBMS_Movie_Photo__c[]"/>
+    <aura:attribute name="photosAvailable" type="Boolean"/>
+    <aura:attribute name="minimumNumberOfPhotos" type="Integer"/>
+    <aura:handler name='init' action="{!c.getLatestPhotosFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.arePhotosAvailableFunction}" value="{!this}"/>
+    <aura:handler name='init' action="{!c.getMinimumNumberOfPhotosFunction}" value="{!this}"/>
+    <lightning:card title="Latest Movie Photos" iconName="custom:custom38">
+        <aura:if isTrue="{!v.photosAvailable}">
+            <div class="mbms-photo-row">
+                <div class="mbms-photo-column">
+                    <div class="div-photo">
+                        <a href="{!'/' + v.photos[0].Id}">
+                            <img src="{!v.photos[0].MBMS_Photo_URL__c}" alt="{!'Photo of ' + v.photos[0].MBMS_Movie__r.MBMS_Title__c + ' movie.'}"/>
+                        </a>
+                        <p>
+                            <a href="{!'/' + v.photos[0].MBMS_Movie__r.Id}">{!v.photos[0].MBMS_Movie__r.MBMS_Title__c}</a>
+                        </p>
+                    </div>
+                    <div class="div-photo">
+                        <a href="{!'/' + v.photos[1].Id}">
+                            <img src="{!v.photos[1].MBMS_Photo_URL__c}" alt="{!'Photo of ' + v.photos[1].MBMS_Movie__r.MBMS_Title__c + ' movie.'}"/>
+                        </a>
+                        <p>
+                            <a href="{!'/' + v.photos[1].MBMS_Movie__r.Id}">{!v.photos[1].MBMS_Movie__r.MBMS_Title__c}</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="mbms-photo-column">
+                    <div class="div-photo">
+                        <a href="{!'/' + v.photos[2].Id}">
+                            <img src="{!v.photos[2].MBMS_Photo_URL__c}" alt="{!'Photo of ' + v.photos[2].MBMS_Movie__r.MBMS_Title__c + ' movie.'}"/>
+                        </a>
+                        <p>
+                            <a href="{!'/' + v.photos[2].MBMS_Movie__r.Id}">{!v.photos[2].MBMS_Movie__r.MBMS_Title__c}</a>
+                        </p>
+                    </div>
+                    <div class="div-photo">
+                        <a href="{!'/' + v.photos[3].Id}">
+                            <img src="{!v.photos[3].MBMS_Photo_URL__c}" alt="{!'Photo of ' + v.photos[3].MBMS_Movie__r.MBMS_Title__c + ' movie.'}"/>
+                        </a>
+                        <p>
+                            <a href="{!'/' + v.photos[3].MBMS_Movie__r.Id}">{!v.photos[3].MBMS_Movie__r.MBMS_Title__c}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <p>The latest photos are not available. There have to be at least {!v.minimumNumberOfPhotos} photos.</p>
+            </aura:set>
+        </aura:if> 
+    </lightning:card>
+</aura:component>

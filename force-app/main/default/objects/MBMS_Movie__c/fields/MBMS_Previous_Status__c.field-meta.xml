@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Previous_Status__c</fullName>
+    <description>A field that stores a previous status of the Movie record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Previous Status of the Movie record.</inlineHelpText>
+    <label>Previous Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>MBMS_Status_Values</valueSetName>
+    </valueSet>
+</CustomField>

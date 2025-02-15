@@ -1,0 +1,33 @@
+.THIS .mbms-photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.THIS .mbms-photo-column {
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.THIS .mbms-photo-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.THIS .mbms-photo-title {
+    width: 33%;
+    float: left
+}
+
+.THIS .div-photo {
+    margin: 10px;
+    text-align: center;
+}
+
+.THIS img {
+    transition: transform .4s;
+}
+
+.THIS img:hover {
+    transform: scale(0.97);
+}

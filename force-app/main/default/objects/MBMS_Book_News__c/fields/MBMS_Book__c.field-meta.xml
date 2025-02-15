@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Book__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>A field that stores a lookup to the Book object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Book.</inlineHelpText>
+    <label>Book</label>
+    <referenceTo>MBMS_Book__c</referenceTo>
+    <relationshipLabel>Book News</relationshipLabel>
+    <relationshipName>Book_News</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

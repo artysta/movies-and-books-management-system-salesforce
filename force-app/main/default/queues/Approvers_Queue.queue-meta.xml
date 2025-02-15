@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Approvers Queue</name>
+    <queueSobject>
+        <sobjectType>MBMS_Artist__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>MBMS_Book__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>MBMS_Movie_Photo__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>MBMS_Movie__c</sobjectType>
+    </queueSobject>
+</Queue>
