@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_With_Details</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>MBMS_Birthplace__c</columns>
+    <columns>MBMS_Date_of_Birth__c</columns>
+    <columns>MBMS_Roles__c</columns>
+    <columns>MBMS_Status__c</columns>
+    <columns>MBMS_Status_Comment__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>All With Details</label>
+</ListView>

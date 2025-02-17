@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approvers_Queue_MBMS_Movie</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Approvers Queue</label>
+    <queue>Approvers_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

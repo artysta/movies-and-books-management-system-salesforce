@@ -25,29 +25,23 @@ To deploy and run this application on your Salesforce Organization you have to:
     ```console
     cd movies-and-books-management-system
     ```
-    
- - create a sfdx project
-
-    ```console
-    sfdx force:project:create -n ./
-    ```
  
  - authorize your org
 
     ```console
-    sfdx auth:web:login -a mbms-app
+    sf org login web --alias mbms-app
     ```
 
  - set org as a default one
 
     ```console
-    sfdx force:config:set defaultusername=mbms-app
+    sf config set target-org mbms-app
     ```
 
- - deploy the application files
+ - start deployment
  
     ```console
-    sfdx force:mdapi:deploy --deploydir ./src
+    sf project deploy start
     ```
 
 ## **#3** Sample Data

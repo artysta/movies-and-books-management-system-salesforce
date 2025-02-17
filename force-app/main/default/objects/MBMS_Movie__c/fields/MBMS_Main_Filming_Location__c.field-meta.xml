@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Main_Filming_Location__c</fullName>
+    <description>A field that stores a main filming location of the Movie.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Main filming location of the movie.</inlineHelpText>
+    <label>Main Filming Location</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

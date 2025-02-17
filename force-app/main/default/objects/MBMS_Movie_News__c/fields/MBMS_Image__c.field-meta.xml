@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Image__c</fullName>
+    <description>A formula field that displays news image image or string value (if the image URL is not available).</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(MBMS_Image_URL__c)), IMAGE(MBMS_Image_URL__c, &apos;Image&apos;), &quot;News image is not available.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>News image.</inlineHelpText>
+    <label>Image</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

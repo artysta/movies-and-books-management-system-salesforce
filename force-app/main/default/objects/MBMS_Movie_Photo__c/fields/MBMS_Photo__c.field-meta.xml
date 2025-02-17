@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Photo__c</fullName>
+    <description>A formula field that displays Book cover image or string value (if the cover image URL is not available).</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(MBMS_Photo_URL__c)), IMAGE(MBMS_Photo_URL__c, &apos;Photo&apos;), &quot;Photo is not available.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Photo of the Movie.</inlineHelpText>
+    <label>Photo</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Artist__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>A field that stores a lookup to the Artist object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Artist.</inlineHelpText>
+    <label>Artist</label>
+    <referenceTo>MBMS_Artist__c</referenceTo>
+    <relationshipLabel>Movie Actors</relationshipLabel>
+    <relationshipName>Movie_Actors</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

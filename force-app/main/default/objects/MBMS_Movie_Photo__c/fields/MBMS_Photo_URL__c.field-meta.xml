@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MBMS_Photo_URL__c</fullName>
+    <description>A field that stores a Photo URL.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Photo URL.</inlineHelpText>
+    <label>Photo URL</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>
