@@ -4,7 +4,7 @@
 > ## **#1** Description
 > **Movies & Books Management System** Salesforce application was created as part of my engineering thesis. It is a simple application which presents the capabilities of the **Salesforce CRM** cloud platform. At the moment application allows you to manage books, movies, artists and so on.
 
-> [!note]
+> [!important]
 > ## **#2** Deployment instructions
 > To deploy and run this application on your Salesforce Organization you have to:
 > - install [git](https://git-scm.com/)
@@ -35,7 +35,7 @@
 >   sf project deploy start --test-level RunLocalTests
 >   ```
 
-> [!note]
+> [!tip]
 > ## **#3** Sample Data
 > You can run the below code in the Apex Anonymous Window to insert sample records to the database.
 > ```console
