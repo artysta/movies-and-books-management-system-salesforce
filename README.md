@@ -39,7 +39,7 @@
 > [!tip]
 > ## **#3** Sample Data
 > You can run the below code in the Apex Anonymous Window to insert sample records to the database.
-> ```console
+> ```java
 > SampleDataFactory.createAndInsertSampleRecords();
 > ```
 
