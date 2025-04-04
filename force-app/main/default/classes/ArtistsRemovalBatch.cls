@@ -6,11 +6,13 @@ public class ArtistsRemovalBatch extends VirtualBatchRunLogger implements Databa
     
     public Database.QueryLocator start(Database.BatchableContext context) {
         super.startLogging();
-        return Database.getQueryLocator([SELECT Id
-                                         FROM MBMS_Artist__c
-                                         WHERE MBMS_Status__c IN (:Constants.STATUS_INITIAL,
-                                                                  :Constants.STATUS_REJECTED)
-                                         AND CreatedDate <= :Constants.RECORDS_RETENTION_DATE]);
+        return Database.getQueryLocator([
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            WHERE MBMS_Status__c IN (:Constants.STATUS_INITIAL, :Constants.STATUS_REJECTED)
+            AND CreatedDate <= :Constants.RECORDS_RETENTION_DATE
+        ]);
     }
     
     public void execute(Database.BatchableContext context, List<MBMS_Artist__c> artists) {

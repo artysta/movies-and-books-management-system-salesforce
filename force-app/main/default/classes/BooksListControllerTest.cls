@@ -11,7 +11,13 @@ private class BooksListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfBooks() {
-        MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        MBMS_Book__c book = [
+            SELECT
+                Id
+            FROM MBMS_Book__c
+            LIMIT 1
+        ];
+        
         delete book;
         
         Test.startTest();
@@ -33,7 +39,13 @@ private class BooksListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionBooks() {
-        MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        MBMS_Book__c book = [
+            SELECT
+                Id
+            FROM MBMS_Book__c
+            LIMIT 1
+        ];
+        
         book.MBMS_Status__c = Constants.STATUS_APPROVED;
         update book;
         
@@ -46,7 +58,11 @@ private class BooksListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionBooks() {
-        List<MBMS_Book__c> booksFromDb = [SELECT Id FROM MBMS_Book__c];
+        List<MBMS_Book__c> booksFromDb = [
+            SELECT
+                Id
+            FROM MBMS_Book__c
+        ];
         
         for (MBMS_Book__c book : booksFromDb) {
             book.MBMS_Status__c = Constants.STATUS_REJECTED;
@@ -64,7 +80,13 @@ private class BooksListControllerTest {
     
     @isTest
     static void booksShouldNotBeAvailable() {
-        MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        MBMS_Book__c book = [
+            SELECT
+                Id
+            FROM MBMS_Book__c
+            LIMIT 1
+        ];
+        
         delete book;
         
         Test.startTest();

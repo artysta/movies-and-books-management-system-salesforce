@@ -21,7 +21,14 @@ private class SObjectsSelectorTest {
     
     @isTest
     static void shouldReturnGroupMembers() {
-        User user = [SELECT Id FROM User WHERE Email = :Constants.EMAIL LIMIT 1];
+        User user = [
+            SELECT
+                Id
+            FROM User
+            WHERE Email = :Constants.EMAIL
+            LIMIT 1
+        ];
+        
         Group queue = SObjectsSelector.getApproversQueue();
         
         GroupMember groupMember = new GroupMember();

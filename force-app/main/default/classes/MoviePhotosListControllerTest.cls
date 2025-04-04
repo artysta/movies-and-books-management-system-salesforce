@@ -11,7 +11,13 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfMoviePhotos() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT Id FROM MBMS_Movie_Photo__c LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
+        
         delete moviePhoto;
 
         Test.startTest();
@@ -33,7 +39,13 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfLatestMoviePhotos() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT Id FROM MBMS_Movie_Photo__c LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
+        
         delete moviePhoto;
 
         Test.startTest();
@@ -64,7 +76,12 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void latestPhotosListShouldBeAvailable() {
-        List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
+        List<MBMS_Movie_Photo__c> moviePhotosFromDb = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Photo__c
+        ];
+        
         List<MBMS_Movie_Photo__c> moviePhotosToInsert = new List<MBMS_Movie_Photo__c>();
         
         // Add missing Movie Photos to reach MINIMUM_NUMBER_OF_PHOTOS size.
@@ -103,7 +120,11 @@ private class MoviePhotosListControllerTest {
     
     @isTest
     static void requiringActionPhotosListShouldNotBeEmpty() {
-		List<MBMS_Movie_Photo__c> moviePhotosFromDb = [SELECT Id FROM MBMS_Movie_Photo__c];
+		List<MBMS_Movie_Photo__c> moviePhotosFromDb = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Photo__c
+        ];
         
         for (MBMS_Movie_Photo__c moviePhoto : moviePhotosFromDb) {
             moviePhoto.MBMS_Status__c = Constants.STATUS_REJECTED;

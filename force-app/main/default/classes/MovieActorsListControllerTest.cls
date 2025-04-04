@@ -11,7 +11,13 @@ private class MovieActorsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfMovieActors() {
-        MBMS_Movie_Actor__c movieActor = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
+        MBMS_Movie_Actor__c movieActor = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Actor__c
+            LIMIT 1
+        ];
+        
         delete movieActor;
         
         Test.startTest();
@@ -33,7 +39,13 @@ private class MovieActorsListControllerTest {
     
     @isTest
     static void artistsShouldNotBeAvailable() {
-        MBMS_Movie_Actor__c movieActor = [SELECT Id FROM MBMS_Movie_Actor__c LIMIT 1];
+        MBMS_Movie_Actor__c movieActor = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Actor__c
+            LIMIT 1
+        ];
+        
         delete movieActor;
         
         Test.startTest();

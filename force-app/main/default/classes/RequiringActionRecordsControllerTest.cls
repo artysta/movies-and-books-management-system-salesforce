@@ -15,7 +15,12 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void  shouldReturnEmptyListOfRequiringActionRecords() {
-        List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
+        List<MBMS_Artist__c> artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
+        
         delete artists;
         
         Test.startTest();
@@ -27,7 +32,11 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void  shouldReturnNotEmptyListOfRequiringActionRecords() {
-        List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
+        List<MBMS_Artist__c> artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
         
         for (MBMS_Artist__c artist : artists) {
             artist.MBMS_Status__c = Constants.STATUS_REJECTED;
@@ -45,7 +54,13 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void requiringActionRecordsShouldNotBeAvailable() {
-        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        MBMS_Artist__c artist = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            LIMIT 1
+        ];
+        
         delete artist;
         
         Test.startTest();
@@ -57,7 +72,11 @@ private class RequiringActionRecordsControllerTest {
     
     @isTest
     static void requiringActionRecordsShouldBeAvailable() {
-        List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
+        List<MBMS_Artist__c> artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
         
         for (MBMS_Artist__c artist : artists) {
             artist.MBMS_Status__c = Constants.STATUS_REJECTED;
@@ -74,7 +93,13 @@ private class RequiringActionRecordsControllerTest {
 
     @isTest
     static void userShouldBeAbleToSeeTheComponent() {
-        User user = [SELECT Id FROM User WHERE Email = :Constants.EMAIL LIMIT 1];
+        User user = [
+            SELECT
+                Id
+            FROM User
+            WHERE Email = :Constants.EMAIL LIMIT 1
+        ];
+        
         System.runAs(user) {
             Group queue = SObjectsSelector.getApproversQueue();
 
@@ -93,7 +118,14 @@ private class RequiringActionRecordsControllerTest {
 
     @isTest
     static void userShouldNotBeAbleToSeeTheComponent() {
-        User user = [SELECT Id FROM User WHERE Email = 'test1@test.pl' LIMIT 1];
+        User user = [
+            SELECT
+                Id
+            FROM User
+            WHERE Email = 'test1@test.pl'
+            LIMIT 1
+        ];
+        
         System.runAs(user) {
             Test.startTest();
             Boolean isUserAbleToSeeTheComponent = RequiringActionRecordsController.shouldUserBeAbleToSeeTheComponent();

@@ -11,7 +11,13 @@ public class ArtistNewsControllerTest {
     
     @isTest
     static void shouldThrowException() {
-        MBMS_Artist_News__c artistNews = [SELECT Id FROM MBMS_Artist_News__c LIMIT 1];
+        MBMS_Artist_News__c artistNews = [
+            SELECT
+                Id
+            FROM MBMS_Artist_News__c
+            LIMIT 1
+        ];
+        
         delete artistNews;
         
         Integer exceptionsCount = 0;
@@ -40,7 +46,12 @@ public class ArtistNewsControllerTest {
     
     @isTest
     static void shouldReturnArtistNewsByArtistId() {
-        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        MBMS_Artist__c artist = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            LIMIT 1
+        ];
 
         Test.startTest();
         MBMS_Artist_News__c artistNews = ArtistNewsController.getLatestArtistNewsByArtistId(artist.Id);
