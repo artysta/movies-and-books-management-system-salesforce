@@ -6,9 +6,12 @@ public class BatchLogsRemovalBatch extends VirtualBatchRunLogger implements Data
     
     public Database.QueryLocator start(Database.BatchableContext context) {
         super.startLogging();
-        return Database.getQueryLocator([SELECT Id
-                                         FROM MBMS_Batch_Log__c
-                                         WHERE CreatedDate <= :Constants.RECORDS_RETENTION_DATE]);
+        return Database.getQueryLocator([
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+            WHERE CreatedDate <= :Constants.RECORDS_RETENTION_DATE
+        ]);
     }
     
     public void execute(Database.BatchableContext context, List<MBMS_Batch_Log__c> batchLogs) {

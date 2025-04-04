@@ -12,7 +12,12 @@ private class LocationMapControllerTest {
     
     @isTest
     static void shouldReturnMainFilmingLocationByMovieId() {
-        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        MBMS_Movie__c movie = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            LIMIT 1
+        ];
         
         Test.startTest();
         String mainFilmingLocation = LocationMapController.getMainFilmingLocationByMovieId(movie.Id);

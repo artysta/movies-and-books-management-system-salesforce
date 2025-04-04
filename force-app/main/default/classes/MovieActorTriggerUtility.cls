@@ -6,7 +6,12 @@ public class MovieActorTriggerUtility {
             artists.put(movieActor.MBMS_Artist__c, null);
         }
         
-        artists.putAll([SELECT Name FROM MBMS_Artist__c WHERE Id = :artists.keySet()]);
+        artists.putAll([
+            SELECT
+                Name
+            FROM MBMS_Artist__c
+            WHERE Id = :artists.keySet()
+        ]);
         
         for (MBMS_Movie_Actor__c movieActor: movieActors) {
             MBMS_Artist__c artist = artists.get(movieActor.MBMS_Artist__c);

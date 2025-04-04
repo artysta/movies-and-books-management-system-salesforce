@@ -11,7 +11,13 @@ public class BookNewsControllerTest {
     
     @isTest
     static void shouldThrowException() {
-        MBMS_Book_News__c bookNews = [SELECT Id FROM MBMS_Book_News__c LIMIT 1];
+        MBMS_Book_News__c bookNews = [
+            SELECT
+                Id
+            FROM MBMS_Book_News__c
+            LIMIT 1
+        ];
+        
         delete bookNews;
         
         Integer exceptionsCount = 0;
@@ -40,7 +46,12 @@ public class BookNewsControllerTest {
     
     @isTest
     static void shouldReturnBookNewsByBookId() {
-        MBMS_Book__c book = [SELECT Id FROM MBMS_Book__c LIMIT 1];
+        MBMS_Book__c book = [
+            SELECT
+                Id
+            FROM MBMS_Book__c
+            LIMIT 1
+        ];
         
         Test.startTest();
         MBMS_Book_News__c bookNews = BookNewsController.getLatestBookNewsByBookId(book.Id);

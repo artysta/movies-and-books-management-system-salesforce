@@ -19,7 +19,12 @@ public class MovieTriggerUtility {
     
     public static void removeRelatedMovieActors(List<MBMS_Movie__c> movies) {
         Set<Id> movieIds = (new Map<Id, MBMS_Movie__c>(movies)).keySet();
-        List<MBMS_Movie_Actor__c> movieActors = [SELECT Id FROM MBMS_Movie_Actor__c WHERE MBMS_Artist__r.Id IN :movieIds];
+        List<MBMS_Movie_Actor__c> movieActors = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Actor__c
+            WHERE MBMS_Artist__r.Id IN :movieIds
+        ];
         
         delete movieActors;
     }

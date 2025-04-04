@@ -11,9 +11,14 @@ private class MovieActorTriggerHandlerTest {
     
     @isTest
     static void triggerShouldUpdateMovieActorName() {
-        MBMS_Movie_Actor__c movieActor = [SELECT Name, MBMS_Artist__r.Name, MBMS_Character_Name__c
-                                          FROM MBMS_Movie_Actor__c
-                                          LIMIT 1];
+        MBMS_Movie_Actor__c movieActor = [
+            SELECT
+                Name,
+                MBMS_Artist__r.Name,
+                MBMS_Character_Name__c
+            FROM MBMS_Movie_Actor__c
+            LIMIT 1
+        ];
         
         String expectedName = String.format('{0} as {1}', new List<String> { movieActor.MBMS_Artist__r.Name, movieActor.MBMS_Character_Name__c });
         

@@ -18,7 +18,12 @@ public with sharing class RequiringActionRecordsController {
 
     @AuraEnabled
     public static Boolean shouldUserBeAbleToSeeTheComponent() {
-        List<GroupMember> groupMembers = [SELECT GroupId FROM GroupMember WHERE UserOrGroupId = :UserInfo.getUserId()];
+        List<GroupMember> groupMembers = [
+            SELECT
+                GroupId
+            FROM GroupMember
+            WHERE UserOrGroupId = :UserInfo.getUserId()
+        ];
         
         Set<Id> userGroupsIds = new Set<Id>();
         
@@ -26,7 +31,12 @@ public with sharing class RequiringActionRecordsController {
             userGroupsIds.add(member.GroupId);
         }
         
-        List<Group> queues = [SELECT Name FROM Group WHERE Id IN :userGroupsIds];
+        List<Group> queues = [
+            SELECT
+                Name
+            FROM Group
+            WHERE Id IN :userGroupsIds
+        ];
         
         for (Group queue : queues) {
             if (queue.Name == Constants.APPROVERS_QUEUE) {

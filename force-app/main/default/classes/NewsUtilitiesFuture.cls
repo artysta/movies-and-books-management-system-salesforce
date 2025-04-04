@@ -20,9 +20,26 @@ public class NewsUtilitiesFuture {
     }
     
     private static void updateFields(Set<Id> newsIds) {
-        List<MBMS_Artist_News__c> artistNewsList = [SELECT Id FROM MBMS_Artist_News__c WHERE Id = :newsIds];
-        List<MBMS_Book_News__c> bookNewsList = [SELECT Id FROM MBMS_Book_News__c WHERE Id = :newsIds];
-        List<MBMS_Movie_News__c> movieNewsList = [SELECT Id FROM MBMS_Movie_News__c WHERE Id = :newsIds];
+        List<MBMS_Artist_News__c> artistNewsList = [
+            SELECT
+                Id
+            FROM MBMS_Artist_News__c
+            WHERE Id = :newsIds
+        ];
+        
+        List<MBMS_Book_News__c> bookNewsList = [
+            SELECT
+                Id
+            FROM MBMS_Book_News__c
+            WHERE Id = :newsIds
+        ];
+
+        List<MBMS_Movie_News__c> movieNewsList = [
+            SELECT
+                Id
+            FROM MBMS_Movie_News__c
+            WHERE Id = :newsIds
+        ];
                 
         for (MBMS_Artist_News__c artistNews : artistNewsList) {
             artistNews.MBMS_Content__c = contentList.get(Utilities.getRandomNumber(contentList.size() - 1));

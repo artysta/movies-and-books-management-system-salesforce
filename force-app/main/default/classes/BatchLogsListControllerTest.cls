@@ -11,7 +11,13 @@ private class BatchLogsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfBatchLogs() {
-        MBMS_Batch_Log__c batchLog = [SELECT Id FROM MBMS_Batch_Log__c LIMIT 1];
+        MBMS_Batch_Log__c batchLog = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+            LIMIT 1
+        ];
+        
         delete batchLog;
         
         Test.startTest();
@@ -33,7 +39,13 @@ private class BatchLogsListControllerTest {
     
     @isTest
     static void batchLogsShouldNotBeAvailable() {
-        MBMS_Batch_Log__c batchLog = [SELECT Id FROM MBMS_Batch_Log__c LIMIT 1];
+        MBMS_Batch_Log__c batchLog = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+            LIMIT 1
+        ];
+        
         delete batchLog;
         
         Test.startTest();
