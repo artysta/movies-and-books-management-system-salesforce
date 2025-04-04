@@ -73,7 +73,7 @@
 > do this:
 > 
 > ```java  
-> for (Group queue : [SELECT Name FROM Group WHERE Id IN:userGroupsIds]) {
+> for (Group queue : [SELECT Name FROM Group WHERE Id IN: userGroupsIds]) {
 >     return queue.Name == Constants.APPROVERS_QUEUE;
 > }
 > ```
