@@ -58,7 +58,7 @@
 > [!warning]
 > ## **5.** TODO
 > Things that can be done to increase quality, performance and so on:
-> - [ ] Consider using **SOQL For Loops** to iterate and process data from large queries (Queue is pretty bad example but it is just an example) to avoid Heap Size Limit Error.
+> - [ ] Consider using **SOQL For Loops** to iterate and process data from large queries (Queue is not so perfect for this one but it is just an example) to avoid Heap Size Limit Error.
 >  
 > e.g. instead of this:
 > 
