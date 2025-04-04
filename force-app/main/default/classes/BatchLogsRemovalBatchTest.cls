@@ -11,7 +11,11 @@ private class BatchLogsRemovalBatchTest {
     
     @isTest
     private static void shouldDeleteExistingBatchLogs() {
-        List<MBMS_Batch_Log__c> batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];
+        List<MBMS_Batch_Log__c> batchLogs = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+        ];
         
         for (MBMS_Batch_Log__c batchLog : batchLogs) {
             Test.setCreatedDate(batchLog.Id, Constants.TEST_DATE_10_DAYS_BEFORE_TODAY);
@@ -21,7 +25,13 @@ private class BatchLogsRemovalBatchTest {
         Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
-        batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
+        batchLogs = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+            WHERE CreatedDate != TODAY
+        ];
+        
         System.assertEquals(0, batchLogs.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
@@ -48,24 +58,42 @@ private class BatchLogsRemovalBatchTest {
         Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
-        batchLogs = [SELECT Id FROM MBMS_Batch_Log__c WHERE CreatedDate != TODAY];
+        batchLogs = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+            WHERE CreatedDate != TODAY
+        ];
         
         System.assertEquals(0, batchLogs.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     @isTest
     private static void shouldNotDeleteExistingBatchLogs() {
-        List<MBMS_Batch_Log__c> batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];
+        List<MBMS_Batch_Log__c> batchLogs = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+        ];
         
         Test.startTest();
         Database.executeBatch(new BatchLogsRemovalBatch());
         Test.stopTest();
         
-        batchLogs = [SELECT Id FROM MBMS_Batch_Log__c];
+        batchLogs = [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+        ];
+        
         System.assert(batchLogs.size() > 0, String.format(Constants.SIZE_SHOULD_BE_GREATER_THAN_PATTERN, new List<String> { 'batchLogs', '0' }));
     }
     
     private static void removeExistingBatchLogs() {
-        delete [SELECT Id FROM MBMS_Batch_Log__c];
+        delete [
+            SELECT
+                Id
+            FROM MBMS_Batch_Log__c
+        ];
     }
 }

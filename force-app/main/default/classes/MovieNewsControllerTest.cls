@@ -11,7 +11,13 @@ public class MovieNewsControllerTest {
     
     @isTest
     static void shouldThrowException() {
-        MBMS_Movie_News__c movieNews = [SELECT Id FROM MBMS_Movie_News__c LIMIT 1];
+        MBMS_Movie_News__c movieNews = [
+            SELECT
+                Id
+            FROM MBMS_Movie_News__c
+            LIMIT 1
+        ];
+        
         delete movieNews;
         
         Integer exceptionsCount = 0;
@@ -40,7 +46,12 @@ public class MovieNewsControllerTest {
     
     @isTest
     static void shouldReturnMovieNewsByMovieId() {
-        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        MBMS_Movie__c movie = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            LIMIT 1
+        ];
 
         Test.startTest();
         MBMS_Movie_News__c movieNews = MovieNewsController.getLatestMovieNewsByMovieId(movie.Id);

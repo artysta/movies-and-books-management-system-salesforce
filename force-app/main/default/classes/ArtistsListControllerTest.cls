@@ -10,7 +10,13 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfArtists() {
-        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        MBMS_Artist__c artist = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            LIMIT 1
+        ];
+
         delete artist;
         
         Test.startTest();
@@ -32,7 +38,13 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionArtists() {
-        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        MBMS_Artist__c artist = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            LIMIT 1
+        ];
+        
         artist.MBMS_Status__c = Constants.STATUS_APPROVED;
         update artist;
         
@@ -45,7 +57,11 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionArtists() {
-        List<MBMS_Artist__c> artistsFromDb = [SELECT Id FROM MBMS_Artist__c];
+        List<MBMS_Artist__c> artistsFromDb = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
         
         for (MBMS_Artist__c artist : artistsFromDb) {
             artist.MBMS_Status__c = Constants.STATUS_REJECTED;
@@ -63,7 +79,13 @@ private class ArtistsListControllerTest {
     
     @isTest
     static void artistsShouldNotBeAvailable() {
-        MBMS_Artist__c artist = [SELECT Id FROM MBMS_Artist__c LIMIT 1];
+        MBMS_Artist__c artist = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+            LIMIT 1
+        ];
+
         delete artist;
         
         Test.startTest();

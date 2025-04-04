@@ -6,11 +6,13 @@ public class MoviesRemovalBatch extends VirtualBatchRunLogger implements Databas
     
     public Database.QueryLocator start(Database.BatchableContext context) {
         startLogging();
-        return Database.getQueryLocator([SELECT Id
-                                         FROM MBMS_Movie__c
-                                         WHERE MBMS_Status__c IN (:Constants.STATUS_INITIAL,
-                                                                  :Constants.STATUS_REJECTED)
-                                         AND CreatedDate <= :Constants.RECORDS_RETENTION_DATE]);
+        return Database.getQueryLocator([
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            WHERE MBMS_Status__c IN (:Constants.STATUS_INITIAL, :Constants.STATUS_REJECTED)
+            AND CreatedDate <= :Constants.RECORDS_RETENTION_DATE
+        ]);
     }
     
     public void execute(Database.BatchableContext context, List<MBMS_Movie__c> movies) {

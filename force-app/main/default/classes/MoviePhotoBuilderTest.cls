@@ -20,45 +20,60 @@ private class MoviePhotoBuilderTest {
     
     @isTest
     static void insertedMoviePhotoShouldNotBeNull() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT Id
-                                          FROM MBMS_Movie_Photo__c
-                                          LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                Id
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
         
         System.assertNotEquals(null, moviePhoto, String.format(Constants.OBJECT_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie_Photo__c' }));
     }
     
     @isTest
     static void moviePhotoShouldHaveMovie() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Movie__c
-                                          FROM MBMS_Movie_Photo__c
-                                          LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                MBMS_Movie__c
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
         
         System.assertNotEquals(null, moviePhoto.MBMS_Movie__c, String.format(Constants.FIELD_SHOULD_NOT_BE_NULL_PATTERN, new List<String> { 'MBMS_Movie__c' }));
     }
 
     @isTest
     static void moviePhotoShouldHavePhotoURL() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Photo_URL__c
-                                          FROM MBMS_Movie_Photo__c
-                                          LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                MBMS_Photo_URL__c
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
         
         System.assertEquals(Constants.TEST_STRING_VALUE, moviePhoto.MBMS_Photo_URL__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Photo_URL__c', Constants.TEST_STRING_VALUE }));
     }
 
     @isTest
     static void moviePhotoShouldHaveStatus() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Status__c
-                                          FROM MBMS_Movie_Photo__c
-                                          LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                MBMS_Status__c
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
         
         System.assertEquals(Constants.STATUS_APPROVED, moviePhoto.MBMS_Status__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status__c', Constants.STATUS_APPROVED }));
     }
     
     @isTest
     static void moviePhotoShouldHaveStatusComment() {
-        MBMS_Movie_Photo__c moviePhoto = [SELECT MBMS_Status_Comment__c
-                                          FROM MBMS_Movie_Photo__c
-                                          LIMIT 1];
+        MBMS_Movie_Photo__c moviePhoto = [
+            SELECT
+                MBMS_Status_Comment__c
+            FROM MBMS_Movie_Photo__c
+            LIMIT 1
+        ];
         
         System.assertEquals(Constants.INITIAL_STATUS_COMMENT, moviePhoto.MBMS_Status_Comment__c, String.format(Constants.FIELD_SHOULD_BE_PATTERN, new List<String> { 'MBMS_Status_Comment__c', Constants.INITIAL_STATUS_COMMENT }));
     }

@@ -11,7 +11,11 @@ private class ArtistsRemovalBatchTest {
     
     @isTest
     private static void shouldDeleteExistingArtists() {
-        List<MBMS_Artist__c> artists = [SELECT Id FROM MBMS_Artist__c];
+        List<MBMS_Artist__c> artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
         
         for (MBMS_Artist__c artist : artists) {
             Test.setCreatedDate(artist.Id, Constants.TEST_DATE_10_DAYS_BEFORE_TODAY);
@@ -24,7 +28,12 @@ private class ArtistsRemovalBatchTest {
         Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
-        artists = [SELECT Id FROM MBMS_Artist__c];
+        artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
+
         System.assertEquals(0, artists.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '0' }));
     }
     
@@ -55,7 +64,11 @@ private class ArtistsRemovalBatchTest {
         Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
-        artists = [SELECT Id FROM MBMS_Artist__c];
+        artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
         
         System.assertEquals(0, artists.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '0' }));
     }
@@ -68,11 +81,20 @@ private class ArtistsRemovalBatchTest {
         Database.executeBatch(new ArtistsRemovalBatch());
         Test.stopTest();
         
-        artists = [SELECT Id FROM MBMS_Artist__c];
+        artists = [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
+
         System.assertEquals(1, artists.size(), String.format(Constants.SIZE_SHOULD_BE_EQUAL_TO_PATTERN, new List<String> { 'artists', '1' }));
     }
     
     private static void removeExistingArtists() {
-        delete [SELECT Id FROM MBMS_Artist__c];
+        delete [
+            SELECT
+                Id
+            FROM MBMS_Artist__c
+        ];
     }
 }

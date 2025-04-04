@@ -11,7 +11,12 @@ private class NewsControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfNews() {
-        List<MBMS_Artist_News__c> artistNews = [SELECT Id FROM MBMS_Artist_News__c];
+        List<MBMS_Artist_News__c> artistNews = [
+            SELECT
+                Id
+            FROM MBMS_Artist_News__c
+        ];
+        
         delete artistNews;
         
         Test.startTest();
@@ -23,7 +28,12 @@ private class NewsControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfNews() {
-        List<MBMS_Artist_News__c> artistNews = [SELECT Id FROM MBMS_Artist_News__c];
+        List<MBMS_Artist_News__c> artistNews = [
+            SELECT
+                Id
+            FROM MBMS_Artist_News__c
+        ];
+        
         update artistNews;
         
         Test.startTest();
@@ -36,7 +46,13 @@ private class NewsControllerTest {
     
     @isTest
     static void newsShouldNotBeAvailable() {
-        MBMS_Artist_News__c artistNews = [SELECT Id FROM MBMS_Artist_News__c LIMIT 1];
+        MBMS_Artist_News__c artistNews = [
+            SELECT
+                Id
+            FROM MBMS_Artist_News__c
+            LIMIT 1
+        ];
+        
         delete artistNews;
         
         Test.startTest();

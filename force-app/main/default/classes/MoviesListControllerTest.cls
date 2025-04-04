@@ -11,7 +11,13 @@ private class MoviesListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfMovies() {
-        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        MBMS_Movie__c movie = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            LIMIT 1
+        ];
+
         delete movie;
         
         Test.startTest();
@@ -33,7 +39,13 @@ private class MoviesListControllerTest {
     
     @isTest
     static void shouldReturnEmptyListOfRequiringActionMovies() {
-        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        MBMS_Movie__c movie = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            LIMIT 1
+        ];
+
         movie.MBMS_Status__c = Constants.STATUS_APPROVED;
         update movie;
         
@@ -46,7 +58,11 @@ private class MoviesListControllerTest {
     
     @isTest
     static void shouldReturnNotEmptyListOfRequiringActionMovies() {
-        List<MBMS_Movie__c> moviesFromDb = [SELECT Id FROM MBMS_Movie__c];
+        List<MBMS_Movie__c> moviesFromDb = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+        ];
         
         for (MBMS_Movie__c movie : moviesFromDb) {
             movie.MBMS_Status__c = Constants.STATUS_REJECTED;
@@ -64,7 +80,13 @@ private class MoviesListControllerTest {
     
     @isTest
     static void moviesShouldNotBeAvailable() {
-        MBMS_Movie__c movie = [SELECT Id FROM MBMS_Movie__c LIMIT 1];
+        MBMS_Movie__c movie = [
+            SELECT
+                Id
+            FROM MBMS_Movie__c
+            LIMIT 1
+        ];
+        
         delete movie;
         
         Test.startTest();
