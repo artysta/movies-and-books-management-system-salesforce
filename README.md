@@ -58,7 +58,7 @@
 > [!warning]
 > ## **5.** TODO
 > Things that can be done to increase quality, performance and so on:
-> - [ ] Consider using **SOQL For Loops** to iterate and process data from large queries (Queue is not so perfect for this one but it is just an example) to avoid Heap Size Limit Error.
+> - [ ] Consider using **SOQL For Loops** to iterate and process data from large queries (Group is not so perfect for this one but it is just an example) to avoid Heap Size Limit Error.
 >  
 > e.g. instead of this:
 > 
@@ -75,5 +75,22 @@
 > ```java  
 > for (Group queue : [SELECT Name FROM Group WHERE Id IN: userGroupsIds]) {
 >     return queue.Name == Constants.APPROVERS_QUEUE;
+> }
+> ```
+> ---
+> - [ ] Use **equals (or equalsIgnoreCase)** method (String class) instead of **==** to compare string values as it is more efficient.
+>
+> e.g. instead of this:
+> 
+> ```java
+> if (book.MBMS_Status__c == book.MBMS_Previous_Status__c) {
+>     continue;
+> }
+> ```
+> do this:
+> 
+> ```java
+> if (book.MBMS_Status__c.equals(book.MBMS_Previous_Status__c)) {
+>     continue;
 > }
 > ```
