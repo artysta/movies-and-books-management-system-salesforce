@@ -40,11 +40,11 @@ public class MovieTriggerUtility {
         }
         
         for (MBMS_Movie__c movie : movies) {
-            if (movie.MBMS_Status__c == movie.MBMS_Previous_Status__c) {
+            if (movie.MBMS_Status__c.equals(movie.MBMS_Previous_Status__c)) {
                 continue;
             }
 
-            if (movie.MBMS_Status__c == Constants.STATUS_APPROVED) {
+            if (movie.MBMS_Status__c.equals(Constants.STATUS_APPROVED)) {
                 continue;
             }
             

@@ -39,7 +39,7 @@ public with sharing class RequiringActionRecordsController {
         ];
         
         for (Group queue : queues) {
-            if (queue.Name == Constants.APPROVERS_QUEUE) {
+            if (queue.Name.equals(Constants.APPROVERS_QUEUE)) {
                 return true;
             }
         }

@@ -22,11 +22,11 @@ public class MoviePhotoTriggerUtility {
         }
         
         for (MBMS_Movie_Photo__c moviePhoto : moviePhotos) {
-            if (moviePhoto.MBMS_Status__c == moviePhoto.MBMS_Previous_Status__c) {
+            if (moviePhoto.MBMS_Status__c.equals(moviePhoto.MBMS_Previous_Status__c)) {
                 continue;
             }
 
-            if (moviePhoto.MBMS_Status__c == Constants.STATUS_APPROVED) {
+            if (moviePhoto.MBMS_Status__c.equals(Constants.STATUS_APPROVED)) {
                 continue;
             }
             

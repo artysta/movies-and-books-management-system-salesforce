@@ -41,11 +41,11 @@ public class ArtistTriggerUtility {
         }
         
         for (MBMS_Artist__c artist : artists) {
-            if (artist.MBMS_Status__c == artist.MBMS_Previous_Status__c) {
+            if (artist.MBMS_Status__c.equals(artist.MBMS_Previous_Status__c)) {
                 continue;
             }
 
-            if (artist.MBMS_Status__c == Constants.STATUS_APPROVED) {
+            if (artist.MBMS_Status__c.equals(Constants.STATUS_APPROVED)) {
                 continue;
             }
 

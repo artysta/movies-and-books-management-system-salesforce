@@ -41,7 +41,7 @@ public with sharing class MoviePhotosListController {
     
     @AuraEnabled
     public static Boolean arePhotosAvailable() { 
-        return getLatestPhotos().size() == MINIMUM_NUMBER_OF_PHOTOS;
+        return getLatestPhotos().size().equals(MINIMUM_NUMBER_OF_PHOTOS);
     }
     
     @AuraEnabled

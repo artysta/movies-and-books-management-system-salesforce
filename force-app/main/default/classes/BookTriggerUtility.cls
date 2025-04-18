@@ -28,11 +28,11 @@ public class BookTriggerUtility {
         }
         
         for (MBMS_Book__c book : books) {
-            if (book.MBMS_Status__c == book.MBMS_Previous_Status__c) {
+            if (book.MBMS_Status__c.equals(book.MBMS_Previous_Status__c)) {
                 continue;
             }
 
-            if (book.MBMS_Status__c == Constants.STATUS_APPROVED) {
+            if (book.MBMS_Status__c.equals(Constants.STATUS_APPROVED)) {
                 continue;
             }
             
